@@ -7,7 +7,7 @@ export default function Home() {
         <div className='home'>
             <div className="homeLeft">
                 <div className="homeLeftTitle">omar chatin</div>
-                <div className="homeLeftBody">profitional <br/> ux/ui desginer</div>
+                <div className="homeLeftBody">profitional <br/> ux/ui desginer /test</div>
                 <button className="learnMoreBtn">learn More</button>
             </div>
             <div className="homeRight">

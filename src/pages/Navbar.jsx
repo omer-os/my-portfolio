@@ -34,9 +34,9 @@ export default function Navbar() {
 
             <div className="rightNav" id={ShowMenuStyle ? 'showMenuList' : 'hideMenuList'}>
                 <ul className='rightNavUl'>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">contacts</a></li>
+                    <li><a>home</a></li>
+                    <li><a>about</a></li>
+                    <li><a>contacts</a></li>
                 </ul>
             </div>
 
