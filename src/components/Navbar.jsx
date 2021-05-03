@@ -15,7 +15,7 @@ export default function Navbar() {
                 <div className="leftNavText">omar chatin</div>
             </div>
             <div className="rightNav" id={ShowMenuStyle ? 'showMenuList' : 'hideMenuList'}>
-                <ul>
+                <ul className='rightNavUl'>
                     <li><a href="#">home</a></li>
                     <li><a href="#">about</a></li>
                     <li><a href="#">contacts</a></li>

@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 :root{
-  --dark: #3A4446;
-  --blue: #6595F4;
+  --blue: #f46565;
+  --white: white;
+  
+  --body-background-color: white;
+  --nav-bar-background: #3A4446;
 }
-
 
 
 *{
@@ -11,38 +13,50 @@
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+body{
+  background-color: var(--body-background-color);
+}
 
+/* navigation bar */
 
 nav{
-  background-color: var(--dark);
+  padding: 15px;
+  background-color: var(--nav-bar-background);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-}.rightNav ul{
-  display: flex;
-  justify-content: space-evenly;
-}.rightNav{
+}
+
+/* right side of nav bar */
+.rightNav{
   transition: all 1s;
   width: 40%;
-}.rightNav ul li{
+}.rightNavUl{
+  display: flex;
+  justify-content: space-evenly;
   text-transform: capitalize;
-  cursor: pointer;
   font-size: 1.3em;
+  cursor: pointer;
   list-style: none;
-}.rightNav ul li:hover a{
-  color: var(--blue);
-}a{
+}
+a{
   transition: all 0.3s ease-in;
   text-decoration: none;
-  color: white;
-}.leftNav{
-  font-size: 1.5em;
-  font-weight: 900;
-  color: white;
+  color: var(--white);
+}.rightNavUl li:hover a{
+  color: var(--blue);
 }
 
 
+/* left side of nav bar */
+.leftNav{
+  font-size: 1.5em;
+  font-weight: 900;
+  color: var(--white);
+}
+
+
+/* button for showing the nav bar in small devices */
 .menuBarBtn{
   display: none;
   position: absolute;
@@ -52,32 +66,31 @@ nav{
 }.line{
   width: 40px;
   height: 6px;
-  background-color: white;
+  background-color: var(--white);
   margin: 5px;
 }
 
 @media (max-width: 800px){
-  .menuBarBtn{
-    display: inline-block;
-  }
-  .rightNav ul{
-    flex-direction: column;
-    text-align: center;
-  }.rightNav li{
-    padding: 10px;
-  }
-  .rightNav li:hover{
-    background-color: #4b575a;
-  }
   .rightNav{
     position: absolute;
-    background-color: var(--dark);
+    background-color: var(--nav-bar-background);
     width: 100%;
     left: -100%;
     top: 58px;
+  }.rightNavUl{
+    flex-direction: column;
+    text-align: center;
+  }.rightNavUl li{
+    padding: 10px;
+  }
+  .rightNavUl li:hover{
+    background-color: #4b575a;
+  }
+
+  .menuBarBtn{
+    display: inline-block;
   }
 }
-
 #showMenuList{
   left: 0px;
 }#hideMenuList{
@@ -85,9 +98,8 @@ nav{
   opacity: 50%;
 }
 
-.imgOfMe{
-  width: 40vmin;
-}
+
+/* home page */
 .home{
   width: fit-content;
   margin: auto;
@@ -97,25 +109,28 @@ nav{
 }.homeLeft{
   margin: 20px;
   margin-right: 10px;
-  width: 40vmin;
+  width: 45vmin;
 }
+
+/* Omar Chatin */
 .homeLeftTitle{
   font-size: 6vmin;
   text-transform: capitalize;
   font-weight: 800;
   margin-bottom: 30px;
 }
+/* Profitional Ux/Ui Desginer */
 .homeLeftBody{
   font-size: 5vmin;
   font-weight: 400;
   text-transform: capitalize;
 }
-
+/* Learn More */
 .learnMoreBtn{
   padding: 8px;
   border:none;
   border-radius: 5px;
-  color: white;
+  color: var(--white);
   background-color: var(--blue);
   position: relative;
   top: 15%;
@@ -125,4 +140,7 @@ nav{
   cursor: pointer;
 }.learnMoreBtn:hover{
   transform: scale(1.07);
+}
+.imgOfMe{
+  width: 40vmin;
 }
