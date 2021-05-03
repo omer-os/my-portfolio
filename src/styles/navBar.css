@@ -1,0 +1,83 @@
+
+/* navigation bar */
+
+nav{
+    padding: 15px;
+    background-color: var(--nav-bar-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* right side of nav bar */
+  .rightNav{
+    transition: all 1s;
+    width: 40%;
+  }.rightNavUl{
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+    font-size: 1.3em;
+    cursor: pointer;
+    list-style: none;
+  }
+  a{
+    transition: all 0.3s ease-in;
+    text-decoration: none;
+    color: var(--white);
+  }.rightNavUl li:hover a{
+    color: var(--blue);
+  }
+  
+  
+  /* left side of nav bar */
+  .leftNav{
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--white);
+  }
+  
+  
+  /* button for showing the nav bar in small devices */
+  .menuBarBtn{
+    display: none;
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    cursor: pointer;
+  }.line{
+    width: 40px;
+    height: 6px;
+    background-color: var(--white);
+    margin: 5px;
+    transition: all 0.2s ease-out;
+  }
+  
+  @media (max-width: 800px){
+    .rightNav{
+      position: absolute;
+      background-color: var(--nav-bar-background);
+      width: 100%;
+      left: -100%;
+      top: 58px;
+    }.rightNavUl{
+      flex-direction: column;
+      text-align: center;
+    }.rightNavUl li{
+      padding: 10px;
+    }
+    .rightNavUl li:hover{
+      background-color: #4b575a;
+    }
+  
+    .menuBarBtn{
+      display: inline-block;
+    }
+  }
+  #showMenuList{
+    left: 0px;
+  }#hideMenuList{
+    left: -100%;
+    opacity: 50%;
+}
+  
