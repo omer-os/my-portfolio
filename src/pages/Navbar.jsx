@@ -25,14 +25,14 @@ export default function Navbar() {
     const rotateFirstLine = {'transform':'translate(0px,-10px) rotate(40deg)'}
     const rotateLastLine = {'transform':'translate(0px,10px) rotate(-40deg)'}
     const hideMiddleLine ={'opacity' : '0'}
-    
+
     return (
         <nav>
             <div className="leftNav">
                 <div className="leftNavText">omar chatin</div>
             </div>
 
-            <div className="rightNav" id={ShowMenuStyle ? 'showMenuList' : 'hideMenuList'}>
+            <div className="rightNav" id={ShowMenuStyle && window.innerWidth <= 800 ? 'showMenuList' : null}>
                 <ul className='rightNavUl'>
                     <li><a>home</a></li>
                     <li><a>about</a></li>

@@ -74,10 +74,10 @@ nav{
       display: inline-block;
     }
   }
-  #showMenuList{
-    left: 0px;
-  }#hideMenuList{
-    left: -100%;
-    opacity: 50%;
+
+#showMenuList{
+  left: 0px;
 }
-  
+#sml{
+  color: white;
+}
