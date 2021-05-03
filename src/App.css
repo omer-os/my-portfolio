@@ -94,9 +94,9 @@ nav{
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
-  background-color: #4b575a;
 }.homeLeft{
   margin: 20px;
+  margin-right: 10px;
   width: 40vmin;
 }
 .homeLeftTitle{
@@ -121,5 +121,8 @@ nav{
   top: 15%;
   left: 30%;
   width: fit-content;
-  font-size: ;
+  font-size: 2.5vmin;
+  cursor: pointer;
+}.learnMoreBtn:hover{
+  transform: scale(1.07);
 }
