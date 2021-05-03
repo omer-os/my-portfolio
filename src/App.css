@@ -15,7 +15,6 @@
 
 nav{
   background-color: var(--dark);
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,14 +32,14 @@ nav{
   list-style: none;
 }.rightNav ul li:hover a{
   color: var(--blue);
-}
-a{
+}a{
   transition: all 0.3s ease-in;
   text-decoration: none;
   color: white;
 }.leftNav{
   font-size: 1.5em;
   font-weight: 900;
+  color: white;
 }
 
 
@@ -67,6 +66,9 @@ a{
   }.rightNav li{
     padding: 10px;
   }
+  .rightNav li:hover{
+    background-color: #4b575a;
+  }
   .rightNav{
     position: absolute;
     background-color: var(--dark);
@@ -81,4 +83,8 @@ a{
 }#hideMenuList{
   left: -100%;
   opacity: 50%;
+}
+
+.imgOfMe{
+  width: 20%;
 }
