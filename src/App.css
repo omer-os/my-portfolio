@@ -68,6 +68,7 @@ a{
   height: 6px;
   background-color: var(--white);
   margin: 5px;
+  transition: all 0.2s ease-out;
 }
 
 @media (max-width: 800px){
@@ -144,3 +145,6 @@ a{
 .imgOfMe{
   width: 40vmin;
 }
+
+
+
