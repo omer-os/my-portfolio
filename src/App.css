@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import './css/navbar.css';
+@import './css/home.css';
 
-@import './styles/homePage.css';
-@import './styles/navBar.css';
-@import './styles/cssElements.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}

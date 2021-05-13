@@ -1,12 +1,19 @@
-import Navbar from "./pages/Navbar";
-import Home from "./pages/Home";
-import './App.css'
+import './app.css'
+
+import About from "./javascript/about";
+import Contacts from "./javascript/contacts";
+import Home from "./javascript/home";
+import Nav from "./javascript/navbar";
+import Projects from "./javascript/projects";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Nav />
       <Home />
+      <About />
+      <Projects />
+      <Contacts />
     </div>
   );
 }
