@@ -1,6 +1,6 @@
 :root{
-    --nav-background-color: rgb(133, 82, 192);
+    --nav-background-color: rgb(73, 73, 73);
     --nav-a-color: white;
-    --nav-a-hovering-color: rgb(248, 178, 132); 
+    --nav-a-hovering-color: rgb(106, 124, 206); 
     --nav-showbtn-line-color: white;
 }

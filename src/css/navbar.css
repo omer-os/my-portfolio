@@ -5,6 +5,7 @@ nav{
     display: flex;
     justify-content: flex-end;
     position: sticky;   
+    height: 66px;
 }
 
 .navBarUl{
@@ -16,13 +17,7 @@ nav{
     padding: 20px;
     animation: animateNavUl 1s ease-in-out;
 }
-@keyframes animateNavUl{
-    from {
-        left: -100%;
-        top: -150px;
-        opacity: 0;
-    }
-}
+
 
 a{
     text-decoration: none;
@@ -41,6 +36,7 @@ a:hover{
     margin: 10px;
     display: none;
     cursor: pointer;
+    position: absolute;
 }
 
 .line{
@@ -49,6 +45,8 @@ a:hover{
     background-color: var(--nav-showbtn-line-color);
     border-radius: 3px;
     margin: 5px;
+    position: relative;
+    transition: all .5s ease-in-out;
 }
 
 
@@ -66,9 +64,20 @@ a:hover{
         height: 160px;
         margin-bottom: 5px;
         left: 0px;
-        top: 63px;
+        top: 64px;
         text-align: center;
-        display: none;
+        transition: .5s ease-in-out;
     }
-    
+    #showNavBar{
+        display: flex;
+    }
+    #hideNavBar{
+        transform: translate(-100%);
+    }
+    @keyframes animateNavUl{
+        from {
+            left: -100%;
+            opacity: 0;
+        }
+    }
 }
