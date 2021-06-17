@@ -3,8 +3,11 @@ body{
     padding: 0;
     font-family: sans-serif;
     color: white;
+    background-color: black;
 }
-
+*:not(body){
+    transition: all .3s;
+}
 
 .right-nav{
     display: flex;
@@ -20,7 +23,37 @@ a{
 }
 
 .left-nav img{
-    margin: 0 0 0 10px;
+    position: absolute;
+    top: 10px;
+    left: 25px;
     width: 25px;
     cursor: pointer;
+    transition: all .5s ease-in-out;
 }
+
+
+.change-theme{
+    opacity: 0;
+}
+
+.me1{
+    width: 20vmin;
+}
+
+.first-section{
+    text-align: center;
+    margin-top: 90px;
+}
+.p1{
+    font-size: 5vmin;
+}
+.p2{
+    font-size: 2.8vmin;
+    width: 40vmin;
+    margin: auto;
+    color: #B4B4B4;
+}
+
+
+
+.showMenuBar{}
