@@ -32,8 +32,8 @@ function App() {
       </Firstsection>
 
       <div className="showMenuBar">
-        <div className="line"></div>
-        <div className="line"></div>
+        <div className="line1"></div>
+        <div className="line2"></div>
       </div>
 
     </Body>
