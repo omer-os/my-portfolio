@@ -1,5 +1,5 @@
 "# my-website" 
 
-    created using React js and vanilla css
+    created using React js and react styled-components
     
-    live on https://omarchatin.netlify.app/
+    the website is live on https://omarchatin.netlify.app/
