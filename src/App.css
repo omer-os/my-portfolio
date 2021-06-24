@@ -20,6 +20,11 @@ a{
 
 .right-nav li{
     padding: 5px 20px 0 20px;
+}.right-nav li a{
+    cursor: pointer;
+    text-transform: capitalize;
+}.right-nav li a:hover{
+    color: rgb(91, 91, 253);
 }
 
 .left-nav img{
@@ -43,7 +48,7 @@ a{
 
 .first-section{
     text-align: center;
-    margin-top: 90px;
+    padding-top: 90px;
 }
 .p1{
     font-size: 5vmin;
@@ -92,4 +97,12 @@ a{
 
 .contact1-2-1item{
     margin: 10px;
+}
+
+::selection{
+    background-color: yellow;
+    color:crimson;
+}
+img::selection{
+    background-color: gray;
 }

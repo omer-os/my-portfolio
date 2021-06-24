@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 
 export const Body = styled.div`
-background-color: ${(props)=>props.Theme ? 'black' : 'white'};
-width: 100%;
-height: 100vh;
+    background-color: ${(props)=>props.Theme ? 'black' : 'white'};
+    width: 100%;
+    height: 100%;
 `
 
 export const NavBar = styled.div`
@@ -19,20 +19,27 @@ export const NavBar = styled.div`
     padding: 10px 10px 20px 10px;
     height: 20px;
     z-index: 99;
+    `
+export const Rightnav = styled.div`
+    @media (max-width: 550px){
+            top: ${props=>props.ShowNav ? '50px' : '-200px'};
+            background-color: #000000bc;
+            padding-bottom: 15px;
+    }
 `
 
 export const Firstsection = styled.div`
-color: ${(props)=>props.Theme ? 'white' : 'black'};
+    color: ${(props)=>props.Theme ? 'white' : 'black'};
 `
 
 export const Hr = styled.div`
-width: 60%;
-height: 5px;
-background-color: ${(props)=>props.Theme ? '#9D9D9D' : 'red'};
-margin: auto;
-border-radius: 10px;
-margin-top: 65px;
-margin-bottom: 65px;
+    width: 60%;
+    height: 5px;
+    background-color: ${(props)=>props.Theme ? '#9D9D9D' : 'red'};
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 65px;
+    margin-bottom: 65px;
 `
 
 export const ShowMenuBar = styled.div`
@@ -49,18 +56,12 @@ export const ShowMenuBar = styled.div`
         display: flex;
     }
 `
-export const Rightnav = styled.div`
-    @media (max-width: 550px){
-            top: ${props=>props.ShowNav ? '50px' : '-200px'};
-           background-color: #000000bc;
-            padding-bottom: 15px;
-    }
-
-`
 
 
 export const AboutMe = styled.div`
     margin: auto;
+    background-color: ${(props)=>props.Theme ? 'black' : 'white'};
+    color: ${(props)=>props.Theme ? 'white' : 'black'};
     h1{
         font-size: 6vmin;
     }
@@ -95,6 +96,7 @@ export const Projects = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 10px 20%;
+    color: ${(props)=>props.Theme ? 'white' : 'black'};
     justify-content: center;
     @media (max-width: 350px){
         margin: 10px 0;
@@ -104,7 +106,8 @@ export const Proj = styled.div`
     width: 250px;
     height: fit-content;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid;
+    border-color: ${(props)=>props.Theme ? 'white' : 'gray'};
     border-radius: 10px;
     padding: 5% 3%;
     display: flex;
@@ -137,6 +140,7 @@ export const Proj = styled.div`
 export const ContactWithMe = styled.div`
     width: 70%;
     margin: auto;
+    color: ${(props)=>props.Theme ? 'white' : 'black'};
     .contact1-2{
         display: flex;
         justify-content: space-between;
@@ -149,7 +153,13 @@ export const ContactWithMe = styled.div`
         align-items: center;
         text-align: center;
         text-transform: capitalize;
-    }.contact1-2-1item img{
+        cursor: pointer;
+    }.contact1-2-1item:hover{
+        background-color: #808080ab;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .contact1-2-1item img{
         width: 60%;
         margin-top: 10px;
     }
