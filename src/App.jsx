@@ -11,7 +11,10 @@ import instaImg from './imgs/instaImg.png'
 import githubImg from './imgs/githubImg.png'
 import {Link} from 'react-scroll'
 import * as Scroll from 'react-scroll'
-
+import FirstSection from './components/FirstSection.jsx'
+import About from './components/About.jsx'
+import MyProjects from './components/MyProjects.jsx'
+import ContactWithme from './components/ContactWithme.jsx'
 
 
 
@@ -46,75 +49,21 @@ function App() {
         </Rightnav>
       </NavBar>
 
-      <Firstsection Theme={Theme} name="Home" className="first-section">
-        <img src={me1} className='me1' alt=""/>
-        <div className="p1">👋 hi there , i’m omar chatin</div>
-        <div className="p2">i’m ux/ui desginer and front end web developer</div>
-        <Hr Theme={Theme}></Hr>
-      </Firstsection>
-
+      <FirstSection Theme={Theme}/>
+      
       <ShowMenuBar onClick={()=>{setShowNav(!ShowNav)}}>
         <div className="line1"></div>
         <div className="line2"></div>
       </ShowMenuBar>
 
-      <AboutMe name="About" Theme={Theme}>
-        <h1 style={{'textAlign': 'center'}}>About Me</h1>
-        <br/><br/>
-        <div className="aboutMeTop aboutMeDiv">
-          I’m studying dental Industry in al kitab university in iraq/kirkuk .
-        </div>
-        <div className="aboutMeBottom aboutMeDiv">
-          I love building websites and share my knowledge with everyone ! 
-        </div>
-      </AboutMe>
-      <Hr Theme={Theme}></Hr>
-      <Projects name="Projects" Theme={Theme}>
-        <h1 style={{'textAlign': 'center','width':'100%','font-size':'6vmin'}}>My Projects</h1>
-
-        {ProjectList.map(i=>{
-
-          if (i.name.length >= 20){
-            i.name = i.name.slice(0,18) + ' ...'
-          }
-          return (
-            <Proj>
-              <div className="projTitle">{i.name}</div>
-              <div className="projBody">Created at {i.created_at.slice(0,10)}</div>
-              <a href={i.html_url} className="githubLink" >github Link</a>
-            </Proj>
-          )
-        })}
-      </Projects>
+      <About Theme={Theme}/>
 
       <Hr Theme={Theme}></Hr>
-      <ContactWithMe name="Contacts" Theme={Theme}>
-        <h1 style={{'textAlign': 'center','width':'100%','font-size':'6vmin'}}>Contact With Me</h1>
+      
+      <MyProjects ProjectList={ProjectList} Theme={Theme}/>
 
-        <div className="contact1">
-          <h1 style={{'textAlign': 'center','width':'100%','font-size':'3.5vmin', 'margin':'12vmin 0','color':'gray'}} className="contact1-1">
-            Follow Me On
-          </h1>
-          <div Theme={Theme} className="contact1-2">
-            <div className="contact1-2-1item">
-              <div className="ContactItemTop">stackoverflow</div>
-              <div className="ContactItemBottom"><img src={stackOverFlowImg} alt=""/></div>
-            </div>
-            <div Theme={Theme} className="contact1-2-1item">
-              <div className="ContactItemTop">telegram</div>
-              <div className="ContactItemBottom"><img src={telegramImg} alt=""/></div>
-            </div>
-            <a href='https://www.instagram.com/omar.chatin/' Theme={Theme} className="contact1-2-1item">
-              <div className="ContactItemTop">instagram</div>
-              <div className="ContactItemBottom"><img src={instaImg} alt=""/></div>
-            </a>
-            <a href='https://github.com/omer-os' Theme={Theme} className="contact1-2-1item">
-              <div className="ContactItemTop">github</div>
-              <div className="ContactItemBottom"><img src={githubImg} alt=""/></div>
-            </a>
-          </div>
-        </div>
-      </ContactWithMe>
+      <Hr Theme={Theme}></Hr>
+      <ContactWithme Theme={Theme}/>
     </Body>
   )
 }
