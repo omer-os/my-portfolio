@@ -79,5 +79,17 @@ a{
     .right-nav li{
         margin-top: 10px;
     }
+}
 
+.ContactItemTop{
+    font-size: 3.5vmin;
+}
+
+.contact1-2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact1-2-1item{
+    margin: 10px;
 }

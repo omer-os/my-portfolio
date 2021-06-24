@@ -10,6 +10,12 @@ function App() {
   const [Theme, setTheme] = useState(true)
   const [ShowNav, setShowNav] = useState(false)
 
+
+
+  // fetch('https://api.github.com/users/omer-os/repos').then(res=>res.json()).then((data)=>{console.log(data)})
+
+
+
   return (
     <Body Theme={Theme}>
       <NavBar className='NavBar' Theme={Theme}>
@@ -75,10 +81,10 @@ function App() {
 
       <Hr Theme={Theme}></Hr>
       <ContactWithMe>
-        <h1 style={{'textAlign': 'center','width':'100%','font-size':'6vmin'}}>Contacts</h1>
+        <h1 style={{'textAlign': 'center','width':'100%','font-size':'6vmin'}}>Contact With Me</h1>
 
         <div className="contact1">
-          <h1 style={{'textAlign': 'center','width':'100%','font-size':'3.5vmin', 'margin':'40px 0','color':'gray'}} className="contact1-1">
+          <h1 style={{'textAlign': 'center','width':'100%','font-size':'3.5vmin', 'margin':'12vmin 0','color':'gray'}} className="contact1-1">
             Follow Me On
           </h1>
           <div className="contact1-2">
