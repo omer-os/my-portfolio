@@ -5,6 +5,7 @@ export const Body = styled.div`
     background-color: ${(props)=>props.Theme ? 'black' : 'white'};
     width: 100%;
     height: 100%;
+    padding-bottom: 100px;
 `
 
 export const NavBar = styled.div`
@@ -115,6 +116,10 @@ export const Proj = styled.div`
     justify-content: center;
     align-items: center;
     margin: 5%;
+    :hover{
+        background-color: #9b9b9b58;
+        transform: scale(1.07);
+    }
     .projTitle{
         font-size: 4.3vmin;
         margin:10px 0;
@@ -154,6 +159,10 @@ export const ContactWithMe = styled.div`
         text-align: center;
         text-transform: capitalize;
         cursor: pointer;
+        background-color: ${props => props.Theme ? 'black' : '#1A2F40'};
+        color:white;
+        padding: 4px;
+        border-radius: 4px;
     }.contact1-2-1item:hover{
         background-color: #808080ab;
         padding: 5px;
