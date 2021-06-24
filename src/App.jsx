@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {Body, ContactWithMe, Proj, Projects, AboutMe,ShowMenuBar , Rightnav, NavBar, Firstsection, Hr} from './styles/style.jsx'
 
 import './App.css'
@@ -11,11 +11,17 @@ import * as Scroll from 'react-scroll'
 function App() {
   const [Theme, setTheme] = useState(true)
   const [ShowNav, setShowNav] = useState(false)
+  const [ProjectList, setProjectList] = useState([])
   
 
 
-  // fetch('https://api.github.com/users/omer-os/repos').then(res=>res.json()).then((data)=>{console.log(data)})
-
+  
+  useEffect(()=>{
+    fetch('https://api.github.com/users/omer-os/repos').then(res=>res.json()).then((data)=>{
+      setProjectList(data)
+      console.log(ProjectList);
+    })
+  },[])
 
 
   return (
@@ -59,26 +65,19 @@ function App() {
       <Projects name="Projects" Theme={Theme}>
         <h1 style={{'textAlign': 'center','width':'100%','font-size':'6vmin'}}>My Projects</h1>
 
-        <Proj>
-          <div className="projTitle">Note Keeper App</div>
-          <div className="projBody">Created using reactjs and styled components</div>
-          <div className="githubLink">github Link</div>
-        </Proj>
-        <Proj>
-          <div className="projTitle">Note Keeper App</div>
-          <div className="projBody">Created using reactjs and styled components</div>
-          <div className="githubLink">github Link</div>
-        </Proj>
-        <Proj>
-          <div className="projTitle">Note Keeper App</div>
-          <div className="projBody">Created using reactjs and styled components</div>
-          <div className="githubLink">github Link</div>
-        </Proj>
-        <Proj>
-          <div className="projTitle">Note Keeper App</div>
-          <div className="projBody">Created using reactjs and styled components</div>
-          <div className="githubLink">github Link</div>
-        </Proj>
+        {ProjectList.map(i=>{
+
+          if (i.name.length >= 20){
+            i.name = i.name.slice(0,18) + ' ...'
+          }
+          return (
+            <Proj>
+              <div className="projTitle">{i.name}</div>
+              <div className="projBody">Created at {i.created_at.slice(0,10)}</div>
+              <a href={i.url} className="githubLink" >github Link</a>
+            </Proj>
+          )
+        })}
       </Projects>
 
       <Hr Theme={Theme}></Hr>
