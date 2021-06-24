@@ -6,12 +6,15 @@ function About({Theme}) {
         <>
             <AboutMe name="About" Theme={Theme}>
                 <h1 style={{'textAlign': 'center'}}>About Me</h1>
+                
                 <br/><br/>
+                
                 <div className="aboutMeTop aboutMeDiv">
-                I’m studying dental Industry in al kitab university in iraq/kirkuk .
+                    I’m studying dental Industry in al kitab university in iraq/kirkuk .
                 </div>
+                
                 <div className="aboutMeBottom aboutMeDiv">
-                I love building websites and share my knowledge with everyone ! 
+                    I love building websites and share my knowledge with everyone ! 
                 </div>
             </AboutMe>
         </>
@@ -19,4 +22,4 @@ function About({Theme}) {
 }
 
 
-export default About
+export default About;
