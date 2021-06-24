@@ -81,7 +81,7 @@ function App() {
             <Proj>
               <div className="projTitle">{i.name}</div>
               <div className="projBody">Created at {i.created_at.slice(0,10)}</div>
-              <a href={i.url} className="githubLink" >github Link</a>
+              <a href={i.html_url} className="githubLink" >github Link</a>
             </Proj>
           )
         })}
