@@ -1,7 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 
 export default function Header() {
+    const [ShowMenu, setShowMenu] = useState(false)
 
     return (
         <Nav>
@@ -9,13 +11,13 @@ export default function Header() {
                 <a href="#" className='name__logo'>Omar Chatin</a>
             </Header__right>
 
-            <Header__left className='header__left'>
+            <Header__left Show={ShowMenu} className='header__left'>
                 <li><a href="">home</a></li>
                 <li><a href="">about me</a></li>
                 <li><a href="">my projects</a></li>
                 <li><a href="">contacts</a></li>
             </Header__left>
-            <div className="burgerMenu">
+            <div className="burgerMenu" onClick={()=>{setShowMenu(!ShowMenu)}}>
                         <div className="line"></div>
                         <div className="line"></div>
                         <div className="line"></div>
@@ -43,10 +45,12 @@ export const Nav = styled.header`
         font-size: 1.3rem;
         font-family: sans-serif;
         text-transform: capitalize;
+        transition: all .4s ease-in-out;
     }
 
     .burgerMenu{
         display: none;
+        z-index: 999;
         cursor: pointer;
         .line{
             width: 45px;
@@ -59,9 +63,6 @@ export const Nav = styled.header`
 
     @media (max-width : 1000px){
         padding: 15px;
-        .header__left{
-            display: none;
-        }
         .burgerMenu{
             display: block;
         }
@@ -78,4 +79,20 @@ export const Header__left = styled.div`
     justify-content: space-between;
     list-style: none;
     width: 50%;
+
+    @media (max-width: 1000px){
+        flex-direction: column;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        transition: all .4s ease-in-out;
+        top:  ${(props)=>props.Show ? '50%' : '-100%'};
+        left: ${(props)=>props.Show ? '50%' : '50%'};
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 99;
+
+        justify-content: space-evenly;
+    }
 `

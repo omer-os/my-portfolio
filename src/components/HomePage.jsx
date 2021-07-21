@@ -33,6 +33,10 @@ export default function HomePage() {
             <div className="Home-Right">
                 <img src={homeme} alt=""/>
             </div>
+
+            <div className="square1">
+                
+            </div>
         </Body>
     )
 }
@@ -40,12 +44,13 @@ export default function HomePage() {
 export const Body = styled.div`
     display: flex;
     justify-content: space-between;
-    /* background-color: antiquewhite; */
     margin-top: 90px;
 
     a{
         color: black;
     }
+
+
     .Home-Left{
         margin-left: 150px;
         width: 40%;
@@ -53,13 +58,14 @@ export const Body = styled.div`
         .Home-Left-Top{
             h1{
                 font-size: 2rem;
+                transition: all .4s ease-in-out;
             }
             h2{
                 font-size: 1.4rem;
                 font-weight: 400;
                 color: #878787;
-
                 width: 250px;
+                transition: all .4s ease-in-out;
             }
             button{
                 background-color: #D54C4C;
@@ -72,6 +78,8 @@ export const Body = styled.div`
                 padding: 7px;
                 cursor: pointer;
                 margin-top: 50px;
+
+                transition: all .4s ease-in-out;
             }
         }
         .Home-Left-Bottom{
@@ -83,6 +91,8 @@ export const Body = styled.div`
             left: 150px;
 
             margin-bottom: 20px;
+            transition: all .4s ease;
+
 
             hr{
                 width: 3px;
@@ -96,6 +106,7 @@ export const Body = styled.div`
             p{
                 text-align: center;
                 line-height: 10px;
+                transition: all .4s ease-in-out;
             }
 
             @media(max-width:580px){
@@ -109,6 +120,14 @@ export const Body = styled.div`
             margin-right: 130px;
 
             box-shadow: 30px -30px #C8DBAE;
+            transition: width .4s ease;
+
+            animation: imganimate 2s ease-in-out;
+            @keyframes imganimate{
+                from{
+                    box-shadow: 0 0 0 white;
+                }
+            }
         }
     }
 
@@ -161,6 +180,39 @@ export const Body = styled.div`
             transform: translate(-50%,40%);
             left: 50%;
             text-align: center;
+        }
+    }
+
+    .square1{
+        background-color: #b1c990;
+        position: absolute;
+        bottom: -120px;
+        left: -120px;
+
+        z-index: -1;
+
+        width: 320px;
+        height: 200px;
+
+        box-shadow:
+         20px -20px 0 rgba(200, 219, 174, 0.68),
+         40px -40px 0px rgba(200, 219, 174, 0.55);
+
+        animation: animatesq1 2s ease-in-out;
+        transition: all .4s ease;
+        @media (max-width:765px){
+            width: 255px;
+            height: 155px;
+        }
+        @keyframes animatesq1{
+            from{
+                bottom: -250px;
+                left: -250px;
+                box-shadow:
+                    10px -10px 0 rgba(200, 219, 174, 0.68),
+                    30px -30px 0 rgba(200, 219, 174, 0.55);
+            }
+
         }
     }
 
