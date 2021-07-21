@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import homeme from '../imgs/homeme.png'
 
+
+
 export default function HomePage() {
 
     return (
+
         <Body>
             <div className="Home-Left">
                 <div className="Home-Left-Top">
@@ -34,10 +37,9 @@ export default function HomePage() {
                 <img src={homeme} alt=""/>
             </div>
 
-            <div className="square1">
-                
-            </div>
+            <div className="square1"></div>
         </Body>
+
     )
 }
 

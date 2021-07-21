@@ -10,13 +10,12 @@ export const Body = styled.div`
 export default function APP() {
     return (
         <Body>
+            <Header />
             {/* 
                 Header > 
                     Header-Left > lix1 
                     Header-Right > lix4
             */}
-
-            <Header />
 
             {/* 
                 Home-Page > 
@@ -32,7 +31,16 @@ export default function APP() {
                         home-img-background
                     
              */}
-             <HomePage />
+
+             {/*
+             About me >
+                AboutTitle > About Me
+                AboutCardGroup > 
+                    .Card*4 > 
+                        InsideCardLeft > img
+                        InsideCardRight > text
+             */}
+             
 
         </Body>
     )

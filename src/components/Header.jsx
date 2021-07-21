@@ -2,27 +2,57 @@ import React from 'react'
 import { useState } from 'react'
 import styled from 'styled-components'
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import About from './About';
+import HomePage from './HomePage';
+import Contacts from './Contacts';
+import  MyProjects from './MyProjects'
+
 export default function Header() {
     const [ShowMenu, setShowMenu] = useState(false)
 
     return (
-        <Nav>
-            <Header__right>
-                <a href="#" className='name__logo'>Omar Chatin</a>
-            </Header__right>
+        <Router>
+            <Nav>
+                <Header__right>
+                    <Link to='/'><a href="#" className='name__logo'>Omar Chatin</a></Link>
+                </Header__right>
 
-            <Header__left Show={ShowMenu} className='header__left'>
-                <li><a href="">home</a></li>
-                <li><a href="">about me</a></li>
-                <li><a href="">my projects</a></li>
-                <li><a href="">contacts</a></li>
-            </Header__left>
-            <div className="burgerMenu" onClick={()=>{setShowMenu(!ShowMenu)}}>
-                        <div className="line"></div>
-                        <div className="line"></div>
-                        <div className="line"></div>
-            </div>
-        </Nav>
+                <Header__left Show={ShowMenu} className='header__left'>
+                    <Link to='/'><li><a href="">home</a></li></Link>
+                    <Link to='/About'><li><a href="">about me</a></li></Link>
+                    <Link to='/MyProjects'><li><a href="">my projects</a></li></Link>
+                    <Link to='/Contacts'><li><a href="">contacts</a></li></Link>
+                </Header__left>
+                <div className="burgerMenu" onClick={()=>{setShowMenu(!ShowMenu)}}>
+                            <div className="line"></div>
+                            <div className="line"></div>
+                            <div className="line"></div>
+                </div>
+            </Nav>
+
+
+            <Switch>
+                <Route path='/Contacts'>
+                      <Contacts /> 
+                </Route>                
+                <Route path='/MyProjects'>
+                      <MyProjects />
+                </Route>                
+                <Route path='/About'>
+                    <About />
+                </Route>
+                <Route path='/'>
+                    <HomePage/>
+                </Route>
+
+            </Switch>
+        </Router>
     )
 }
 
