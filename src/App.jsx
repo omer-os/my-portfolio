@@ -29,7 +29,6 @@ function App() {
   useEffect(()=>{
     fetch('https://api.github.com/users/omer-os/repos').then(res=>res.json()).then((data)=>{
       setProjectList(data)
-      console.log(ProjectList);
     })
   },[])
 

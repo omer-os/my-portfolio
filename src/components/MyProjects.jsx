@@ -7,7 +7,7 @@ function MyProjects({ProjectList,Theme}) {
     return (
         <>
             <Projects name="Projects" Theme={Theme}>
-                <h1 style={{'textAlign': 'center','width':'100%','font-size':'6vmin'}}>My Projects</h1>
+                <h1 style={{'textAlign': 'center','width':'100%','fontSize':'6vmin'}}>My Projects</h1>
 
                     {ProjectList.map(i=>{
                     if (i.name.length >= 20){
