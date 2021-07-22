@@ -62,8 +62,10 @@ export const Nav = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    padding-top: 30px;
+    padding: 30px 40px;
+    background-color: white;
+    padding-bottom: 5px;
+
     .name__logo{
         background-color: #C8DBAE;
         padding: 10px;

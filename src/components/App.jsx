@@ -4,7 +4,6 @@ import Header from './Header'
 import HomePage from './HomePage'
 
 export const Body = styled.div`
-    overflow: hidden;
 `
 
 export default function APP() {
@@ -40,8 +39,6 @@ export default function APP() {
                         InsideCardLeft > img
                         InsideCardRight > text
              */}
-             
-
         </Body>
     )
 }

@@ -31,13 +31,16 @@ export default function HomePage() {
                     <p>location</p>
                     <a href=""><p>iraq/kirkuk</p></a>
                 </div>
+
+                </div>
+                <div className="homeLeftSquare">
+                    <div className="square1"></div>
                 </div>
             </div>
             <div className="Home-Right">
                 <img src={homeme} alt=""/>
             </div>
 
-            <div className="square1"></div>
         </Body>
 
     )
@@ -57,6 +60,56 @@ export const Body = styled.div`
         margin-left: 150px;
         width: 40%;
         font-family: sans-serif;
+
+        .homeLeftSquare{
+            /* background-color: black; */
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: -1;
+
+
+            .square1{
+                background-color: #b1c990;
+                position: relative;
+                top: 120px;
+                right: 130px;
+            
+
+                width: 320px;
+                height: 200px;
+
+                box-shadow:
+                20px -20px 0 rgba(200, 219, 174, 0.68),
+                40px -40px 0px rgba(200, 219, 174, 0.55);
+
+                animation: animatesq1 2s ease-in-out;
+                transition: all .4s ease;
+                
+                @media (max-width:765px){
+                    width: 255px;
+                    height: 155px;
+                }
+                @keyframes animatesq1{
+                    from{
+                        top: 200px;
+                        right: 200px;
+                        box-shadow:
+                            10px -10px 0 rgba(200, 219, 174, 0.68),
+                            30px -30px 0 rgba(200, 219, 174, 0.55);
+                    }
+
+                }
+            }
+            @media (max-width:450px){
+                width: fit-content;
+                height: fit-content;
+            }
+        }
+
         .Home-Left-Top{
             h1{
                 font-size: 2rem;
@@ -185,37 +238,6 @@ export const Body = styled.div`
         }
     }
 
-    .square1{
-        background-color: #b1c990;
-        position: absolute;
-        bottom: -120px;
-        left: -120px;
-
-        z-index: -1;
-
-        width: 320px;
-        height: 200px;
-
-        box-shadow:
-         20px -20px 0 rgba(200, 219, 174, 0.68),
-         40px -40px 0px rgba(200, 219, 174, 0.55);
-
-        animation: animatesq1 2s ease-in-out;
-        transition: all .4s ease;
-        @media (max-width:765px){
-            width: 255px;
-            height: 155px;
-        }
-        @keyframes animatesq1{
-            from{
-                bottom: -250px;
-                left: -250px;
-                box-shadow:
-                    10px -10px 0 rgba(200, 219, 174, 0.68),
-                    30px -30px 0 rgba(200, 219, 174, 0.55);
-            }
-
-        }
-    }
+    
 
 `
