@@ -1,9 +1,9 @@
 import React from 'react'
 import {ContactWithMe} from '../styles/style.jsx'
-import stackOverFlowImg from '../imgs/stackOverFlowImg.png'
 import telegramImg from '../imgs/telegramImg.png'
 import instaImg from '../imgs/instaImg.png'
 import githubImg from '../imgs/githubImg.png'
+import facebook from '../imgs/facebook.png'
 
 function ContactWithme({Theme}) {
     
@@ -17,21 +17,24 @@ function ContactWithme({Theme}) {
                 Follow Me On
             </h1>
             <div className="contact1-2">
-                <div className="contact1-2-1item">
-                <div className="ContactItemTop">stackoverflow</div>
-                <div className="ContactItemBottom"><img src={stackOverFlowImg} alt=""/></div>
-                </div>
-                <div className="contact1-2-1item">
-                <div className="ContactItemTop">telegram</div>
-                <div className="ContactItemBottom"><img src={telegramImg} alt=""/></div>
-                </div>
-                <a href='https://www.instagram.com/omar.chatin/' className="contact1-2-1item">
-                <div className="ContactItemTop">instagram</div>
-                <div className="ContactItemBottom"><img src={instaImg} alt=""/></div>
+                <a href='https://www.facebook.com/omer.chetin.5' className="contact1-2-1item">
+                    <div className="ContactItemTop">facebook</div>
+                    <div className="ContactItemBottom"><img src={facebook} alt=""/></div>
                 </a>
+
+                <a href='https://t.me/@me_tf' className="contact1-2-1item">
+                    <div className="ContactItemTop">telegram</div>
+                    <div className="ContactItemBottom"><img src={telegramImg} alt=""/></div>
+                </a>
+
+                <a href='https://www.instagram.com/omar.chatin/' className="contact1-2-1item">
+                    <div className="ContactItemTop">instagram</div>
+                    <div className="ContactItemBottom"><img src={instaImg} alt=""/></div>
+                </a>
+                
                 <a href='https://github.com/omer-os' className="contact1-2-1item">
-                <div className="ContactItemTop">github</div>
-                <div className="ContactItemBottom"><img src={githubImg} alt=""/></div>
+                    <div className="ContactItemTop">github</div>
+                    <div className="ContactItemBottom"><img src={githubImg} alt=""/></div>
                 </a>
             </div>
             </div>

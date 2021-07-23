@@ -80,6 +80,10 @@ export const AboutMe = styled.div`
         right: calc(-140px - 20%);
     }
 
+    /* .aboutMeTop{
+        margin-top: 100px 0;
+    } */
+
     @media (max-width: 800px){
         .aboutMeDiv{
             width: 60%;

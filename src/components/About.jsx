@@ -16,6 +16,14 @@ function About({Theme}) {
                 <div className="aboutMeBottom aboutMeDiv">
                     I love building websites and share my knowledge with everyone ! 
                 </div>
+                <br/><br/>
+                <div className="aboutMeTop aboutMeDiv">
+                    I’m studying dental Industry in al kitab university in iraq/kirkuk .
+                </div>
+
+                <div className="aboutMeBottom aboutMeDiv">
+                    I love building websites and share my knowledge with everyone ! 
+                </div>
             </AboutMe>
         </>
     )
