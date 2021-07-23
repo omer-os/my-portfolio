@@ -8,30 +8,63 @@ import sss from '../imgs/sss.mp4'
 export default function About() {
     return (
         <Body>
-            <div className="AboutTitle">About Me</div>
+
             <div className="AboutCardGroup">
                     
-                    <div className="Card">
-                        <div className="InsideCardRight">
-                            <img src={MeAbout} alt=""/>
-                        </div>
+                    <div className="AboutTitle">About Me</div>
+
+                    <div className="Card" style={{marginTop:'20px'}}>
                         <div className="InsideCardLeft">
                             <div className="title">study</div>
                             <div className='body'>i’m studying dental products  Industry in al kitab university in iraq/kirkuk .
                             </div>
+                        </div>
+                        <div className="InsideCardRight">
+                            <img src={MeAbout} alt=""/>
                         </div>
                     </div>
 
                     <div className="Card">
-                        <div className="InsideCardRight">
-                            <img src={MeAbout} alt=""/>
-                        </div>
                         <div className="InsideCardLeft">
-                            <div className="title">study</div>
-                            <div className='body'>i’m studying dental products  Industry in al kitab university in iraq/kirkuk .
+                            <div className="title">work expearince</div>
+                            <div className='body'>I do not have work experience , but I worked in many free lance projects before .
+                            </div>
+                        </div>
+                        <div className="InsideCardRight">
+                            <img src={Code} alt=""/>
+                        </div>
+                    </div>
+
+                    <div className="Card">
+                        <div className="InsideCardLeft">
+                            <div className="title">Skills</div>
+                            <div className='body'>
+                                <ol>
+                                    <li>javascript</li>
+                                    <li>react js</li>
+                                    <li>jquery js</li>
+                                    <li>python and flask</li>
+                                    <li>html and css</li>
+                                    <li>git and github</li>
+                                    <li>cmd/termminal</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div className="InsideCardRight">
+                            <img src={Banksy} alt=""/>
+                        </div>
+                    </div>
+
+                    <div className="Card">
+                        <div className="InsideCardLeft">
+                            <div className="title">my passionates</div>
+                            <div className='body'>im very curious about machine learning and Artificial intelligence
+                                                I enjoy playing on saz (its traditional music instrument here).
+                                                I love space industry and everything about spacecrafts " fan of spacex -Elon Musk.
                             </div>
                         </div>
                     </div>
+                    <br/><br/><br/>
             </div>
 
 
@@ -48,31 +81,45 @@ export default function About() {
 
 
 export const Body = styled.div`
-    margin: 0 15px;
-    margin-top: 100px;
+    margin: 0 2vmin;
+    margin-top: 6vmin;
     font-family: sans-serif;
-    
+    padding: 0 10px;
+
+
+    div, li, img{
+        transition: all .3s ease-in-out;
+    }
     
     .AboutTitle{
-        font-size: 1.8rem;
-        margin-left: 23%;
-        margin-bottom: 40px;
+        font-size: 5vmin;
+        margin-left: 18%;
+        margin-bottom: 10px;
     }
 
     .Card{
         display: flex;
-        padding: 15px;
-        width: fit-content;
+        justify-content: space-between;
+        padding: 20px;
+        width: 60%;
         margin: auto;
-        margin-top: 100px;
+        margin-top: 50px;
         height: fit-content;
         border-radius: 10px;
-        background-color: antiquewhite;
+        background-color: #efffda;
 
-        flex-wrap: wrap;
 
-        img{
-            width: 70%;
+        .InsideCardLeft{
+            
+            .title{
+                font-size: 6vmin;
+                margin-bottom: 10px;
+            }
+
+            .body{
+                font-size: 4vmin;
+                color: rgba(105, 105, 105, 1);
+            }
         }
 
         .InsideCardRight{
@@ -80,19 +127,20 @@ export const Body = styled.div`
             display: grid;
             place-items: center;
         }
+        img{
+            width: 100%;
+        }
 
-        .InsideCardLeft{
-            margin-left: 40px;
-            .title{
-                font-size: 2rem;
+
+        @media (max-width: 880px){
+            width: 90%;
+
+            .InsideCardLeft>.body{
+                font-size: 4vmin;
             }
 
-            .body{
-                font-size: 1.3rem;
-                color: rgba(105, 105, 105, 1);
-                margin: 18px 0 0 0;
-                max-width: 400px;
-                
+            .InsideCardLeft>.title{
+                font-size: 6vmin;
             }
         }
     }
