@@ -56,6 +56,27 @@ export const ShowMenuBar = styled.div`
     @media (max-width: 550px){
         display: flex;
     }
+
+    .line1,.line2{
+    background-color: white;
+    width: 35px;
+    height: 7px;
+    border-radius: 5px;
+    margin: 3px;
+    }
+    .line1{
+        ${(props)=>props.ShowNav ? `
+        transform: rotate(40deg);
+        margin: 12px 0 0 0;
+        ` : "margin: 0 0 0 -10px"}
+    }
+    .line2{
+        ${(props)=>props.ShowNav ? `
+        transform: rotate(-40deg);
+        margin-top: -6px;
+        margin-left: -1px;
+        ` : ""}
+    }
 `
 
 
