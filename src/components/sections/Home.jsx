@@ -1,7 +1,8 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
-import me1 from '../me1.png'
+import me1 from '../imgs/me1.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,7 +14,7 @@ export default function Home() {
                     <h1>Omar Chatin</h1>
                     <h2>Front-wend web developer,
                         ui/ux desginer</h2>
-                    <Button>Learn More</Button>
+                    <Link to="/about"><Button>Learn More</Button></Link>
                 </div>
 
 

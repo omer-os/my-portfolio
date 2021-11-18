@@ -60,8 +60,6 @@ export const Body=styled.div`
             height: 100%;
             top: 0;
             justify-content: center;
-
-
         }
     }
 
