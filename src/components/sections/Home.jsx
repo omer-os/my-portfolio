@@ -1,5 +1,4 @@
 import { Button } from '@mui/material'
-import React from 'react'
 import styled from 'styled-components'
 import me1 from '../imgs/me1.png'
 import { Link } from 'react-router-dom';
@@ -16,20 +15,18 @@ export default function Home() {
                         ui/ux desginer</h2>
                     <Link to="/about"><Button>Learn More</Button></Link>
                 </div>
-
-
                 <div className="Home-Left-Bottom">
                 <div className="Home-Contacts">
-                    <p>email</p>
-                    <a href=""><p>omerchetin19@gmail.com</p></a>
+                   <p>email</p>
+                   <p>omerchetin19@gmail.com</p>
                 </div><hr/>
                 <div className="Home-Contacts">
                     <p>phone</p>
-                    <a href=""><p>7716945678</p></a>
+                    <p>7716945678</p>
                 </div><hr/>
                 <div className="Home-Contacts">
                     <p>location</p>
-                    <a href=""><p>iraq/kirkuk</p></a>
+                    <p>iraq/kirkuk</p>
                 </div>
 
                 </div>
@@ -40,7 +37,6 @@ export default function Home() {
             <div className="Home-Right">
                 <img src={me1} alt=""/>
             </div>
-
         </Body>
     )
 }

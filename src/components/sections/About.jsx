@@ -1,5 +1,5 @@
-import { Button, Slide, Zoom } from '@mui/material'
-import React, { useState } from 'react'
+import { Button, Slide } from '@mui/material'
+import React from 'react'
 import styled from 'styled-components'
 import img1 from '../imgs/img1.png'
 import img2 from '../imgs/img2.png'

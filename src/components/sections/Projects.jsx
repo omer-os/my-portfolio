@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import { Box } from '@mui/system';
 import styled from 'styled-components'
 import Cards from '../projects/Cards';
 import p1 from '../projects/imgs/p1.png'
@@ -8,7 +6,6 @@ import p3 from '../projects/imgs/p3.png'
 import p4 from '../projects/imgs/p4.png'
 import p5 from '../projects/imgs/p5.png'
 import p6 from '../projects/imgs/p6.png'
-import Button from '@mui/material/Button'
 
 
 export const Body=styled.div`
