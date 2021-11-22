@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import img1 from '../imgs/img1.png'
 import img2 from '../imgs/img2.png'
 import img3 from '../imgs/img3.png'
+import { Link } from 'react-router-dom';
+
 
 export const Body=styled.div`
     display: flex;
@@ -111,7 +113,9 @@ export default function About() {
             </Slide>
 
 
-            <ProjectsBtn variant="contained">see my projects</ProjectsBtn>
+            <Link to="/projects">
+                <ProjectsBtn variant="contained">see my projects</ProjectsBtn>
+            </Link>
             
         </Body>
     )

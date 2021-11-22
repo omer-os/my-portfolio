@@ -47,6 +47,8 @@ export const Body=styled.div`
             :hover{
                 color: red;
             }
+        }a.pageOn{
+            color: red;
         }
 
         @media (max-width:770px){
