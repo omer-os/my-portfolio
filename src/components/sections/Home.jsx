@@ -11,7 +11,7 @@ export default function Home() {
             <div className="Home-Left">
                 <div className="Home-Left-Top">
                     <h1>Omar Chatin</h1>
-                    <h2>Front-wend web developer,
+                    <h2>Front-end web developer,
                         ui/ux desginer</h2>
                     <Link to="/about"><Button>Learn More</Button></Link>
                 </div>
