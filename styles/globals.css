@@ -19,7 +19,8 @@ a {
   box-sizing: border-box;
 }
 
-body {
+body,
+.navbar {
   background: radial-gradient(
     81.98% 73.07% at 76.94% 46.39%,
     #17171f 0%,
@@ -30,8 +31,9 @@ body {
   );
 }
 
-body,html, #__next{
+body,
+html,
+#__next {
   height: 100%;
   margin: 0;
 }
-
