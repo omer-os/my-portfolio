@@ -1,10 +1,12 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 export default function NavBar() {
   const router = useRouter();
   const { pathname } = router;
+  const [OpenMenu, setOpenMenu] = useState(false);
 
   return (
     <div className="fixed w-full top-0 left-0 px-7 py-6 justify-between bg-dark sm:flex">
@@ -72,13 +74,20 @@ export default function NavBar() {
         </Link>
       </div>
 
-      <div className="mobile-version bg-[#17171f] inset-0 pt-20  fixed visible sm:hidden gap-3 flex flex-col justify-start align-start px-4 gap-3">
+      <div
+        className={`${
+          OpenMenu ? "" : "h-0"
+        } transition overflow-hidden bg-[#17171f] inset-0 pt-20  fixed visible sm:hidden gap-3 flex flex-col justify-start align-start px-4 gap-3`}
+      >
         <div className="flex fixed left-5 right-5 top-6 items-center justify-between">
           <div className="font-bold left-5 z-[999] text-white text-lg">
             Omar Chatin
           </div>
 
-          <div className="cursor-pointer">
+          <div
+            onClick={() => setOpenMenu(!OpenMenu)}
+            className="cursor-pointer"
+          >
             <svg
               color="white"
               xmlns="http://www.w3.org/2000/svg"
@@ -97,77 +106,85 @@ export default function NavBar() {
           </div>
         </div>
 
-        <Link href="/">
-          <a
-            className={`${
-              pathname === "/"
-                ? "text-white bg-blue-600"
-                : "text-gray-300 border-blue-600 border-2"
-            } text-white py-3 px-4 rounded`}
-          >
-            Home
-          </a>
-        </Link>
+        <div className="flex flex-col gap-3">
+          <Link href="/">
+            <a
+            onClick={()=>setOpenMenu(false)}
+              className={`${
+                pathname === "/"
+                  ? "text-white bg-blue-600"
+                  : "text-gray-300 border-blue-600 border-2"
+              } text-white py-3 px-4 rounded`}
+            >
+              Home
+            </a>
+          </Link>
 
-        <Link href="/about">
-          <a
-            className={`${
-              pathname === "/about"
-                ? "text-white bg-blue-600"
-                : "text-gray-300 border-blue-600 border-2"
-            } text-white py-3 px-4 rounded`}
-          >
-            About
-          </a>
-        </Link>
+          <Link href="/about">
+            <a
+            onClick={()=>setOpenMenu(false)}
+              className={`${
+                pathname === "/about"
+                  ? "text-white bg-blue-600"
+                  : "text-gray-300 border-blue-600 border-2"
+              } text-white py-3 px-4 rounded`}
+            >
+              About
+            </a>
+          </Link>
 
-        <Link href="/contact">
-          <a
-            className={`${
-              pathname === "/contact"
-                ? "text-white bg-blue-600"
-                : "text-gray-300 border-blue-600 border-2"
-            } text-white py-3 px-4 rounded`}
-          >
-            Contact
-          </a>
-        </Link>
+          <Link href="/contact">
+            <a
+            onClick={()=>setOpenMenu(false)}
+              className={`${
+                pathname === "/contact"
+                  ? "text-white bg-blue-600"
+                  : "text-gray-300 border-blue-600 border-2"
+              } text-white py-3 px-4 rounded`}
+            >
+              Contact
+            </a>
+          </Link>
 
-        <Link href="/skills">
-          <a
-            className={`${
-              pathname === "/skills"
-                ? "text-white bg-blue-600"
-                : "text-gray-300 border-blue-600 border-2"
-            } text-white py-3 px-4 rounded`}
-          >
-            Skills
-          </a>
-        </Link>
+          <Link href="/skills">
+            <a
+            onClick={()=>setOpenMenu(false)}
+              className={`${
+                pathname === "/skills"
+                  ? "text-white bg-blue-600"
+                  : "text-gray-300 border-blue-600 border-2"
+              } text-white py-3 px-4 rounded`}
+            >
+              Skills
+            </a>
+          </Link>
 
-        <Link href="/projects">
-          <a
-            className={`${
-              pathname === "/projects"
-                ? "text-white bg-blue-600"
-                : "text-gray-300 border-blue-600 border-2"
-            } text-white py-3 px-4 rounded`}
-          >
-            Projects
-          </a>
-        </Link>
+          <Link href="/projects">
+            <a
+            onClick={()=>setOpenMenu(false)}
+              className={`${
+                pathname === "/projects"
+                  ? "text-white bg-blue-600"
+                  : "text-gray-300 border-blue-600 border-2"
+              } text-white py-3 px-4 rounded`}
+            >
+              Projects
+            </a>
+          </Link>
 
-        <Link href="/blog">
-          <a
-            className={`${
-              pathname === "/blog"
-                ? "text-white bg-blue-600"
-                : "text-gray-300 border-blue-600 border-2"
-            } text-white py-3 px-4 rounded`}
-          >
-            Blog
-          </a>
-        </Link>
+          <Link href="/blog">
+            <a
+            onClick={()=>setOpenMenu(false)}
+              className={`${
+                pathname === "/blog"
+                  ? "text-white bg-blue-600"
+                  : "text-gray-300 border-blue-600 border-2"
+              } text-white py-3 px-4 rounded`}
+            >
+              Blog
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );
