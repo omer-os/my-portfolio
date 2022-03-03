@@ -10,31 +10,33 @@ export default function ProjectCard({
   btn2Link,
 }) {
   return (
-<>      <div className="text-white">
-        <div className="crd-img">
-          <Image layout="responsive" src={img} />
+    <>
+      <div className="card space-y-2 text-white">
+        <div className="card-img">
+          <Image src={img} alt="project 1" layout="responsive" />
         </div>
-
-        <div className="text-lg font-bold capitalize">{title}</div>
-        <div className="card-desc text-ellipsis overflow-hidden">{desc}</div>
-        <div className="card-tags my-2 gap-1 flex-wrap flex">
-          {tags.map((tag, index) => (
+        <div className="card-title text-xl font-bold">{title}</div>
+        <div className="card-desc ">{desc}</div>
+        <div className="flex flex-wrap items-center gap-2">
+          {tags.map((tag) => (
             <div
-              className="bg-blue-600/[.3] px-3 py-1 border-2 border-blue-600 text-xs rounded-full"
-              key={index}
+              className="bg-blue-600/10 text-xs border-2 border-blue-600 px-4 py-1 rounded-full"
+              key={tag}
             >
               {tag}
             </div>
           ))}
         </div>
-        <div className="card-btns grid grid-cols-2 gap-2">
-          <button className="btn-card bg-blue-600 p-2 rounded active:scale-[.9] transition">
+
+        <div className="pt-4 grid gap-2 grid-cols-2">
+          <button className="text-white rounded capitalize bg-blue-600 p-2">
             <a href={btn1Link}>Demo</a>
           </button>
-          <button className="btn-card bg-blue-600 p-2 rounded active:scale-[.9] transition">
+          <button className="text-white rounded capitalize bg-blue-600 p-2">
             <a href={btn2Link}>Source Code</a>
           </button>
         </div>
-      </div></>
+      </div>
+    </>
   );
 }

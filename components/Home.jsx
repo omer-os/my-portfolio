@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Home({img}) {
+export default function Home({ img, first, btn }) {
+
+
+  
+
   return (
     <div
       className="
@@ -14,17 +18,14 @@ export default function Home({img}) {
         font-bold capitalize sm:text-4xl 
         sm:text-left pt-5 text-center text-2xl"
         >
-          professional web <br /> developer and UX
-          <br />
-          /UI designer
+          {first}
         </div>
         <button className="active:scale-[.9] transition mx-auto sm:mx-0 text-white p-2 px-4 font-bold text-xl bg-blue-600 rounded">
-          About Me
+          {btn}
         </button>
       </div>
       <div className="right z-[1] w-[200px] sm:w-[300px]">
-        <Image src={img} className="next-img" layout="responsive"
-        alt="me"/>
+        <Image src={img} className="next-img" layout="responsive" alt="me" />
       </div>
     </div>
   );

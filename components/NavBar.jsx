@@ -9,7 +9,7 @@ export default function NavBar() {
   const [OpenMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className="fixed z-10 w-full top-0 left-0 px-7 py-6 justify-between bg-dark sm:flex">
+    <div className="fixed navbar z-10 w-full top-0 left-0 px-7 py-6 justify-between bg-dark sm:flex">
       <div className="font-bold z-[999] text-white text-lg">Omar Chatin</div>
 
       <div className="sm:flex hidden font-bold justify-between gap-3">
@@ -30,16 +30,6 @@ export default function NavBar() {
             } text-white ease-out duration-300 active`}
           >
             About
-          </a>
-        </Link>
-
-        <Link href="/contact">
-          <a
-            className={`${
-              pathname === "/contact" ? "text-blue-600" : "text-gray-300"
-            } text-white ease-out duration-300 active`}
-          >
-            Contact
           </a>
         </Link>
 
@@ -70,6 +60,16 @@ export default function NavBar() {
             } text-white ease-out duration-300 active`}
           >
             Blog
+          </a>
+        </Link>
+        
+        <Link href="/contact">
+          <a
+            className={`${
+              pathname === "/contact" ? "text-blue-600" : "text-gray-300"
+            } text-white ease-out duration-300 active`}
+          >
+            Contact
           </a>
         </Link>
       </div>
@@ -120,15 +120,15 @@ export default function NavBar() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
