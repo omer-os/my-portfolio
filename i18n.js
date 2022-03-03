@@ -2,6 +2,11 @@ module.exports = {
   locales: ["en", "ar"],
   defaultLocale: "en",
   pages: {
-    "*": ["home"],
+    "*": ["common","navbar"],
+    "/": ["home"],
+    "/about": ["about"],
+    "/contact": ["contact"],
+    "/blog": ["blog"],
+    
   },
 };

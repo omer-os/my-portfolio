@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-export default function NavBar() {
+export default function NavBar({t}) {
   const router = useRouter();
   const { pathname } = router;
   const [OpenMenu, setOpenMenu] = useState(false);
 
   return (
-    <div className="fixed navbar z-10 w-full top-0 left-0 px-7 py-6 justify-between bg-dark sm:flex">
+    <div 
+    className="fixed navbar z-10 w-full top-0 left-0 px-7 py-6 justify-between bg-dark sm:flex">
       <div className="font-bold z-[999] text-white text-lg">Omar Chatin</div>
 
       <div className="sm:flex hidden font-bold justify-between gap-3">
@@ -19,7 +20,7 @@ export default function NavBar() {
               pathname === "/" ? "text-blue-600" : "text-gray-300"
             } text-white ease-out duration-300 ease-out duration-300 active`}
           >
-            Home
+            {t("navbar:home")}
           </a>
         </Link>
 
@@ -29,7 +30,7 @@ export default function NavBar() {
               pathname === "/about" ? "text-blue-600" : "text-gray-300"
             } text-white ease-out duration-300 active`}
           >
-            About
+            {t("navbar:about")}
           </a>
         </Link>
 
@@ -39,7 +40,7 @@ export default function NavBar() {
               pathname === "/skills" ? "text-blue-600" : "text-gray-300"
             } text-white ease-out duration-300 active`}
           >
-            Skills
+            {t("navbar:skills")}
           </a>
         </Link>
 
@@ -49,7 +50,7 @@ export default function NavBar() {
               pathname === "/projects" ? "text-blue-600" : "text-gray-300"
             } text-white ease-out duration-300 active`}
           >
-            Projects
+            {t("navbar:projects")}
           </a>
         </Link>
 
@@ -59,7 +60,7 @@ export default function NavBar() {
               pathname === "/blog" ? "text-blue-600" : "text-gray-300"
             } text-white ease-out duration-300 active`}
           >
-            Blog
+            {t("navbar:blog")}
           </a>
         </Link>
         
@@ -69,7 +70,7 @@ export default function NavBar() {
               pathname === "/contact" ? "text-blue-600" : "text-gray-300"
             } text-white ease-out duration-300 active`}
           >
-            Contact
+            {t("navbar:contact")}
           </a>
         </Link>
       </div>
