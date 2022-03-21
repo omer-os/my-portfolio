@@ -1,8 +1,9 @@
 {
-  "home": "Home",
-  "about": "About",
-  "contact": "Contact",
-  "skills": "Skills",
-  "projects": "Projects",
-  "blog": "Blog"
+  "home": "home",
+  "blog": "blog",
+  "about": "about",
+  "contact": "contact",
+  "language": "language",
+  "english": "english",
+  "arabic": "arabic"
 }

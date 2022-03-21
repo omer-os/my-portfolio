@@ -1,22 +1,14 @@
-import useTranslation from "next-translate/useTranslation";
-import NavBar from "../components/NavBar";
-import "../styles/globals.css";
-
-
-function MyApp({ Component, pageProps }) {
-  const { t, lang } = useTranslation("navbar");
+import React from "react";
+import Layouts from "../components/Layouts";
+import '../styles/globals.css';
 
 
 
+
+export default function App({Component, pageProps}) {
   return (
-    <div className="h-screen">
-      <NavBar 
-        t={t}
-        lang={lang}
-      />
+    <Layouts>
       <Component {...pageProps} />
-    </div>
+    </Layouts>
   );
 }
-
-export default MyApp;

@@ -17,19 +17,10 @@ a {
 
 * {
   box-sizing: border-box;
+  transition: color 0.1s ease;
 }
 
-body,
-.navbar {
-  background: radial-gradient(
-    81.98% 73.07% at 76.94% 46.39%,
-    #17171f 0%,
-    #1b1b25 0.01%,
-    #1a1a23 62.91%,
-    #181821 90.36%,
-    #17171f 100%
-  );
-}
+
 
 body,
 html,
@@ -37,3 +28,4 @@ html,
   height: 100%;
   margin: 0;
 }
+
