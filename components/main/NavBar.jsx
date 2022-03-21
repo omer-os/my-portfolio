@@ -3,32 +3,19 @@ import React, { useEffect, useState } from "react";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
-export default function NavBar({Theme, setTheme}) {
+export default function NavBar({ Theme, setTheme }) {
   const [OpenLang, setOpenLang] = useState(false);
   const [SwitchOpen, setSwitchOpen] = useState(true);
 
-  
-  
-
-
-
-
   return (
     <div className="py-3 px-6 flex justify-between items-center">
-      
       {/* left */}
       <Link href="/">
         <a className="text-xl dark:text-white font-bold">Omar Chatin</a>
       </Link>
 
-      
-      
-      
-      
-      
-      
       {/* middle */}
-      <div className="flex capitalize gap-[1.5em] justify-between text-md text-red dark:text-white text-black">
+      <div className="md:flex hidden capitalize gap-[1.5em] justify-between text-md text-red dark:text-white text-black">
         <Link href="/">
           <a className="hover:text-blue-500 transition duration-150">home</a>
         </Link>
@@ -45,12 +32,7 @@ export default function NavBar({Theme, setTheme}) {
         </Link>
       </div>
 
-
-
-
-
-
-{/* right */}
+      {/* right */}
       <div className="flex gap-[3em] items-center relative">
         <button
           onClick={() => {
@@ -82,13 +64,16 @@ export default function NavBar({Theme, setTheme}) {
 
         <div
           className="relative form-check-input appearance-none w-10 -ml-10 rounded-full float-left h-6 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm"
-          onClick={() => {setSwitchOpen(!SwitchOpen);Theme=="dark"?setTheme("light"):setTheme("dark")}}>
+          onClick={() => {
+            setSwitchOpen(!SwitchOpen);
+            Theme == "dark" ? setTheme("light") : setTheme("dark");
+          }}
+        >
           <div
             className={`
           ${SwitchOpen ? "right-[.15em]" : "right-[1.1em]"}
           bg-blue-600 top-[.14em] absolute w-5 h-5 rounded-full transition-all duration-150 flex justify-center items-center
-          `
-        }
+          `}
           >
             {SwitchOpen ? (
               <BedtimeIcon className="w-3 h-3 fill-white" />
@@ -98,6 +83,22 @@ export default function NavBar({Theme, setTheme}) {
           </div>
         </div>
       </div>
+
+
+
+
+      <div className="responsive left-[0] w-screen top-[3.8em] bg-[#1e1e1e] bottom-0 md:hidden flex flex-col justify-between fixed z-50">
+{/* -left-[100%] */}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam, obcaecati corporis repudiandae amet unde in nisi cupiditate mollitia deleniti necessitatibus fuga velit rem fugiat blanditiis sunt molestiae molestias officiis.
+        
+        
+
+      </div>
+
+
+
+
+      
     </div>
   );
 }
