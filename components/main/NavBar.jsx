@@ -2,16 +2,19 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import { IconButton } from "@mui/material";
 
 export default function NavBar({ Theme, setTheme }) {
   const [OpenLang, setOpenLang] = useState(false);
   const [SwitchOpen, setSwitchOpen] = useState(true);
+  const [MenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="py-3 px-6 flex justify-between items-center">
+    <div className="py-3 px-6  flex justify-between items-center">
       {/* left */}
       <Link href="/">
-        <a className="text-xl dark:text-white font-bold">Omar Chatin</a>
+        <a className="md:text-xl dark:text-white font-bold">Omar Chatin</a>
       </Link>
 
       {/* middle */}
@@ -33,7 +36,7 @@ export default function NavBar({ Theme, setTheme }) {
       </div>
 
       {/* right */}
-      <div className="flex gap-[3em] items-center relative">
+      <div className="flex z-[999] items-center relative">
         <button
           onClick={() => {
             setOpenLang(!OpenLang);
@@ -46,7 +49,7 @@ export default function NavBar({ Theme, setTheme }) {
         <div
           className={` ${
             OpenLang ? "show" : "hidden"
-          } gap-1 w-[7em] absolute right-12 -bottom-[5.5em] rounded xl flex flex-col bg-gray-700 text-white `}
+          } gap-1 w-[7em] absolute right-20 -bottom-[5.5em] rounded xl flex flex-col bg-gray-700 text-white `}
         >
           <button
             className="border:ring-gray-500 active:bg-slate-500 p-2 rounded"
@@ -63,7 +66,7 @@ export default function NavBar({ Theme, setTheme }) {
         </div>
 
         <div
-          className="relative form-check-input appearance-none w-10 -ml-10 rounded-full float-left h-6 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm"
+          className="relative form-check-input appearance-none w-10 ml-2 rounded-full float-left h-6 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm "
           onClick={() => {
             setSwitchOpen(!SwitchOpen);
             Theme == "dark" ? setTheme("light") : setTheme("dark");
@@ -82,23 +85,48 @@ export default function NavBar({ Theme, setTheme }) {
             )}
           </div>
         </div>
+
+        <IconButton
+          onClick={() => {
+            setMenuOpen(!MenuOpen);
+          }}
+          color="inherit"
+        >
+          <MenuRoundedIcon />
+        </IconButton>
       </div>
 
+      <div
+        className={`
+      responsive w-screen top-[3.8em] bg-[#1e1e1e] bottom-0 md:hidden flex items-center flex-col justify-center fixed z-50 transition-[left] duration-[.4s] ${MenuOpen ? `left-0` : `-left-[100%]`}`}
+      >
+        <div className="flex flex-col justify-between">
+          <Link href="/">
+            <a className="hover:text-blue-500 text-center capitalize my-4 transition duration-150">
+              home
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="hover:text-blue-500 text-center capitalize my-4 transition duration-150">
+              about
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="hover:text-blue-500 text-center capitalize my-4 transition duration-150">
+              projects
+            </a>
+          </Link>
 
 
+          <Link href="/">
+            <a className="hover:text-blue-500 text-center capitalize my-4 transition duration-150">
+              blog
+            </a>
+          </Link>
 
-      <div className="responsive left-[0] w-screen top-[3.8em] bg-[#1e1e1e] bottom-0 md:hidden flex flex-col justify-between fixed z-50">
-{/* -left-[100%] */}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nam, obcaecati corporis repudiandae amet unde in nisi cupiditate mollitia deleniti necessitatibus fuga velit rem fugiat blanditiis sunt molestiae molestias officiis.
-        
-        
 
+          </div>
       </div>
-
-
-
-
-      
     </div>
   );
 }
