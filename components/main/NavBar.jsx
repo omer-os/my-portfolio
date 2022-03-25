@@ -4,6 +4,8 @@ import BedtimeIcon from "@mui/icons-material/Bedtime";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { IconButton } from "@mui/material";
+import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
+import { motion } from "framer-motion";
 
 export default function NavBar({ Theme, setTheme }) {
   const [OpenLang, setOpenLang] = useState(false);
@@ -11,7 +13,7 @@ export default function NavBar({ Theme, setTheme }) {
   const [MenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="py-3 px-6  flex justify-between items-center">
+    <div className="py-3 px-6 fixed left-0 right-0 top-0 flex justify-between items-center">
       {/* left */}
       <Link href="/">
         <a className="md:text-xl dark:text-white font-bold">Omar Chatin</a>
@@ -91,14 +93,21 @@ export default function NavBar({ Theme, setTheme }) {
             setMenuOpen(!MenuOpen);
           }}
           color="inherit"
+          className="ml-2"
         >
-          <MenuRoundedIcon />
+          {MenuOpen ? (
+            <ClearRoundedIcon/>
+          ) : (
+            <MenuRoundedIcon/>
+          )}
         </IconButton>
       </div>
 
       <div
         className={`
-      responsive w-screen top-[3.8em] bg-[#1e1e1e] bottom-0 md:hidden flex items-center flex-col justify-center fixed z-50 transition-[left] duration-[.4s] ${MenuOpen ? `left-0` : `-left-[100%]`}`}
+      responsive w-screen top-[3.8em] bg-[#1e1e1e] bottom-0 md:hidden flex items-center flex-col justify-center fixed z-[999] transition-[left] duration-[.4s] ${
+        MenuOpen ? `left-0` : `-left-[100%]`
+      }`}
       >
         <div className="flex flex-col justify-between">
           <Link href="/">
@@ -117,15 +126,12 @@ export default function NavBar({ Theme, setTheme }) {
             </a>
           </Link>
 
-
           <Link href="/">
             <a className="hover:text-blue-500 text-center capitalize my-4 transition duration-150">
               blog
             </a>
           </Link>
-
-
-          </div>
+        </div>
       </div>
     </div>
   );
