@@ -1,0 +1,23 @@
+{
+  "language": "اللغة",
+  "english": "الانجليزية",
+  "arabic": "العربية",
+  "urls": [
+    {
+      "name": "اتصل بي",
+      "url": "/portfolio/contact"
+    },
+    {
+      "name": "مدونة",
+      "url": "/blog"
+    },
+    {
+      "name": "مشاريعي",
+      "url": "/portfolio/projects"
+    },
+    {
+      "name": "الرئيسية",
+      "url": "/portfolio"
+    }
+  ]
+}

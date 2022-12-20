@@ -1,0 +1,28 @@
+{
+  "title": "I'm A Creative Ui/Ux Designer And Front End Web Developer",
+  "subtitle": "I'm a Web Designer and Front End Developer with a passion for creating beautiful and functional user interfaces and websites.",
+  "projects":"My Projects",
+  "buttons": {
+    "my-projects": "My Projects",
+    "learn-more": "Learn More"
+  },
+  "sec-2": {
+    "title": "About Me",
+    "subtitle": "I'm currently a student at the University of Al_Kitap at Iraq/kirkuk, I study dental prosthesis so i have to divide my time between my studies and programming. I have a passion for creating and designing beautiful and functional web applications. I have a strong desire to learn and grow as a developer.",
+    "see-my-projects": "see my projects"
+  },
+  "sec-3": [
+    {
+      "title": "Ui/Ux Designs",
+      "desc": "I have a passion for creating and designing beautiful and functional user interface and user experience."
+    },
+    {
+      "title": "Coder",
+      "desc": "I love ro code and i love to learn new things. I have a strong desire to learn and grow as a developer."
+    },
+    {
+      "title": "Learning and Growing",
+      "desc": "I have a strong desire to learn and grow as a developer."
+    }
+  ]
+}

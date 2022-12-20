@@ -1,0 +1,23 @@
+{
+  "language": "language",
+  "english": "english",
+  "arabic": "arabic",
+  "urls": [
+    {
+      "name": "portfolio",
+      "url": "/portfolio"
+    },
+    {
+      "name": "blog",
+      "url": "/blog"
+    },
+    {
+      "name": "projects",
+      "url": "/portfolio/projects"
+    },
+    {
+      "name": "contact",
+      "url": "/portfolio/contact"
+    }
+  ]
+}
