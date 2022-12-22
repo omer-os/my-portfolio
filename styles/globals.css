@@ -35,7 +35,7 @@ body {
     @apply cursor-pointer active:scale-95 flex sm:hidden flex-col gap-1;
   }
   .lb-menu-line {
-    @apply lb-animate w-7 h-1 bg-black top-0 left-0 relative opacity-100 rounded-full;
+    @apply lb-animate w-7 h-1 bg-white top-0 left-0 relative opacity-100 rounded-full;
   }
   .lb-menu-line-1 {
     @apply rotate-45 top-2;
@@ -108,123 +108,100 @@ body {
 }
 /* Ripple Button End */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Blog-Content styles */
-.Blog-Content strong{
+.Blog-Content strong {
   font-weight: normal;
 }
-.Blog-Content p{
+.Blog-Content p {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content a{
+.Blog-Content a {
   color: #1976d2;
   text-decoration: none;
 }
-.Blog-Content a:hover{
+.Blog-Content a:hover {
   text-decoration: underline;
 }
-.Blog-Content img{
+.Blog-Content img {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
-.Blog-Content h1{
+.Blog-Content h1 {
   font-size: 30px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content h2{
+.Blog-Content h2 {
   font-size: 24px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content h3{
+.Blog-Content h3 {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content h4{
+.Blog-Content h4 {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content h5{
+.Blog-Content h5 {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content h6{
+.Blog-Content h6 {
   font-weight: 700;
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.Blog-Content ul{
+.Blog-Content ul {
   list-style: none;
   margin-left: 0;
   margin-bottom: 20px;
 }
-.Blog-Content ol{
+.Blog-Content ol {
   list-style: none;
   margin-left: 0;
   margin-bottom: 20px;
 }
-.Blog-Content li{
+.Blog-Content li {
   margin-bottom: 10px;
 }
-.Blog-Content li:last-child{
+.Blog-Content li:last-child {
   margin-bottom: 0;
 }
-.Blog-Content blockquote{
+.Blog-Content blockquote {
   border-left: 4px solid #1976d2;
   padding: 10px 20px;
   margin-bottom: 20px;
 }
-.Blog-Content blockquote p{
+.Blog-Content blockquote p {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 0;
 }
-.Blog-Content blockquote footer{
+.Blog-Content blockquote footer {
   font-size: 12px;
   line-height: 1.5;
   margin-top: 10px;
 }
-.Blog-Content blockquote footer:before{
+.Blog-Content blockquote footer:before {
   content: "\2014 \00A0";
 }
-.Blog-Content blockquote footer:after{
+.Blog-Content blockquote footer:after {
   content: "\00A0 \2014";
 }
 
-.Blog-Content pre{
+.Blog-Content pre {
   background: #dbdbdb;
   border-radius: 4px;
   padding: 13px;
@@ -232,9 +209,6 @@ body {
   margin-bottom: 20px;
 }
 
-
-
-
-.scroll-bar-none::-webkit-scrollbar{
+.scroll-bar-none::-webkit-scrollbar {
   display: none;
 }
