@@ -6,12 +6,14 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'string'
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -19,42 +21,46 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}]
+      of: [{type: 'reference', to: {type: 'category'}}],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime'
+      type: 'datetime',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'blockContent'
-    }
-    
+      type: 'blockContent',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage'
+      media: 'mainImage',
     },
     prepare(selection) {
       return Object.assign({}, selection)
-    }
-  }
+    },
+  },
 }

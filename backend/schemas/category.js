@@ -7,6 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      required: true, // added required property
     },
     {
       name: 'coverImage',
@@ -15,6 +16,7 @@ export default {
       options: {
         hotspot: true,
       },
+      required: true, // added required property
     },
     {
       name: 'slug',
@@ -24,6 +26,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      required: true, // added required property
     },
   ],
   preview: {
