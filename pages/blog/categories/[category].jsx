@@ -1,10 +1,10 @@
-import { client } from "../../services/data2";
-import BlogCard from "../../components/blog/blogCard";
+import { client } from "../../../services/data2";
+import BlogCard from "../../../components/blog/blogCard";
 
 export default function Index({ blogs }) {
   return (
     <>
-      <div className="sm:mt-[8em] mt-[5em] lg:mx-[10em] mx-6 sm:mx-[3em]">
+      <div className="sm:mt-[8em] mt-[8em] lg:mx-[10em] mx-6 sm:mx-[3em]">
         <div className="sm:text-3xl text-2xl capitalize font-bold">
           Welcome to my blog
         </div>
@@ -21,9 +21,28 @@ export default function Index({ blogs }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const response = await client.fetch(`
-    *[_type == 'blog']{
+export const getStaticPaths = async () => {
+  const slugs = await client.fetch(`
+    *[_type == 'category'] {
+      slug 
+    }
+  `);
+
+  const paths = slugs.map((slug) => ({
+    params: { category: slug.slug.current },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
+  const category = params.category;
+
+  const response = await client.fetch(
+    `*[_type == "blog" && "${category}" in categories[]->slug.current]{
       title,
       mainImage {
         asset->{
@@ -36,11 +55,9 @@ export const getStaticProps = async () => {
         title,
         slug
       }
-    }  
-  `);
-
+    }  `
+  );
   return {
     props: { blogs: response },
-    revalidate: 60,
   };
 };

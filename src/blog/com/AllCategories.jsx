@@ -10,10 +10,10 @@ export default function AllCategories() {
         lg:w-8/12 mb-10
         "
       >
-        <div className="text-2xl font-bold">All Categories</div>
+        <div className="text-2xl font-bold">Blog Categories</div>
         <div className="text-lg text-gray-500 max-w-[20em]">
-          we currently have 6 categories including diffrent topics for each of
-          them. select one to see/blog blogs about it.
+          i currently have 6 categories including diffrent topics for each of
+          them. select one to see blogs about it.
         </div>
 
         <div className="grid relative categories-grid w-full mt-5 auto-rows-[15em] gap-3 sm:grid-cols-6">
@@ -47,37 +47,36 @@ export default function AllCategories() {
               <Link
                 key={index}
                 href={`/blog/blogs?categories=${cat.name.toLocaleLowerCase()}`}
+                className="card-outer cursor-pointer relative "
               >
-                <a className="card-outer cursor-pointer relative ">
-                  <motion.div
-                    initial={{
-                      filter: "brightness(70%)",
-                    }}
-                    whileHover={{
-                      filter: "brightness(100%)",
-                      boxShadow: ["0 0 0 gray", "0 0 10px gray"],
-                      scale: [1, 1.04],
-                      transition: {
-                        duration: 0.3,
-                      },
-                    }}
-                    className="w-full h-full relative rounded-xl overflow-hidden"
-                  >
-                    <Image
-                      placeholder="blur"
-                      blurDataURL="/images/blur.webp"
-                      layout="fill"
-                      src={cat.img}
-                      alt={cat.name + " image"}
-                      className="img w-full h-full object-cover absolute top-0 left-0 rounded-xl"
-                    />
-                    <div className="bottom-blog rounded-b-xl absolute bottom-0 w-full py-5 px-4">
-                      <div className="capitalize text-white text-xl font-bold">
-                        {cat.name}
-                      </div>
+                <motion.div
+                  initial={{
+                    filter: "brightness(70%)",
+                  }}
+                  whileHover={{
+                    filter: "brightness(100%)",
+                    textShadow: ["0 0 0 gray", "0 0 25px black"],
+                    scale: [1, 1.04],
+                    transition: {
+                      duration: 0.3,
+                    },
+                  }}
+                  className="w-full h-full relative rounded-xl overflow-hidden"
+                >
+                  <Image
+                    placeholder="blur"
+                    blurDataURL="/images/blur.webp"
+                    layout="fill"
+                    src={cat.img}
+                    alt={cat.name + " image"}
+                    className="img w-full h-full object-cover absolute top-0 left-0 rounded-xl"
+                  />
+                  <div className="bottom-blog rounded-b-xl absolute bottom-0 w-full py-5 px-4">
+                    <div className="capitalize text-white text-xl font-bold">
+                      {cat.name}
                     </div>
-                  </motion.div>
-                </a>
+                  </div>
+                </motion.div>
               </Link>
             );
           })}

@@ -9,7 +9,7 @@ export default function SubToNewsLetter() {
           blurDataURL="/images/blur.webp"
           layout="fill"
           src="/images/walpaper.jpg"
-          className="w-full h-full absolute top-0 left-0 rounded-xl h-full object-cover z-10"
+          className="w-full absolute top-0 left-0 rounded-xl h-full object-cover z-10"
           alt="s"
         />
         <div className="box gap-2 z-20 flex flex-col bg-black rounded-xl sm:p-10 p-7 md:px-14  md:w-[33em] sm:w-[28em] w-full ">

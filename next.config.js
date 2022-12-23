@@ -2,15 +2,7 @@ const nextTranslate = require("next-translate");
 
 const nextConfig = {
   productionBrowserSourceMaps: true,
-  // redirects() {
-  //   return [
-  //     {
-  //       source: "/",
-  //       destination: "/portfolio",
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+
   webpack(config, { dev }) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -26,7 +18,7 @@ const nextConfig = {
     supportedLocales: ["en", "ar"],
   },
   images: {
-    domains: ["images.unsplash.com", "media.graphassets.com"],
+    domains: ["images.unsplash.com", "media.graphassets.com","cdn.sanity.io"],
   },
 };
 

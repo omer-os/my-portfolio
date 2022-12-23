@@ -1,7 +1,15 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import {
+  AllCategories,
+  FirstHomeComponent,
+  Line,
+  SubToNewsLetter,
+  YouMayLike,
+} from "../../src/blog/Files";
 
-export default function Landing() {
+export default function Landing({ topBlogs }) {
   return (
     <>
       <div className=" h-screen flex items-center justify-center px-4">
@@ -12,7 +20,7 @@ export default function Landing() {
                 Welcome to my website
               </p>
               <h1 className="sm:mt-3 mt-1 sm:text-[3.5rem] text-3xl font-bold sm:leading-[4rem] tracking-tight">
-                I'm A Creative Ui/Ux Designer And Front End Web Developer
+                I&apos;m A Creative Ui/Ux Designer And Front End Web Developer
               </h1>
               <p className="mt-3 sm:text-lg leading-relaxed text-slate-400">
                 Web Designer and Front End Developer with a passion for creating
@@ -150,10 +158,10 @@ export default function Landing() {
         <div className="flex flex-col px-10 lg:w-[50vw] mt-10 md:w-5/6 mx-auto gap-10">
           {[
             "A website can help you reach a larger audience, build credibility, and establish thought leadership in your industry.",
-            "A Most people today use the internet as their primary source of information. If you don't have a website, you're missing out on a huge opportunity to reach potential customers and grow your business.",
+            "A Most people today use the internet as their primary source of information. If you don&apos;t have a website, you&apos;re missing out on a huge opportunity to reach potential customers and grow your business.",
             "Finally, a website can help you establish thought leadership in your industry. By sharing blog posts, infographics, and other thought-provoking content, you can position yourself as an expert in your field. This can help you attract more customers and grow your business.",
             "Finally, a website can help you establish thought leadership in your industry. By sharing blog posts, infographics, and other thought-provoking content, you can position yourself as an expert in your field. This can help you attract more customers and grow your business.",
-            "If you're not sure where to start, there are many web design companies that can help you create a professional website for your business. Investing in a website is a smart decision that can help you reach your business goals.",
+            "If you&apos;re not sure where to start, there are many web design companies that can help you create a professional website for your business. Investing in a website is a smart decision that can help you reach your business goals.",
           ].map((i, index) => (
             <div
               key={index}
@@ -244,6 +252,21 @@ export default function Landing() {
             checkout more projects
           </Link>
         </div>
+      </div>
+
+      <div className="sm:px-10 lg:px-[9em] px-5">
+        <motion.div
+          animate={{
+            y: [20, 0],
+            opacity: [0, 1],
+            transition: {
+              duration: 1,
+              ease: "easeInOut",
+            },
+          }}
+        >
+          <FirstHomeComponent topBlogs={topBlogs} />
+        </motion.div>
       </div>
     </>
   );

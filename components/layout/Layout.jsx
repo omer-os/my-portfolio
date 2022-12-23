@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div>
       <Navbar />
       {children}
-      <div className="h-[10em]"></div>
+      <div className="h-[2em]"></div>
       <Footer />
     </div>
   );

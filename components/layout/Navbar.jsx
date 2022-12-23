@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import useTranslation from "next-translate/useTranslation";
-import setLanguage from "next-translate/setLanguage";
 
 export default function Navbar() {
   const [MenuOpened, setMenuOpened] = useState(false);
@@ -10,13 +9,28 @@ export default function Navbar() {
   const [DropDown, setDropDown] = useState(false);
   const { t, lang } = useTranslation("common");
 
-  const links = [];
-  for (let i = 0; i < 4; i++) {
-    links.push({
-      url: t(`urls.${i}.url`),
-      name: t(`urls.${i}.name`),
-    });
-  }
+  const links = [
+    {
+      name: "home",
+      url: "/",
+    },
+    {
+      name: "about",
+      url: "/about",
+    },
+    {
+      name: "blog",
+      url: "/blog",
+    },
+    {
+      name: "projects",
+      url: "/projects",
+    },
+    {
+      name: "contact",
+      url: "/contact",
+    },
+  ];
 
   return (
     <>
@@ -28,28 +42,7 @@ export default function Navbar() {
         </Link>
 
         <div className="md:flex items-center hidden gap-5 capitalize">
-          {[
-            {
-              name: "home",
-              url: "/",
-            },
-            {
-              name: "about",
-              url: "/about",
-            },
-            {
-              name: "blog",
-              url: "/blog",
-            },
-            {
-              name: "projects",
-              url: "/projects",
-            },
-            {
-              name: "contact",
-              url: "/contact",
-            },
-          ].map((item, index) => (
+          {links.map((item, index) => (
             <Link
               onClick={() => setMenuOpened(false)}
               href={item.url}
