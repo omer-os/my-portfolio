@@ -1,3 +1,4 @@
+import MainNavbar from "@/components/layout/nav/MainNavbar";
 import "./globals.css";
 
 export default function RootLayout({
@@ -8,7 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="bg-black text-white">{children}</body>
+      <body className="bg-black text-white min-h-screen">
+        <MainNavbar />
+
+        {children}
+      </body>
     </html>
   );
 }
