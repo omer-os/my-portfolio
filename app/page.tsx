@@ -1,7 +1,9 @@
 import BackgroundGradient from "@/components/home/BackgroundGradient";
+import HomeContactMeCircle from "@/components/home/ScrollToTopButton";
 import HomeFirstSection from "@/components/home/HomeFirstSection";
 import HomeSkillsSection from "@/components/home/HomeSkillsSection";
 import LastestBlogs from "@/components/home/LastestBlogs";
+import ScrollToTopButton from "@/components/home/ScrollToTopButton";
 import LastestProjects from "@/components/home/LastestProjects";
 
 export default function page() {
@@ -14,6 +16,8 @@ export default function page() {
         <LastestProjects />
         <LastestBlogs />
       </div>
+
+      <ScrollToTopButton />
     </div>
   );
 }
