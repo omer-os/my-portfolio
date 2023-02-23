@@ -1,5 +1,6 @@
 import React from "react";
 import LinkChips from "./LinkChips";
+import MainNavBg from "./MainNavBg";
 import MenuBurgerButton from "./MenuBurgerButton";
 
 export default function MainNavbar() {
@@ -11,7 +12,7 @@ export default function MainNavbar() {
   ];
 
   return (
-    <div className="sticky z-50 top-0 left-0 bg-black">
+    <div className="sticky z-50 top-0 left-0 bg-black/0">
       <div className="flex py-4 mx-auto content-width justify-between items-center">
         <div className="text-xl font-extrabold capitalize relative z-50">
           omar chatin
@@ -24,6 +25,8 @@ export default function MainNavbar() {
 
         <MenuBurgerButton links={links} />
       </div>
+
+      <MainNavBg />
     </div>
   );
 }

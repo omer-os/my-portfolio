@@ -15,7 +15,7 @@ type BlogProps = {
 export default function BlogCard({ blog }: BlogProps) {
   return (
     <LayoutAnimationWrapper>
-      <Link href={`/bogs/${blog.slug}`} className="flex flex-col rounded-xl">
+      <Link href={`/blog/${blog.slug}`} className="flex flex-col rounded-xl">
         <div className="h-[13em] rounded-xl relative bg-zinc-900 w-full">
           <Image
             src="/bluredImage.jpg"

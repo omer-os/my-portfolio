@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import BlogCard from "../blog/BlogCard";
+import BlogCard from "./BlogCard";
 
 export default function AllBlogs() {
   const blogs = [
