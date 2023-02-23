@@ -4,6 +4,7 @@ import SocialLinkChip from "@/components/home/SocialLinkChip";
 import { ImGithub } from "react-icons/im";
 import { AiFillLinkedin } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
+import Link from "next/link";
 
 export default function HomeFirstSection() {
   return (
@@ -61,9 +62,12 @@ export default function HomeFirstSection() {
       </div>
 
       <div className="flex gap-6 mt-6 sm:mt-10">
-        <button className="gradient-bg py-2 px-4 font-bold rounded sm:text-base text-sm">
+        <Link
+          href="/projects"
+          className="gradient-bg py-2 px-4 font-bold rounded sm:text-base text-sm"
+        >
           See Projects
-        </button>
+        </Link>
         <button className="bg-zinc-900 py-2 px-4 font-bold rounded sm:text-base text-sm">
           Download Resume
         </button>

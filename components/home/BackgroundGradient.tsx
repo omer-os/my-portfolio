@@ -1,11 +1,19 @@
+import Image from "next/image";
 import React from "react";
 
 export default function BackgroundGradient() {
   return (
     <div>
-      <div className="flex -z-10 absolute top-40 left-20">
-        <div className="blob absolute top-0 md:left-[10vw] sm:left-[3vw] -left-20 w-[60vmin] h-[60vmin]">
-          <div className="z-10 bg-black/70 absolute backdrop-blur-[4em] -left-[7em] -top-[7em] -right-[7em] -bottom-[7em] "></div>
+      <div className="flex -z-10 absolute top-32 sm:top-18  left-10">
+        <div className="absolute top-0 sm:-top-24 lg:left-[8vw]  sm:left-[1vw] -left-20 w-[70vmin] sm:w-[70vmin] h-[60vmin]">
+          <Image
+            alt="backgrounf blob animation"
+            src="/blobanimation.svg"
+            width={1000}
+            height={1000}
+          />
+
+          <div className="z-10 bg-black/70 absolute backdrop-blur-[3em] -left-[7em] -top-[7em] -right-[7em] -bottom-[7em] "></div>
         </div>
       </div>
     </div>

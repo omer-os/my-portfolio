@@ -23,23 +23,6 @@
     transition-all w-full;
 }
 
-/* Rectangle 2 */
-.blob {
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%22895.443%22 height=%22791.383%22 viewBox=%2237.888 73.261 895.443 791.383%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22%3E%3Cstop offset=%22NaN%25%22 stop-color=%22%233a00ff%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M914.5 629q-59.5 129-198 120.5t-242 70Q371 898 241.5 840t-185-199Q1 500 111 398.5t194-171q84-69.5 216.5-135t164 92Q717 342 845.5 421t69 208Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M914.5 629q-59.5 129-198 120.5t-242 70Q371 898 241.5 840t-185-199Q1 500 111 398.5t194-171q84-69.5 216.5-135t164 92Q717 342 845.5 421t69 208Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  animation: AnimateGradient 5s ease infinite;
-  background-size: 300% 300%;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(59, 173, 227, 1) 0%,
-    rgba(87, 111, 230, 1) 25%,
-    rgba(152, 68, 183, 1) 51%,
-    rgba(255, 53, 127, 1) 100%
-  );
-}
-
 .gradient-bg {
   animation: AnimateGradient 8s ease infinite;
   animation-direction: alternate;
@@ -61,5 +44,21 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+*::-webkit-scrollbar {
+  background-color: black;
+  width: 0.5em;
+  height: 0.3em;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(56, 56, 56);
+  border-radius: 10em;
+}
+
+@media (max-width: 500px) {
+  *::-webkit-scrollbar {
+    display: none;
   }
 }

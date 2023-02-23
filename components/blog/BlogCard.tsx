@@ -1,16 +1,38 @@
-export default function BlogCard() {
-  return (
-    <div className="flex flex-1 min-w-[15em] flex-col  rounded-xl">
-      <div className="h-[15em] rounded-xl bg-zinc-900"></div>
-      <div className="font-bold capitalize text-lg mt-2">
-        has been the flask
-      </div>
+import Image from "next/image";
+import Link from "next/link";
+import LayoutAnimationWrapper from "../coms/LayoutAnimationWrapper";
 
-      <div className="flex items-center gap-2 ">
-        <p className="text-zinc-400 capitalize">august 13th, 2022</p>
-        <div className="h-1 w-1 rounded-full bg-zinc-400"></div>
-        <p className="text-zinc-400 capitalize text-sm">4 min read</p>
-      </div>
-    </div>
+type BlogProps = {
+  blog: {
+    title: string;
+    description: string;
+    date: string;
+    categories: string[];
+    slug: string;
+  };
+};
+
+export default function BlogCard({ blog }: BlogProps) {
+  return (
+    <LayoutAnimationWrapper>
+      <Link href={`/bogs/${blog.slug}`} className="flex flex-col rounded-xl">
+        <div className="h-[13em] rounded-xl relative bg-zinc-900 w-full">
+          <Image
+            src="/bluredImage.jpg"
+            fill
+            alt="image"
+            className="rounded-2xl object-cover "
+          />
+        </div>
+        <div className="px-3">
+          <div className="text-xs text-zinc-300 mt-3">{blog.date}</div>
+          <div className="font-bold capitalize text-xl mt-1">{blog.title}</div>
+
+          <div className="text-zinc-400 text-sm line-clamp-2">
+            {blog.description}
+          </div>
+        </div>
+      </Link>
+    </LayoutAnimationWrapper>
   );
 }
