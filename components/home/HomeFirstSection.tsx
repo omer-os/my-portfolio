@@ -7,11 +7,12 @@ import { RiInstagramFill } from "react-icons/ri";
 
 export default function HomeFirstSection() {
   return (
-    <div className="flex flex-col smaller-content-width mx-auto">
+    <div>
       <div>
         <div className="sm:h-[15em] h-[13em] transition-all w-full bg-zinc-900 rounded-xl ring-2 ring-white relative flex items-end">
           <div className="absolute inset-0">
             <Image
+              priority
               src="https://media.licdn.com/dms/image/C4E16AQEyC-YcS5zIkA/profile-displaybackgroundimage-shrink_350_1400/0/1659781291341?e=1682553600&v=beta&t=xFcobQei4NrNBSgl6SboUOMTi6QNRTzUEg9_M5AxI5A"
               fill
               className="object-cover rounded-xl"
@@ -20,6 +21,7 @@ export default function HomeFirstSection() {
           </div>
           <div className="sm:w-[6em] w-[5em] sm:h-[6em] h-[5em] transition-all rounded-full relative sm:left-10 left-5  sm:-bottom-12 -bottom-10 sm:ring-4 ring-2 ring-white">
             <Image
+              priority
               fill
               alt="my image"
               src="https://media.licdn.com/dms/image/D4E03AQGS_2sQLHQmXw/profile-displayphoto-shrink_400_400/0/1676557598058?e=1682553600&v=beta&t=lme5PXUpLag5M4sixHXAaaHFj9yBYJtnvm4gALQtbhY"

@@ -13,6 +13,11 @@ export default function RootLayout({
         <MainNavbar />
 
         {children}
+
+        <br />
+        <br />
+        <br />
+        <br />
       </body>
     </html>
   );
