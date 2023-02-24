@@ -7,7 +7,7 @@ export default async function page({
 }: {
   params: { category: string };
 }) {
-  const blogsRes = await fetch(`${BaseUrl}/api/blogs/${params.category}`);
+  const blogsRes = await fetch(`${BaseUrl}/api/blogs/${params.category}`, {cache:"no-store"});
   const allBlogs = await blogsRes.json();
 
   return (

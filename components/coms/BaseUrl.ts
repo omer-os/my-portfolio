@@ -1,7 +1,7 @@
 export let BaseUrl = "";
 
-if (process.env.NODE_ENV === "development") {
-  BaseUrl = "http://localhost:3000/";
+if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+  BaseUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/`;
 } else {
-  BaseUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+  BaseUrl = "http://localhost:3000/";
 }

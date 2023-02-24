@@ -5,9 +5,11 @@ import Link from "next/link";
 import React from "react";
 
 export default async function page() {
-  const blogsRes = await fetch(`${BaseUrl}/api/blogs`);
+  const blogsRes = await fetch(`${BaseUrl}/api/blogs`, { cache: "no-store" });
   const allBlogs = await blogsRes.json();
-  const categoriesRes = await fetch(`${BaseUrl}/api/blogs/categories`);
+  const categoriesRes = await fetch(`${BaseUrl}/api/blogs/categories`, {
+    cache: "no-store",
+  });
   const allCategories: { data: BlogCategory[] } = await categoriesRes.json();
 
   return (
