@@ -1,19 +1,14 @@
-"use client";
 import AllBlogs from "@/components/blog/AllBlogs";
+import { BaseUrl } from "@/components/coms/BaseUrl";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
-export default function page({ params }: { params: { category: string } }) {
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    function handleScroll() {
-      const position = window.pageYOffset;
-      setScale(1 + position / 100);
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+export default async function page({
+  params,
+}: {
+  params: { category: string };
+}) {
+  const blogsRes = await fetch(`${BaseUrl}/api/blogs/${params.category}`);
+  const allBlogs = await blogsRes.json();
 
   return (
     <div>
@@ -42,7 +37,7 @@ export default function page({ params }: { params: { category: string } }) {
       <div className="w-full h-10 px-20 bg-zinc-900/50 border-y border-zinc-700 "></div>
 
       <div className="px-10 mx-auto">
-        <AllBlogs />
+        <AllBlogs allBlogs={allBlogs} />
       </div>
     </div>
   );
