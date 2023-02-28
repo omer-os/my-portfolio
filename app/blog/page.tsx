@@ -1,6 +1,6 @@
 import AllBlogs from "@/components/blog/AllBlogs";
 import { BaseUrl } from "@/components/coms/BaseUrl";
-import { Blog, BlogCategory } from "@/components/interfaces/blog";
+import { BlogCategory } from "@/components/interfaces/blog";
 import Link from "next/link";
 import React from "react";
 

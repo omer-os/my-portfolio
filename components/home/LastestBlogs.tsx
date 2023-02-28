@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import Line from "../coms/Line";
 import HomeBlogCard from "./HomeBlogCard";
@@ -31,6 +30,9 @@ export default function LastestBlogs() {
       slug: "Using-GitHub-as-a-CsMS",
     },
   ];
+
+  
+
   return (
     <div className="my-10">
       <Line />
@@ -48,8 +50,8 @@ export default function LastestBlogs() {
         </div>
 
         <Link
-          href="/blogs"
-          className="flex justify-center capitalize font-bold gap-2 hover:gap-4 group transition-all mt-5 sm:text-lg sm:w-max py-3 rounded sm:py-0 sm:rounded-none   sm:items-center relative active:scale-95"
+          href="/blog"
+          className="flex justify-center capitalize font-bold gap-2 hover:gap-4 group transition-all mt-5 sm:text-lg sm:w-max py-3 rounded sm:py-0 sm:rounded-none sm:items-center relative active:scale-95"
         >
           <div className="absolute w-full h-full top-0 left-0 -z-10 sm:w-0 transition-all rounded-xl gradient-bg"></div>
           <div className="relative">

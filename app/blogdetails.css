@@ -1,0 +1,85 @@
+/* Typography */
+.blogcontent h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blogcontent h1 {
+  font-size: 2.5rem;
+}
+
+.blogcontent h2 {
+  font-size: 2rem;
+}
+
+.blogcontent h3 {
+  font-size: 1.5rem;
+}
+
+.blogcontent h4 {
+  font-size: 1.25rem;
+}
+
+.blogcontent h5 {
+  font-size: 1rem;
+}
+
+.blogcontent h6 {
+  font-size: 0.875rem;
+}
+
+.blogcontent p {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #1a56db;
+  text-decoration: underline;
+}
+
+.blogcontent ul,
+ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blogcontent li {
+  margin-bottom: 0.5rem;
+}
+
+.blogcontent pre {
+  background-color: #323232;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blogcontent code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #323232;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.blogcontent img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blogcontent blockquote {
+  border-left: 0.25rem solid #1a56db;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-style: italic;
+}

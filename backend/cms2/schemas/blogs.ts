@@ -9,7 +9,19 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().error('give me a title'),
+      validation: (Rule: any) => Rule.required().error('give me a title'),
+    }),
+    defineField({
+      name: 'wordcount',
+      title: 'Word Count',
+      type: 'number',
+      validation: (Rule: any) => Rule.required().error('give me a number'),
+    }),
+    defineField({
+      name: 'readminutes',
+      title: 'Read Minutes',
+      type: 'number',
+      validation: (Rule: any) => Rule.required().error('give me a number'),
     }),
 
     defineField({
@@ -23,7 +35,7 @@ export default defineType({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
-      validation: (Rule) => Rule.required().error('give me subtitle'),
+      validation: (Rule: any) => Rule.required().error('give me subtitle'),
     }),
 
     defineField({
@@ -34,7 +46,7 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required().error('generate slug'),
+      validation: (Rule: any) => Rule.required().error('generate slug'),
     }),
 
     defineField({

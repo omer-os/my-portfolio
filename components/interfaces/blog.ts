@@ -5,8 +5,10 @@ export interface Blog {
   slug: Slug;
   coverimage: Media;
   publishedAt: string;
-  content: string;
-  blogCategories: BlogCategory;
+  content: any;
+  blogCategories: BlogCategory[];
+  wordcount: number;
+  readminutes: number;
 }
 
 export interface BlogCategory {
