@@ -31,8 +31,6 @@ export default function LastestBlogs() {
     },
   ];
 
-  
-
   return (
     <div className="my-10">
       <Line />

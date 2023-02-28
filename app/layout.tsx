@@ -1,3 +1,4 @@
+import GlowingBox from "@/components/coms/GlowingBox";
 import Footer from "@/components/layout/Footer";
 import MainNavbar from "@/components/layout/nav/MainNavbar";
 import "@/styles/globals.css";
@@ -10,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="bg-black text-white min-h-screen">
+      <body className="bg-black text-white min-h-screen relative ">
         <MainNavbar />
 
         {children}
