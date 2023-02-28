@@ -1,5 +1,4 @@
 import BackgroundGradient from "@/components/home/BackgroundGradient";
-import HomeContactMeCircle from "@/components/home/ScrollToTopButton";
 import HomeFirstSection from "@/components/home/HomeFirstSection";
 import HomeSkillsSection from "@/components/home/HomeSkillsSection";
 import LastestBlogs from "@/components/home/LastestBlogs";

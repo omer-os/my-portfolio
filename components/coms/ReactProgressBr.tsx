@@ -24,7 +24,7 @@ const ProgressBar = () => {
   return (
     <div>
       <div
-        className="h-1 fixed top-[4.8em] sm:top-0 left-0 bg-gradient-to-r gradient-bg z-50"
+        className="h-1 neon-line fixed top-[4.7em] sm:top-0 left-0 bg-gradient-to-r gradient-bg z-50"
         style={{
           width: `${progress}%`,
         }}

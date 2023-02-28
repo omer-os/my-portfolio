@@ -62,3 +62,26 @@
     display: none;
   }
 }
+.neon-line {
+  background: linear-gradient(
+    -45deg,
+    rgb(255, 197, 0) 0%,
+    rgb(220, 172, 0) 25%,
+    rgb(235, 94, 0) 51%,
+    rgb(205, 21, 0) 100%
+  );
+  background-size: 400% 400%;
+  animation: neon-animation 2s ease-in-out infinite;
+}
+
+@keyframes neon-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

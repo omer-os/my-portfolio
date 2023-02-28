@@ -15,7 +15,7 @@ export default function HomeBlogCard({
 }) {
   return (
     <Link
-      href={`/blogs/${blog.slug}`}
+      href={`/blog/${blog.slug}`}
       className="flex flex-col py-5 sm:px-8 px-6 bg-zinc-900 rounded-xl group"
     >
       <div className="flex flex-col">
