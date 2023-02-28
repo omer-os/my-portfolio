@@ -14,13 +14,11 @@ export default function MainNavBg() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const bgColor = scrollY > 0 ? "bg-red-600" : "bg-blue-600";
-
   return (
     <div
       className={`absolute w-full top-0 left-0 -z-10 h-0 ${
         scrollY > 0 && "!h-full"
-      } bg-black/80 backdrop-blur-[3em] transition-all`}
+      } bg-black/80 backdrop-blur-3xl transition-all`}
     />
   );
 }

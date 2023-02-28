@@ -1,8 +1,8 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
 import LinkChips from "./LinkChips";
 import MainNavBg from "./MainNavBg";
 import MenuBurgerButton from "./MenuBurgerButton";
-
 export default function MainNavbar() {
   const links = [
     { name: "home", link: "/" },

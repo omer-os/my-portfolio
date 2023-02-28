@@ -9,20 +9,27 @@ import { BaseUrl } from "@/components/coms/BaseUrl";
 import { Blog } from "@/components/interfaces/blog";
 import { PortableText } from "@portabletext/react";
 
+export async function generateStaticParams() {
+  const data = await fetch(`${BaseUrl}/api/blogs`);
+  const res = await data.json();
+
+  return res.data.map((post: Blog) => ({
+    blogid: post.slug.current,
+  }));
+}
+
 export default async function page({
   params: { blogid },
 }: {
   params: { blogid: string };
 }) {
-  const data = await fetch(`${BaseUrl}/api/blog?blogid=${blogid}`, {
-    cache: "no-store",
-  });
+  const data = await fetch(`${BaseUrl}/api/blog?blogid=${blogid}`);
 
   const res = await data.json();
   const blog: Blog = res.data[0];
 
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-10">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-2">
       <ProgressBar />
 
       <header className="flex text-center flex-col  items-center">
