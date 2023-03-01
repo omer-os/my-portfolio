@@ -9,21 +9,14 @@ import { BaseUrl } from "@/components/coms/BaseUrl";
 import { Blog } from "@/components/interfaces/blog";
 import { PortableText } from "@portabletext/react";
 
-export async function generateStaticParams() {
-  const data = await fetch(`${BaseUrl}/api/blogs`);
-  const res = await data.json();
-
-  return res.data.map((post: Blog) => ({
-    blogid: post.slug.current,
-  }));
-}
-
 export default async function page({
   params: { blogid },
 }: {
   params: { blogid: string };
 }) {
-  const data = await fetch(`${BaseUrl}/api/blog?blogid=${blogid}`);
+  const data = await fetch(`${BaseUrl}/api/blog?blogid=${blogid}`, {
+    cache: "no-store",
+  });
 
   const res = await data.json();
   const blog: Blog = res.data[0];
