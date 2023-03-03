@@ -1,35 +1,12 @@
+import { GetHomeBlogs } from "@/pages/api/blog";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import Line from "../coms/Line";
+import { Blog } from "../interfaces/blog";
 import HomeBlogCard from "./HomeBlogCard";
 
-export default function LastestBlogs() {
-  const blogs = [
-    {
-      title: "Using GitHub as a CMS",
-      description:
-        "Since re-launching my website with an all new redesign I added a number of cool features. One such feature I thought worth sharing about was my projects page as",
-      date: "july 12, 2023",
-      categories: ["nextjs", "tailwindcss"],
-      slug: "Usings-GitHub-as-a-CMS",
-    },
-    {
-      title: "Using GitHub as a CMS",
-      description:
-        "Since re-launching my website with an all new redesign I added a number of cool features. One such feature I thought worth sharing about was my projects page as",
-      date: "july 12, 2023",
-      categories: ["nextjs", "tailwindcss"],
-      slug: "Using-GitHubs-as-a-CMS",
-    },
-    {
-      title: "Using GitHub as a CMS",
-      description:
-        "Since re-launching my website with an all new redesign I added a number of cool features. One such feature I thought worth sharing about was my projects page as",
-      date: "july 12, 2023",
-      categories: ["nextjs", "tailwindcss"],
-      slug: "Using-GitHub-as-a-CsMS",
-    },
-  ];
+export default async function LastestBlogs() {
+  const data: Blog[] = await GetHomeBlogs();
 
   return (
     <div className="my-10">
@@ -42,8 +19,8 @@ export default function LastestBlogs() {
         </div>
 
         <div className="flex flex-col gap-10 mt-5">
-          {blogs.map((i, index) => (
-            <HomeBlogCard key={i.slug} blog={i} />
+          {data?.map((i, index) => (
+            <HomeBlogCard key={i.slug.current} blog={i} />
           ))}
         </div>
 

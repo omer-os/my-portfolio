@@ -14,6 +14,7 @@ export default function page() {
         <HomeSkillsSection />
         {/* @ts-ignore */}
         <LastestProjects />
+        {/* @ts-ignore */}
         <LastestBlogs />
       </div>
 
