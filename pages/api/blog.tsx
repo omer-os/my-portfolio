@@ -40,3 +40,49 @@ export default async function handler(
 
   res.status(200).json({ data });
 }
+
+export async function GetThisBlog(blogid: string) {
+  const data = await client.fetch(`
+  *[_type == "blogs" && slug.current =="${blogid}"]{  
+    title,
+    showinhome,
+    subtitle,
+    wordcount,
+    readminutes,
+    slug{
+        current
+    },
+    coverimage {
+      asset-> {
+        url
+      }
+    },
+    publishedAt,
+    content,
+    blogCategories[]-> {
+      title,
+      slug{
+        current
+    },
+      subtitle,
+      coverimage {
+        asset-> {
+          url
+        }
+      }  
+    }
+  }
+  `);
+
+  return data;
+}
+export async function GetAllBlogs() {
+  const data = await client.fetch(`*[_type == "blogs"]{
+    slug{
+        current
+    },
+  }
+  `);
+
+  return data;
+}

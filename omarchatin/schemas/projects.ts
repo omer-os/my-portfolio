@@ -9,7 +9,6 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().error('give me a title'),
     }),
 
     defineField({
@@ -23,7 +22,12 @@ export default defineType({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
-      validation: (Rule) => Rule.required().error('give me subtitle'),
+    }),
+    defineField({
+      name: 'content',
+      title: 'Project Content',
+      type: 'string',
+      validation: (Rule) => Rule.required().error('give me content'),
     }),
 
     defineField({
@@ -59,12 +63,30 @@ export default defineType({
     }),
 
     defineField({
-      title: 'Project Categories',
-      type: 'reference',
       name: 'projectCategories',
-      to: [{type: 'projectCategories'}],
-      validation: (Rule) => Rule.required().error('give me categories'),
-      weak: true,
+      title: 'Project Categories',
+
+      type: 'array',
+      of: [
+        {
+          name: 'projectCategories',
+          type: 'reference',
+          to: [{type: 'projectCategories'}],
+          title: 'Blog Category',
+          validation: (Rule) => Rule.required().error('Please select a blog category'),
+          weak: true,
+        },
+      ],
+    }),
+    defineField({
+      name: 'demo',
+      title: 'Demo Link',
+      type: 'url',
+    }),
+    defineField({
+      name: 'github',
+      title: 'Source Code Link',
+      type: 'url',
     }),
   ],
 

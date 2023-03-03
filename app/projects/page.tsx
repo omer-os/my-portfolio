@@ -1,9 +1,12 @@
+import { ProjectType } from "@/components/interfaces/projectTypes";
 import ProjectCard from "@/components/projects/ProjectCard";
+import { GetAllProjects } from "@/pages/api/projects";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { VscGithubInverted } from "react-icons/vsc";
 
-export default function Page(): JSX.Element {
+export default async function Page() {
+  const projects: ProjectType[] | null = await GetAllProjects();
   return (
     <>
       <div className=" mt-10 mx-auto mb-16 max-w-4xl px-8">
@@ -13,9 +16,9 @@ export default function Page(): JSX.Element {
 
         <>
           <div className="flex-col mt-2 gap-6 flex">
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+            {projects?.map((i) => (
+              <ProjectCard project={i} />
+            ))}
           </div>
         </>
       </div>

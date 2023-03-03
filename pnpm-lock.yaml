@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@next/font': 13.1.6
   '@portabletext/react': ^2.0.2
   '@sanity/client': ^5.2.2
   '@tailwindcss/line-clamp': ^0.4.2
@@ -17,13 +16,13 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.7.1
+  supports-color: ^9.3.1
   tailwindcss: ^3.2.7
   typescript: 4.9.5
 
 dependencies:
-  '@next/font': 13.1.6
   '@portabletext/react': 2.0.2_react@18.2.0
-  '@sanity/client': 5.2.2
+  '@sanity/client': 5.2.2_supports-color@9.3.1
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.7
   '@types/node': 18.14.0
   '@types/react': 18.0.28
@@ -34,6 +33,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
+  supports-color: 9.3.1
   typescript: 4.9.5
 
 devDependencies:
@@ -59,10 +59,6 @@ packages:
 
   /@next/env/13.2.3:
     resolution: {integrity: sha512-FN50r/E+b8wuqyRjmGaqvqNDuWBWYWQiigfZ50KnSFH0f+AMQQyaZl+Zm2+CIpKk0fL9QxhLxOpTVA3xFHgFow==}
-    dev: false
-
-  /@next/font/13.1.6:
-    resolution: {integrity: sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==}
     dev: false
 
   /@next/swc-android-arm-eabi/13.2.3:
@@ -223,12 +219,12 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
     dev: false
 
-  /@sanity/client/5.2.2:
+  /@sanity/client/5.2.2_supports-color@9.3.1:
     resolution: {integrity: sha512-AhOLSIZI0IO6/vDYYQekhAokqiAmDW2bVvNx3xW8T2hpJLRKHsw98Y+iOcX4dnH6y1Y7IO6upgb76D35xa2Szg==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 4.0.0
-      get-it: 8.0.9
+      get-it: 8.0.9_supports-color@9.3.1
       rxjs: 7.8.0
     transitivePeerDependencies:
       - supports-color
@@ -397,7 +393,7 @@ packages:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: false
 
-  /debug/4.3.4:
+  /debug/4.3.4_supports-color@9.3.1:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
@@ -407,6 +403,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+      supports-color: 9.3.1
     dev: false
 
   /decompress-response/7.0.0:
@@ -482,7 +479,7 @@ packages:
       debug:
         optional: true
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4_supports-color@9.3.1
     dev: false
 
   /fraction.js/4.2.0:
@@ -519,11 +516,11 @@ packages:
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
 
-  /get-it/8.0.9:
+  /get-it/8.0.9_supports-color@9.3.1:
     resolution: {integrity: sha512-Nm54soj8MEXTmkzAR0iWGP/TCAfsueOOWzBTvTB9ch0ubUE/5FbV7tAptbmsYzpk9QzA6zhcadqTCwP3prRfHw==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4_supports-color@9.3.1
       decompress-response: 7.0.0
       follow-redirects: 1.15.2_debug@4.3.4
       into-stream: 6.0.0
@@ -974,6 +971,11 @@ packages:
     dependencies:
       client-only: 0.0.1
       react: 18.2.0
+    dev: false
+
+  /supports-color/9.3.1:
+    resolution: {integrity: sha512-knBY82pjmnIzK3NifMo3RxEIRD9E0kIzV4BKcyTZ9+9kWgLMxd4PrsTSMoFQUabgRBbF8KOLRDCyKgNV+iK44Q==}
+    engines: {node: '>=12'}
     dev: false
 
   /supports-preserve-symlinks-flag/1.0.0:

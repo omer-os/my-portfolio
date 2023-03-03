@@ -12,6 +12,7 @@ export default function page() {
       <div className="flex flex-col smaller-content-width mx-auto">
         <HomeFirstSection />
         <HomeSkillsSection />
+        {/* @ts-ignore */}
         <LastestProjects />
         <LastestBlogs />
       </div>

@@ -2,27 +2,17 @@ import Link from "next/link";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { HiArrowNarrowRight } from "react-icons/hi";
-export default function LastestProjects() {
-  const projects = [
-    {
-      title: "Lmsat Al Fan Architechture",
-      date: "august 13th, 2022",
-    },
-    {
-      title: "codie club personal project",
-      date: "august 13th, 2022",
-    },
-    {
-      title: "Melo production website",
-      date: "august 13th, 2022",
-    },
-  ];
+import { GetHomePageProjects } from "@/pages/api/projects";
+
+export default async function LastestProjects() {
+  const projects = await GetHomePageProjects();
+
   return (
     <div>
       <div className="sm:text-3xl text-2xl font-bold">Lastest Projects</div>
 
       <div className="flex mt-6 flex-wrap grow gap-10">
-        {projects.map((i, index) => (
+        {projects?.map((i, index) => (
           <ProjectCard project={i} key={index} />
         ))}
       </div>

@@ -5,21 +5,25 @@ import { AiOutlineEye } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
 import ProgressBar from "@/components/coms/ReactProgressBr";
-import { BaseUrl } from "@/components/coms/BaseUrl";
 import { Blog } from "@/components/interfaces/blog";
 import { PortableText } from "@portabletext/react";
+import { GetAllBlogs, GetThisBlog } from "@/pages/api/blog";
+
+export async function generateStaticParams() {
+  const data: Blog[] = await GetAllBlogs();
+
+  return data.map((blog) => ({
+    blogid: blog.slug.current,
+  }));
+}
 
 export default async function page({
   params: { blogid },
 }: {
   params: { blogid: string };
 }) {
-  const data = await fetch(`${BaseUrl}/api/blog?blogid=${blogid}`, {
-    cache: "no-store",
-  });
-
-  const res = await data.json();
-  const blog: Blog = res.data[0];
+  const res = await GetThisBlog(blogid);
+  const blog: Blog = res[0];
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-2">
@@ -59,11 +63,12 @@ export default async function page({
           <div className="border-b my-2  pb-5 border-zinc-400">
             <div className="text-zinc-400">Tags</div>
             <div className="flex text-sm text-zinc-400 flex-wrap capitalize gap-3 mt-2">
-              {blog?.blogCategories.map((i) => (
+              {blog?.blogCategories?.map((i) => (
                 <Link
                   className="border active:scale-95  cursor-pointer hover:bg-white/10 bg-black transition-all border-orange-600 rounded-lg text-center py-1 px-2 grow"
                   key={i.slug.current}
-                  href={`/blog/categories/${i.slug.current}`}
+                  href={`/blog/categories/`}
+                  // ${i?.slug?.current}
                 >
                   {i.title}
                 </Link>
@@ -84,7 +89,7 @@ export default async function page({
           </div>
           <div className="relative sm:h-[20em] h-[15em] w-full">
             <Image
-              src={blog?.coverimage.asset.url}
+              src={blog?.coverimage?.asset?.url}
               alt="blog cover image"
               fill
               className="w-full h-full object-cover rounded-xl"
