@@ -18,7 +18,7 @@ export default async function LastestBlogs() {
           i mostly have blogs about programming and web development.
         </div>
 
-        <div className="flex flex-col gap-10 mt-5">
+        <div className="flex flex-col gap-10 mt-5 max-w-full overflow-hidden">
           {data?.map((i, index) => (
             <HomeBlogCard key={i.slug.current} blog={i} />
           ))}
