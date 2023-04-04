@@ -8,6 +8,7 @@ specifiers:
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  '@vercel/analytics': ^0.1.11
   autoprefixer: ^10.4.13
   framer-motion: ^9.1.6
   markdown-to-jsx: ^7.1.9
@@ -27,6 +28,7 @@ dependencies:
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  '@vercel/analytics': 0.1.11_react@18.2.0
   framer-motion: 9.1.6_biqbaboplfbrettd7655fr4n2y
   markdown-to-jsx: 7.1.9_react@18.2.0
   next: 13.2.3_biqbaboplfbrettd7655fr4n2y
@@ -287,6 +289,14 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: false
+
+  /@vercel/analytics/0.1.11_react@18.2.0:
+    resolution: {integrity: sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /acorn-node/1.8.2:
