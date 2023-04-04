@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Line from "../coms/Line";
+import Line from "@/components/coms/Line";
 
 export default function HomeSkillsSection() {
   const skills = [
@@ -27,7 +27,10 @@ export default function HomeSkillsSection() {
         gap-3"
         >
           {skills.map((i) => (
-            <div key={i} className="bg-white/10 border border-zinc-800 sm:min-w-[7em] py-2 px-3 rounded capitalize grow text-center sm:text-base text-sm">
+            <div
+              key={i}
+              className="bg-white/10 border border-zinc-800 sm:min-w-[7em] py-2 px-3 rounded capitalize grow text-center sm:text-base text-sm hover:scale-105 transition-all hover:!bg-zinc-800"
+            >
               {i}
             </div>
           ))}

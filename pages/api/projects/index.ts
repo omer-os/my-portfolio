@@ -1,4 +1,3 @@
-import { Blog } from "@/components/interfaces/blog";
 import { ProjectType } from "@/components/interfaces/projectTypes";
 import type { NextApiRequest, NextApiResponse } from "next";
 import client from "../client";

@@ -21,12 +21,17 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
           <div className="flex z-20 p-4 flex-col">
             <div className="flex gap-2">
               {project.projectCategories?.map((i) => (
-                <div className="border hover:scale-105 transition-all border-zinc-800 rounded text-xs py-1 px-2 capitalize">
+                <div
+                  key={i.slug.current}
+                  className="border hover:scale-105 transition-all border-zinc-800 rounded text-xs py-1 px-2 capitalize"
+                >
                   {i.title}
                 </div>
               ))}
             </div>
-            <div className="text-3xl mt-4 font-bold">{project.title}</div>
+            <div className="md:text-3xl text-2xl md:mt-4 mt-2 font-bold">
+              {project.title}
+            </div>
             <div className="text-md text-zinc-200 line-clamp-2">
               {project.subtitle}{" "}
             </div>

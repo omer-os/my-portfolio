@@ -1,7 +1,6 @@
-import Footer from "@/components/layout/Footer";
-import MainNavbar from "@/components/layout/nav/MainNavbar";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import MainLayout from "@/components/layout/MainLayout";
 
 export default function RootLayout({
   children,
@@ -11,12 +10,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="bg-black text-white min-h-screen relative ">
-        <MainNavbar />
-
-        {children}
-        <Analytics />
-        <Footer />
+      <body className="bg-black text-white min-h-screen relative">
+        <MainLayout>
+          {children}
+          <Analytics />
+        </MainLayout>
       </body>
     </html>
   );

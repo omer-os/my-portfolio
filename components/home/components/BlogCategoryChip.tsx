@@ -1,7 +1,7 @@
 "use client";
 
+import { BlogCategory } from "@/components/interfaces/blog";
 import { useRouter } from "next/navigation";
-import { BlogCategory } from "../interfaces/blog";
 
 export default function BlogCategoryChip({ cat }: { cat: BlogCategory }) {
   const router = useRouter();

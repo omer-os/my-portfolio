@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
-import { ProjectType } from "../interfaces/projectTypes";
-
+import { ProjectType } from "@/components/interfaces/projectTypes";
 export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link
@@ -13,11 +13,13 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
         <HiOutlineExternalLink />
       </div>
 
-      <div className="h-[15em] rounded-xl bg-zinc-900">
-        <img
+      <div className="h-[15em] relative rounded-xl bg-zinc-900">
+        <Image
+          fill
           src={project.coverimage.asset.url}
           alt={project.title + " image"}
-          className="h-full w-full object-cover rounded-xl"
+          className={`h-full w-full object-cover rounded-xl
+          group-hover:brightness-50 transition-all`}
         />
       </div>
       <div className="font-bold capitalize text-lg mt-2">{project.title}</div>

@@ -1,24 +1,9 @@
-import BackgroundGradient from "@/components/home/BackgroundGradient";
-import HomeFirstSection from "@/components/home/HomeFirstSection";
-import HomeSkillsSection from "@/components/home/HomeSkillsSection";
-import LastestBlogs from "@/components/home/LastestBlogs";
-import ScrollToTopButton from "@/components/home/ScrollToTopButton";
-import LastestProjects from "@/components/home/LastestProjects";
+import HomeMain from "@/components/home/HomeMain";
 
 export default function page() {
   return (
     <div className="mt-6">
-      <BackgroundGradient />
-      <div className="flex flex-col smaller-content-width mx-auto">
-        <HomeFirstSection />
-        <HomeSkillsSection />
-        {/* @ts-ignore */}
-        <LastestProjects />
-        {/* @ts-ignore */}
-        <LastestBlogs />
-      </div>
-
-      <ScrollToTopButton />
+      <HomeMain />
     </div>
   );
 }

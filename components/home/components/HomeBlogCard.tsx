@@ -1,7 +1,7 @@
+import GlowingBox from "@/components/coms/GlowingBox";
+import { Blog } from "@/components/interfaces/blog";
 import Link from "next/link";
 import React from "react";
-import GlowingBox from "../coms/GlowingBox";
-import { Blog } from "../interfaces/blog";
 import BlogCategoryChip from "./BlogCategoryChip";
 
 export default function HomeBlogCard({ blog }: { blog: Blog }) {
@@ -20,11 +20,12 @@ export default function HomeBlogCard({ blog }: { blog: Blog }) {
           </div>
 
           <div className="flex mt-2 flex-col">
-            <div className="sm:text-2xl text-xl w-max font-bold relative">
+            <div className="sm:text-2xl max-w-full line-clamp-1 text-xl w-max font-bold relative">
               {blog.title}
-              <div className="absolute h-[.09em] group-hover:w-full w-0 yellow-gradient transition-all -bottom-1 left-0"></div>
             </div>
-            <div className="text-zinc-300 mt-1 text-sm">{blog.subtitle}</div>
+            <div className="text-zinc-300 mt-1 text-sm line-clamp-3">
+              {blog.subtitle}
+            </div>
           </div>
         </div>
       </GlowingBox>

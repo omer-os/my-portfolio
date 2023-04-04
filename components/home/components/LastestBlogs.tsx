@@ -1,8 +1,8 @@
+import Line from "@/components/coms/Line";
+import { Blog } from "@/components/interfaces/blog";
 import { GetHomeBlogs } from "@/pages/api/blog";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import Line from "../coms/Line";
-import { Blog } from "../interfaces/blog";
 import HomeBlogCard from "./HomeBlogCard";
 
 export default async function LastestBlogs() {

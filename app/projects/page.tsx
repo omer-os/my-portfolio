@@ -1,9 +1,6 @@
 import { ProjectType } from "@/components/interfaces/projectTypes";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { GetAllProjects } from "@/pages/api/projects";
-import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
-import { VscGithubInverted } from "react-icons/vsc";
 
 export default async function Page() {
   const projects: ProjectType[] | null = await GetAllProjects();
@@ -17,7 +14,7 @@ export default async function Page() {
         <>
           <div className="flex-col mt-2 gap-6 flex">
             {projects?.map((i) => (
-              <ProjectCard project={i} />
+              <ProjectCard key={i.slug.current} project={i} />
             ))}
           </div>
         </>

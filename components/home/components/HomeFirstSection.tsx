@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import SocialLinkChip from "@/components/home/SocialLinkChip";
+import SocialLinkChip from "./SocialLinkChip";
 import { ImGithub } from "react-icons/im";
 import { AiFillLinkedin } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
