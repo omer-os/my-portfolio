@@ -82,6 +82,7 @@ export async function GetAllBlogs() {
         current
     },
     title,
+    publishedAt,
     subtitle,
     blogCategory->{
       title,

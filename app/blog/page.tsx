@@ -11,7 +11,15 @@ type PageProps = {
 };
 
 export default async function page({ searchParams }: PageProps) {
+  if (!searchParams.category) searchParams.category = "all";
   const categories = await GetAllCategories();
+
+  categories.push({
+    title: "all",
+    slug: {
+      current: "all",
+    },
+  });
 
   return (
     <div className="flex md:flex-row flex-col min-h-full relative max-w-5xl w-full gap-1 md:px-6">

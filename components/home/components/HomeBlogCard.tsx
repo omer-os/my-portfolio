@@ -5,6 +5,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
+function formatDate(date: string) {
+  const d = new Date(date);
+  const month = d.toLocaleString("default", { month: "short" });
+  const day = d.getDate();
+  const year = d.getFullYear();
+  return `${day} ${month} ${year}`;
+}
+
 export default function HomeBlogCard({ blog }: { blog: Blog }) {
   const router = useRouter();
 
@@ -13,7 +21,7 @@ export default function HomeBlogCard({ blog }: { blog: Blog }) {
       <GlowingBox>
         <div className="flex flex-col py-5 sm:px-8 px-6 bg-zinc-900/80 border border-zinc-800/40 rounded-xl group w-full h-full">
           <div className="text-zinc-400 capitalize text-xs">
-            {blog.publishedAt}
+            {formatDate(blog.publishedAt)}
           </div>
 
           <div className="flex mt-2 gap-3 relative z-20">

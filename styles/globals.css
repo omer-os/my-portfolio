@@ -10,18 +10,6 @@
   background: #bd00c7;
 }
 
-.content-width {
-  @apply xl:max-w-7xl 
-    md:max-w-5xl
-    px-8
-    transition-all w-full;
-}
-.smaller-content-width {
-  @apply xl:max-w-5xl 
-    md:max-w-3xl
-    px-8
-    transition-all w-full;
-}
 
 .gradient-bg {
   animation: AnimateGradient 8s ease infinite;

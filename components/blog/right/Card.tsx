@@ -17,18 +17,25 @@ export default function Card({ data }: { data: Blog }) {
 
           <div className="flex mt-6 justify-between items-center">
             <div className="text-zinc-400 relative z-10 text-sm">
-              {data.publishedAt}
+              {formatDate(data.publishedAt)}
             </div>
 
             <div className="rounded-full relative z-10 text-zinc-400 bg-zinc-900 px-4 py-1 text-sm capitalize">
-              {/* {data.blogCategories[0].title} */}
-
               {data.blogCategory.title}
-              {/* nextjs */}
             </div>
           </div>
         </div>
       </GlowingBox>
     </Link>
   );
+}
+
+// turn this 2023-02-24T16:13:33.465Z into 24 Feb 2023
+function formatDate(date: string) {
+  const d = new Date(date);
+  const month = d.toLocaleString("default", { month: "short" });
+  const day = d.getDate();
+  const year = d.getFullYear();
+
+  return `${day} ${month} ${year}`;
 }

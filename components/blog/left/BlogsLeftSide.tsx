@@ -16,33 +16,6 @@ export default function BlogsLeftSide({
   categories: BlogCategory[];
 }) {
   const [ShowInputText, setShowInputText] = useState(false);
-  // const categories = [
-  //   {
-  //     category: "all",
-  //     slug: "all",
-  //   },
-  //   {
-  //     category: "tailwindcss",
-  //     slug: "tailwindcss",
-  //   },
-  //   {
-  //     category: "react",
-  //     slug: "react",
-  //   },
-  //   {
-  //     category: "design",
-  //     slug: "design",
-  //   },
-  //   {
-  //     category: "javascript",
-  //     slug: "javascript",
-  //   },
-  //   {
-  //     category: "typescript",
-  //     slug: "typescript",
-  //   },
-  // ];
-
   return (
     <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] bg-black z-30">
       <div

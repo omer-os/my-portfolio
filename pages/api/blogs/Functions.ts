@@ -35,7 +35,56 @@ export const HomePageBlogs = async () => {
             current 
         }
     }}
-  
-      `);
+    `);
   return data;
 };
+
+export const GetBlogBySlug = async (slug: string) => {
+  const data = await client.fetch(
+    `*[_type == "blogs" && slug.current == $slug]{
+    title,
+    slug{
+        current
+    },
+    publishedAt,
+    blogCategory->{
+        title,
+        slug{
+            current 
+        }
+    },
+    content,
+    coverimage{
+      asset->{
+        url
+        
+      }
+      }
+
+  }[0]
+      `,
+    { slug }
+  );
+  return data;
+};
+
+export const GetBlogsByCategory = async (slug: string) => {
+  const data = await client.fetch(
+    `*[_type == "blogs" && blogCategory->slug.current == $slug]{
+    title,
+    slug{
+        current
+    },
+    publishedAt,
+    blogCategory->{
+        title,
+        slug{
+            current 
+        }
+    }}
+    `,
+    { slug }
+  );
+  return data;
+}
+
