@@ -81,6 +81,8 @@ export async function GetAllBlogs() {
     slug{
         current
     },
+    title,
+    subtitle,
   }
   `);
 

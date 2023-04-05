@@ -5,8 +5,8 @@ import BurgerButton from "./components/BurgerButton";
 
 export default function MainNavBar() {
   return (
-    <header className="sticky bg-black z-50 border-b border-zinc-800 top-0 left-0 p-3 px-6 ">
-      <nav className="flex mx-auto max-w-5xl justify-between items-center">
+    <header className="sticky z-50 border-b border-zinc-800 top-0 left-0 p-3 px-6 ">
+      <nav className="flex mx-auto max-w-5xl justify-between items-center relative z-10">
         <Link
           href="/"
           className="logo relative z-50 font-bold text-xl capitalize"
@@ -47,6 +47,8 @@ export default function MainNavBar() {
 
         <BurgerButton />
       </nav>
+
+      <div className="absolute inset-0 bg-black/30 top-0 left-0 backdrop-blur-lg"></div>
     </header>
   );
 }
