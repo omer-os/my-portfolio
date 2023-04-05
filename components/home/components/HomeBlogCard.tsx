@@ -19,27 +19,27 @@ export default function HomeBlogCard({ blog }: { blog: Blog }) {
   return (
     <Link href={`/blog/${blog.slug.current}`}>
       <GlowingBox>
-        <div className="flex flex-col py-5 sm:px-8 px-6 bg-zinc-900/80 border border-zinc-800/40 rounded-xl group w-full h-full">
-          <div className="text-zinc-400 capitalize text-xs">
+        <div className="flex flex-col w-full h-full px-6 py-5 border sm:px-8 bg-zinc-900/80 border-zinc-800/40 rounded-xl group">
+          <div className="text-xs capitalize text-zinc-400">
             {formatDate(blog.publishedAt)}
           </div>
 
-          <div className="flex mt-2 gap-3 relative z-20">
+          <div className="relative z-20 flex gap-3 mt-2">
             <button
               onClick={() =>
                 router.push(`/categories/${blog.blogCategory.slug.current}`)
               }
-              className="ring-2 hover:bg-white/10 hover:scale-105 bg-black/0 transition-all ring-orange-600 py-1 px-3 rounded capitalize text-xs font-light"
+              className="px-3 py-1 text-xs font-light capitalize transition-all rounded ring-2 hover:bg-white/10 hover:scale-105 bg-black/0 ring-orange-600"
             >
               {blog.blogCategory.title}
             </button>
           </div>
 
-          <div className="flex mt-2 flex-col">
-            <div className="sm:text-2xl max-w-full line-clamp-1 text-xl w-max font-bold relative">
+          <div className="flex flex-col mt-2">
+            <div className="relative max-w-full text-xl font-bold sm:text-2xl line-clamp-1 w-max">
               {blog.title}
             </div>
-            <div className="text-zinc-300 mt-1 text-sm line-clamp-3">
+            <div className="mt-1 text-sm text-zinc-300 line-clamp-3">
               {blog.subtitle}
             </div>
           </div>

@@ -13,8 +13,8 @@ export default async function BlogsRight({ category }: { category: string }) {
   }
 
   return (
-    <div className="flex-1 min-h-full md:border-l border-zinc-800 md:ml-5 md:pl-14 md:px-0 px-6 py-7">
-      <div className="text-3xl font-bold pb-3 border-b border-zinc-800">
+    <div className="flex-1 min-h-full px-6 md:border-l border-zinc-800 md:ml-5 md:pl-14 md:px-0 py-7">
+      <div className="pb-3 text-3xl font-bold border-b border-zinc-800">
         All Blogs
       </div>
       <div className="mt-6 capitalize text-zinc-300">

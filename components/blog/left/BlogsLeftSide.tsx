@@ -25,7 +25,7 @@ export default function BlogsLeftSide({
       >
         <Dialog.Root>
           <Dialog.Trigger asChild>
-            <button className="flex active:scale-95 transition-all items-center gap-2 px-2 py-1 rounded font-bold hover:bg-zinc-900">
+            <button className="flex items-center gap-2 px-2 py-1 font-bold transition-all rounded active:scale-95 hover:bg-zinc-900">
               <AiOutlineMenuUnfold />
               categories
             </button>
@@ -48,11 +48,11 @@ export default function BlogsLeftSide({
                   animate={{ opacity: 1, bottom: 0 }}
                   exit={{ opacity: 0, bottom: -20 }}
                 >
-                  <div className="rounded bg-black border border-zinc-400 p-6">
-                    <Dialog.Title className="font-bold flex justify-between items-center">
+                  <div className="p-6 bg-black border rounded border-zinc-400">
+                    <Dialog.Title className="flex items-center justify-between font-bold">
                       <p>Categories</p>
                       <Dialog.Close asChild>
-                        <button className="hover:bg-zinc-900 p-2 rounded">
+                        <button className="p-2 rounded hover:bg-zinc-900">
                           <IoClose size={18} />
                         </button>
                       </Dialog.Close>
@@ -62,7 +62,7 @@ export default function BlogsLeftSide({
                         {categories.map((i) => (
                           <Dialog.Close key={i.slug.current} asChild>
                             <Link
-                              href={`/blog?category=${i.slug}`}
+                              href={`/blog?category=${i.slug.current}`}
                               className={`${
                                 category === i.slug.current &&
                                 "!font-bold !text-white"
@@ -71,10 +71,10 @@ export default function BlogsLeftSide({
                               {category === i.slug.current && (
                                 <motion.div
                                   layoutId="bgoreiuhouroin"
-                                  className="absolute top-0 left-0 bg-zinc-800 rounded w-full h-full"
+                                  className="absolute top-0 left-0 w-full h-full rounded bg-zinc-800"
                                 />
                               )}
-                              <div className="flex relative z-10 gap-2 items-center p-2">
+                              <div className="relative z-10 flex items-center gap-2 p-2">
                                 <div>{i.title}</div>
                               </div>
                             </Link>
@@ -90,13 +90,13 @@ export default function BlogsLeftSide({
         </Dialog.Root>
         <button
           onClick={() => setShowInputText(!ShowInputText)}
-          className="active:scale-95 transition-all gap-2 p-2 rounded  hover:bg-zinc-900"
+          className="gap-2 p-2 transition-all rounded active:scale-95 hover:bg-zinc-900"
         >
           <BiSearch />
         </button>
       </div>
 
-      <div className="md:flex-col md:border-none border-b border-zinc-800">
+      <div className="border-b md:flex-col md:border-none border-zinc-800">
         <div
           className={`relative md:m-0 m-2 ${
             ShowInputText ? "md:flex" : "hidden md:!flex"
@@ -115,31 +115,30 @@ export default function BlogsLeftSide({
           <div className="absolute md:hidden top-2.5 right-3">
             <button
               onClick={() => setShowInputText(false)}
-              className="active:scale-95 transition-all  rounded"
+              className="transition-all rounded active:scale-95"
             >
               <IoClose size={18} />
             </button>
           </div>
         </div>
 
-        <div className="md:flex hidden flex-col mt-3 text-sm gap-1">
+        <div className="flex-col hidden gap-1 mt-3 text-sm md:flex">
           {categories.map((i) => (
             <Link
               href={`/blog?category=${i.slug.current}`}
               key={i.slug.current}
-              className={`
-                ${
-                  category === i.slug.current && "!font-bold !text-white"
-                } transition-all capitalize font-normal text-zinc-400 rounded relative hover:bg-zinc-900/50 `}
+              className={`${
+                category === i.slug.current && "!font-bold !text-white"
+              } transition-all capitalize font-normal text-zinc-400 rounded relative hover:bg-zinc-900/50 `}
             >
-              <div className="flex gap-2 items-center p-2">
+              <div className="flex items-center gap-2 p-2">
                 <div>{i.title}</div>
               </div>
 
               {category === i.slug.current && (
                 <motion.div
                   layoutId="bgoreiuhouroin"
-                  className="absolute -z-10 top-0 left-0 bg-zinc-800 rounded w-full h-full"
+                  className="absolute top-0 left-0 w-full h-full rounded -z-10 bg-zinc-800"
                 />
               )}
             </Link>

@@ -11,9 +11,9 @@ export default function SocialLinkChip({
   return (
     <Link
       href={link}
-      className="sm:w-8 w-6 active:bg-white/10 bg-zinc-300/0 transition-all active:scale-95 sm:h-8 h-6 rounded-lg ring-1 ring-zinc-300 flex items-center justify-center"
+      className="flex items-center justify-center w-6 h-6 transition-all rounded-lg sm:w-8 active:bg-white/10 bg-zinc-300/0 active:scale-95 sm:h-8 ring-1 ring-zinc-300"
     >
-      <Img className="sm:w-auto sm:h-auto w-3 h-3" />
+      <Img className="w-3 h-3 sm:w-auto sm:h-auto" />
     </Link>
   );
 }

@@ -19,12 +19,10 @@ export default function HomeSkillsSection() {
   return (
     <div className="my-10">
       <Line />
-      <div className="my-10 flex flex-col gap-3">
-        <div className="sm:text-3xl text-2xl font-bold">Skills</div>
+      <div className="flex flex-col gap-3 my-10">
+        <div className="text-lg font-bold sm:text-3xl">Skills</div>
         <div
-          className="flex
-        flex-wrap 
-        gap-3"
+          className="flex flex-wrap gap-3"
         >
           {skills.map((i) => (
             <div

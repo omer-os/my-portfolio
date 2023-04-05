@@ -27,7 +27,7 @@ export default function NavChip({
 
   return (
     <Link
-      className="capitalize py-2 px-4 rounded relative"
+      className="relative px-4 py-2 capitalize rounded"
       href={page.link}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -42,7 +42,7 @@ export default function NavChip({
       {isHovered && (
         <motion.div
           layoutId="mwruiubeiyeigyewiy"
-          className="bg-zinc-900 w-full h-full rounded absolute top-0 left-0"
+          className="absolute top-0 left-0 w-full h-full rounded bg-zinc-900"
         />
       )}
 

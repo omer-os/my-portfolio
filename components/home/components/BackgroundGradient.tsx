@@ -4,7 +4,7 @@ import React from "react";
 export default function BackgroundGradient() {
   return (
     <div>
-      <div className="flex -z-10 absolute top-32 sm:top-18  left-10">
+      <div className="absolute flex -z-10 top-32 sm:top-18 left-10">
         <div className="absolute top-0 sm:-top-24 lg:left-[8vw]  sm:left-[1vw] -left-20 w-[70vmin] sm:w-[70vmin] h-[60vmin]">
           <Image
             alt="backgrounf blob animation"

@@ -21,26 +21,26 @@ export default async function page({
   const blog: Blog = await GetBlogBySlug(blogid);
 
   return (
-    <div className="max-w-3xl w-full px-4 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
+    <div className="w-full max-w-3xl px-4 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
       <ProgressBar />
       <div
         className={`bg-gradient-to-r from-blue-600/20 to-yellow-600/20 h-[25em] w-full absolute md:top-16 top-[3.3em] -z-10 left-0 flex`}
       >
-        <div className="absolute bottom-0 left-0 top-0 right-0 bg-gradient-to-t from-black" />
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-black" />
       </div>
 
       <Link
         href={"/blog?category=all"}
-        className="mt-10 hover:text-white hover:underline transition-all text-zinc-400 flex items-center gap-1 text-sm"
+        className="flex items-center gap-1 mt-10 text-sm transition-all hover:text-white hover:underline text-zinc-400"
       >
         <BiLeftArrow />
         Back to blog
       </Link>
 
-      <div className="pt-10 flex md:flex-row flex-col md:items-center gap-2 md:gap-3">
+      <div className="flex flex-col gap-2 pt-10 md:flex-row md:items-center md:gap-3">
         <Link
           href={"/blog?category=" + blog.blogCategory.slug.current}
-          className="rounded-full py-1 px-3  bg-gradient-to-r from-yellow-600 w-max to-orange-600 "
+          className="px-3 py-1 rounded-full bg-gradient-to-r from-yellow-600 w-max to-orange-600 "
         >
           {blog.blogCategory.title}
         </Link>
@@ -53,7 +53,7 @@ export default async function page({
       </div>
 
       {/* actual content */}
-      <div className="flex lg:flex-row flex-col gap-10 mt-16">
+      <div className="flex flex-col gap-10 mt-16 lg:flex-row">
         <div className="flex-1 lg:border-r lg:pr-10 border-zinc-800">
           <div className="img">
             <img
@@ -63,22 +63,7 @@ export default async function page({
           </div>
 
           <article
-            className="prose my-10 prose-invert porse-2xl 
-          
-          prose-a:text-blue-600 
-          prose-a:hover:underline 
-          prose-a:font-bold 
-          
-          prose-code:bg-zinc-900
-          
-          porse-h1:text-4xl
-          prose-h2:text-3xl
-          prose-h3:text-2xl
-          prose-h4:text-xl
-
-          porse-li:text-xl
-
-          "
+            className="my-10 prose prose-invert porse-2xl prose-a:text-blue-600 prose-a:hover:underline prose-a:font-bold prose-code:bg-zinc-900 porse-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl porse-li:text-xl "
           >
             <PortableText value={blog.content} />
           </article>

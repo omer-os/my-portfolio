@@ -16,18 +16,18 @@ export default function BlogCard({ blog }: { blog: Blog }) {
             src={blog.coverimage.asset.url}
             fill
             alt="image"
-            className="rounded-2xl object-cover "
+            className="object-cover rounded-2xl "
             // placeholder="blur"
             // blurDataURL="/image-placeholder.jpg"
           />
         </div>
         <div className="px-3">
-          <div className="text-xs text-zinc-300 mt-3">
+          <div className="mt-3 text-xs text-zinc-300">
             {formatDate(blog.publishedAt)}
           </div>
-          <div className="font-bold capitalize text-xl mt-1">{blog.title}</div>
+          <div className="mt-1 text-xl font-bold capitalize">{blog.title}</div>
 
-          <div className="text-zinc-400 text-sm line-clamp-2">
+          <div className="text-sm text-zinc-400 line-clamp-2">
             {blog.subtitle}
           </div>
         </div>

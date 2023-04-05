@@ -7,20 +7,20 @@ export default function Card({ data }: { data: Blog }) {
   return (
     <Link
       href={`/blog/${data.slug.current}`}
-      className="rounded-xl overflow-hidden"
+      className="overflow-hidden rounded-xl"
     >
       <GlowingBox>
-        <div className="p-5 rounded-xl border border-zinc-700 relative flex flex-col">
-          <div className="sm:text-3xl text-xl relative z-10 font-bold line-clamp-2">
+        <div className="relative flex flex-col p-5 border rounded-xl border-zinc-700">
+          <div className="relative z-10 text-xl font-bold sm:text-3xl line-clamp-2">
             {data.title}
           </div>
 
-          <div className="flex mt-6 justify-between items-center">
-            <div className="text-zinc-400 relative z-10 text-sm">
+          <div className="flex items-center justify-between mt-6">
+            <div className="relative z-10 text-sm text-zinc-400">
               {formatDate(data.publishedAt)}
             </div>
 
-            <div className="rounded-full relative z-10 text-zinc-400 bg-zinc-900 px-4 py-1 text-sm capitalize">
+            <div className="relative z-10 px-4 py-1 text-sm capitalize rounded-full text-zinc-400 bg-zinc-900">
               {data.blogCategory.title}
             </div>
           </div>

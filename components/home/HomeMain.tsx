@@ -10,7 +10,7 @@ export default function HomeMain() {
   return (
     <div>
       <BackgroundGradient />
-      <div className="flex max-w-5xl px-6 flex-col mx-auto">
+      <div className="flex flex-col max-w-5xl px-6 mx-auto">
         <HomeFirstSection />
         <HomeSkillsSection />
         {/* @ts-ignore */}

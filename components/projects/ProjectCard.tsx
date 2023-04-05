@@ -9,44 +9,44 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <>
       <GlowingBox>
-        <div className="border border-zinc-800/50  flex md:flex-row flex-col md:gap-8 gap-3 rounded-xl bg-zinc-900/40">
+        <div className="flex flex-col gap-3 border border-zinc-800/50 md:flex-row md:gap-8 rounded-xl bg-zinc-900/40">
           <div className="img md:p-3 h-[12em] md:h-60  md:w-[20em] w-full">
             <img
               src={project.coverimage?.asset.url}
               alt={project.title + " image"}
-              className="h-full w-full object-cover rounded-xl"
+              className="object-cover w-full h-full rounded-xl"
             />
           </div>
 
-          <div className="flex z-20 p-4 flex-col">
+          <div className="z-20 flex flex-col p-4">
             <div className="flex gap-2">
               {project.projectCategories?.map((i) => (
                 <div
                   key={i.slug.current}
-                  className="border hover:scale-105 transition-all border-zinc-800 rounded text-xs py-1 px-2 capitalize"
+                  className="px-2 py-1 text-xs capitalize transition-all border rounded hover:scale-105 border-zinc-800"
                 >
                   {i.title}
                 </div>
               ))}
             </div>
-            <div className="md:text-3xl text-2xl md:mt-4 mt-2 font-bold">
+            <div className="mt-2 text-2xl font-bold md:text-3xl md:mt-4">
               {project.title}
             </div>
             <div className="text-md text-zinc-200 line-clamp-2">
               {project.subtitle}{" "}
             </div>
 
-            <div className="flex flex-wrap text-xs md:mt-2 mt-3 md:gap-5 gap-1">
+            <div className="flex flex-wrap gap-1 mt-3 text-xs md:mt-2 md:gap-5">
               <Link
                 href={project.demo}
-                className="bg-zinc-900 flex gap-2 items-center rounded py-2 sm:px-3 px-2 ring-0 transition-all hover:bg-zinc-800 hover:ring-1 ring-zinc-700"
+                className="flex items-center gap-2 px-2 py-2 transition-all rounded bg-zinc-900 sm:px-3 ring-0 hover:bg-zinc-800 hover:ring-1 ring-zinc-700"
               >
                 <p>view demo</p>
                 <FiArrowUpRight />
               </Link>
               <Link
                 href={project.github}
-                className="bg-zinc-900 flex gap-2 items-center rounded py-2 sm:px-3 px-2 ring-0 transition-all hover:bg-zinc-800 hover:ring-1 ring-zinc-700"
+                className="flex items-center gap-2 px-2 py-2 transition-all rounded bg-zinc-900 sm:px-3 ring-0 hover:bg-zinc-800 hover:ring-1 ring-zinc-700"
               >
                 <VscGithubInverted />
                 <p>source code</p>
@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
               </Link>
             </div>
 
-            <div className="md:text-xl font-bold mt-10">Learn More</div>
+            <div className="mt-10 font-bold md:text-xl">Learn More</div>
           </div>
         </div>
       </GlowingBox>
