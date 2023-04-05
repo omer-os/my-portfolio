@@ -83,6 +83,10 @@ export async function GetAllBlogs() {
     },
     title,
     subtitle,
+    blogCategory->{
+      title,
+      slug
+    }
   }
   `);
 

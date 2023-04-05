@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'blogCategories',
+  name: 'blogCategory',
   title: 'All Blog Categories ',
   type: 'document',
   fields: [
@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule:any) => Rule.required(),
+      validation: (Rule: any) => Rule.required(),
     }),
 
     defineField({
@@ -20,19 +20,7 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule:any) => Rule.required().error('generate slug'),
-    }),
-
-    defineField({
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'text',
-    }),
-
-    defineField({
-      name: 'coverimage',
-      title: 'Cover Image',
-      type: 'image',
+      validation: (Rule: any) => Rule.required().error('generate slug'),
     }),
   ],
   preview: {

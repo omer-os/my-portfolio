@@ -6,7 +6,7 @@ export interface Blog {
   coverimage: Media;
   publishedAt: string;
   content: any;
-  blogCategories: BlogCategory[];
+  blogCategory: BlogCategory;
   wordcount: number;
   readminutes: number;
 }
@@ -14,8 +14,6 @@ export interface Blog {
 export interface BlogCategory {
   title: string;
   slug: Slug;
-  subtitle: string;
-  coverimage: Media;
 }
 
 interface Media {

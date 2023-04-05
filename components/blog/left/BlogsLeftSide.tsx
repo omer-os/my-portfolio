@@ -6,35 +6,43 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 import * as Dialog from "@radix-ui/react-dialog";
+import { BlogCategory } from "@/components/interfaces/blog";
 
-export default function BlogsLeftSide({ category }: { category: string }) {
+export default function BlogsLeftSide({
+  category,
+  categories,
+}: {
+  category: string;
+  categories: BlogCategory[];
+}) {
   const [ShowInputText, setShowInputText] = useState(false);
-  const categories = [
-    {
-      category: "all",
-      slug: "all",
-    },
-    {
-      category: "tailwindcss",
-      slug: "tailwindcss",
-    },
-    {
-      category: "react",
-      slug: "react",
-    },
-    {
-      category: "design",
-      slug: "design",
-    },
-    {
-      category: "javascript",
-      slug: "javascript",
-    },
-    {
-      category: "typescript",
-      slug: "typescript",
-    },
-  ];
+  // const categories = [
+  //   {
+  //     category: "all",
+  //     slug: "all",
+  //   },
+  //   {
+  //     category: "tailwindcss",
+  //     slug: "tailwindcss",
+  //   },
+  //   {
+  //     category: "react",
+  //     slug: "react",
+  //   },
+  //   {
+  //     category: "design",
+  //     slug: "design",
+  //   },
+  //   {
+  //     category: "javascript",
+  //     slug: "javascript",
+  //   },
+  //   {
+  //     category: "typescript",
+  //     slug: "typescript",
+  //   },
+  // ];
+
   return (
     <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] bg-black z-30">
       <div
@@ -79,22 +87,22 @@ export default function BlogsLeftSide({ category }: { category: string }) {
                     <Dialog.Description className="mt-8">
                       <div className="flex flex-col gap-2">
                         {categories.map((i) => (
-                          <Dialog.Close asChild>
+                          <Dialog.Close key={i.slug.current} asChild>
                             <Link
                               href={`/blog?category=${i.slug}`}
-                              key={i.category}
                               className={`${
-                                category === i.slug && "!font-bold !text-white"
+                                category === i.slug.current &&
+                                "!font-bold !text-white"
                               } transition-all capitalize font-normal text-zinc-400 rounded  relative hover:bg-zinc-900 `}
                             >
-                              {category === i.slug && (
+                              {category === i.slug.current && (
                                 <motion.div
                                   layoutId="bgoreiuhouroin"
                                   className="absolute top-0 left-0 bg-zinc-800 rounded w-full h-full"
                                 />
                               )}
                               <div className="flex relative z-10 gap-2 items-center p-2">
-                                <div>{i.category}</div>
+                                <div>{i.title}</div>
                               </div>
                             </Link>
                           </Dialog.Close>
@@ -144,18 +152,18 @@ export default function BlogsLeftSide({ category }: { category: string }) {
         <div className="md:flex hidden flex-col mt-3 text-sm gap-1">
           {categories.map((i) => (
             <Link
-              href={`/blog?category=${i.slug}`}
-              key={i.category}
+              href={`/blog?category=${i.slug.current}`}
+              key={i.slug.current}
               className={`
                 ${
-                  category === i.slug && "!font-bold !text-white"
+                  category === i.slug.current && "!font-bold !text-white"
                 } transition-all capitalize font-normal text-zinc-400 rounded relative hover:bg-zinc-900/50 `}
             >
               <div className="flex gap-2 items-center p-2">
-                <div>{i.category}</div>
+                <div>{i.title}</div>
               </div>
 
-              {category === i.slug && (
+              {category === i.slug.current && (
                 <motion.div
                   layoutId="bgoreiuhouroin"
                   className="absolute -z-10 top-0 left-0 bg-zinc-800 rounded w-full h-full"

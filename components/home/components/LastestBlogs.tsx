@@ -1,12 +1,13 @@
 import Line from "@/components/coms/Line";
 import { Blog } from "@/components/interfaces/blog";
 import { GetHomeBlogs } from "@/pages/api/blog";
+import { HomePageBlogs } from "@/pages/api/blogs/Functions";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import HomeBlogCard from "./HomeBlogCard";
 
 export default async function LastestBlogs() {
-  const data: Blog[] = await GetHomeBlogs();
+  const data: Blog[] = await HomePageBlogs();
 
   return (
     <div className="my-10">

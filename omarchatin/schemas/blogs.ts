@@ -80,19 +80,11 @@ export default defineType({
     }),
 
     defineField({
-      name: 'blogCategories',
-      title: 'categories',
-      type: 'array',
-      of: [
-        {
-          name: 'blogCategories',
-          type: 'reference',
-          to: [{type: 'blogCategories'}],
-          title: 'Blog Category',
-          validation: (Rule) => Rule.required().error('Please select a blog category'),
-          weak: true,
-        },
-      ],
+      name: 'blogCategory',
+      title: 'Blog Category',
+      type: 'reference',
+      to: [{type: 'blogCategory'}],
+      validation: (Rule) => Rule.required().error('please select a category'),
     }),
   ],
 

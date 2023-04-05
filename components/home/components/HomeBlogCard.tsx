@@ -1,10 +1,13 @@
+"use client";
 import GlowingBox from "@/components/coms/GlowingBox";
 import { Blog } from "@/components/interfaces/blog";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
-import BlogCategoryChip from "./BlogCategoryChip";
 
 export default function HomeBlogCard({ blog }: { blog: Blog }) {
+  const router = useRouter();
+
   return (
     <Link href={`/blog/${blog.slug.current}`}>
       <GlowingBox>
@@ -14,9 +17,14 @@ export default function HomeBlogCard({ blog }: { blog: Blog }) {
           </div>
 
           <div className="flex mt-2 gap-3 relative z-20">
-            {blog.blogCategories?.map((cat, index) => (
-              <BlogCategoryChip cat={cat} key={cat.slug.current + index} />
-            ))}
+            <button
+              onClick={() =>
+                router.push(`/categories/${blog.blogCategory.slug.current}`)
+              }
+              className="ring-2 hover:bg-white/10 hover:scale-105 bg-black/0 transition-all ring-orange-600 py-1 px-3 rounded capitalize text-xs font-light"
+            >
+              {blog.blogCategory.title}
+            </button>
           </div>
 
           <div className="flex mt-2 flex-col">
