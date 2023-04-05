@@ -23,7 +23,7 @@ export default async function page({
     <div className="max-w-3xl px-4 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
       <ProgressBar />
 
-      <BlogMain blog={blog} />
+      {/* <BlogMain blog={blog} /> */}
     </div>
   );
 }
