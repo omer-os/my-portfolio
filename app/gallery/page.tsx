@@ -46,7 +46,7 @@ export default async function Page() {
             `}
           >
             <Image
-              className="absolute inset-0 object-cover w-full h-full rounded-xl"
+              className="absolute bg-zinc-800 inset-0 object-cover w-full h-full rounded-xl"
               src={image.image.asset.url}
               alt="gallery item"
               fill

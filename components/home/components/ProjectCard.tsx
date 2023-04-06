@@ -25,8 +25,18 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
       <div className="mt-2 text-lg font-bold capitalize">{project.title}</div>
 
       <div className="flex items-center gap-2 ">
-        <p className="capitalize text-zinc-400">{project.publishedAt}</p>
+        <p className="capitalize text-zinc-400">
+          {formatDate(project.publishedAt)}
+        </p>
       </div>
     </Link>
   );
+}
+
+function formatDate(date: string) {
+  const d = new Date(date);
+  const month = d.toLocaleString("default", { month: "short" });
+  const day = d.getDate();
+  const year = d.getFullYear();
+  return `${day} ${month} ${year}`;
 }

@@ -52,6 +52,7 @@ export default function NavChip({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 2, opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4,delay: 0.2 }}
             className="absolute w-full left-0 -bottom-3 bg-white h-[.05em]"
           />
         )}
