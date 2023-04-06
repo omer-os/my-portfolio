@@ -64,7 +64,7 @@ export default async function page({ params }: PageProps) {
               className="bg-white text-black flex-1 rounded text-center py-2
               hover:bg-black hover:text-white hover:ring-[.05em] ring-white active:scale-95 transition-all
               "
-              href="/"
+              href="/contact"
             >
               Contact Me
             </Link>
@@ -139,6 +139,12 @@ export default async function page({ params }: PageProps) {
           </Link>
         </div>
       </div>
+
+
+
+
+
+      
     </div>
   );
 }

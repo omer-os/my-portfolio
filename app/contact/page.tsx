@@ -10,6 +10,8 @@ import { BiSearch } from "react-icons/bi";
 export default function page() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
+  const [message, setMessage] = useState("");
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const [OpenDialog, setOpenDialog] = useState(false);
 
@@ -27,15 +29,6 @@ export default function page() {
     setName("");
     setContact("");
     setMessage("");
-  };
-
-  const [message, setMessage] = useState("");
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
-  const handleChange = (evt: any) => {
-    const val = evt.target?.message;
-
-    setMessage(val);
   };
 
   return (
@@ -76,6 +69,8 @@ export default function page() {
                 placeholder="a contact link, instagram, email etc..."
                 maxLength={30}
                 minLength={3}
+                onChange={(e) => setContact(e.target.value)}
+                value={contact}
               />
               <div className="absolute top-1 left-2 p-2 text-zinc-600">
                 <BiSearch />
@@ -87,7 +82,7 @@ export default function page() {
             <div>
               <textarea
                 id="review-text"
-                onChange={handleChange}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="What did you like or dislike?"
                 ref={textAreaRef}
                 rows={1}
@@ -128,7 +123,7 @@ export default function page() {
                       Thank you for your message
                     </Dialog.Title>
 
-                    <Dialog.Description className="mt-2">
+                    <Dialog.Description asChild className="mt-2">
                       <p>
                         ill contact you from the contact url that you provided
                         as soon as i can.
