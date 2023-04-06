@@ -13,6 +13,7 @@ export default function page() {
         meets your needs.
       </p>
 
+      {/* @ts-ignore */}
       <AllTemplates />
     </div>
   );

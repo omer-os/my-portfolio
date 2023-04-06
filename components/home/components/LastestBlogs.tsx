@@ -1,6 +1,5 @@
 import Line from "@/components/coms/Line";
 import { Blog } from "@/components/interfaces/blog";
-import { GetHomeBlogs } from "@/pages/api/blog";
 import { HomePageBlogs } from "@/pages/api/blogs/Functions";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";

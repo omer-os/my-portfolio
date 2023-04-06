@@ -11,7 +11,6 @@ export default async function BlogsRight({ category }: { category: string }) {
     data = await GetBlogsByCategory(category);
   }
 
-  console.log(data);
 
   return (
     <div className="flex-1 min-h-full px-6 md:border-l border-zinc-800 md:ml-5 md:pl-14 md:px-0 py-7">
