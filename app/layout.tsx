@@ -15,13 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen body">
-        <div className="dark:text-white dark:!bg-black">
-          <MainLayout>
-            {children}
-            <Analytics />
-          </MainLayout>
-        </div>
+      <body className="relative min-h-screen body text-white bg-black">
+        <MainLayout>
+          {children}
+          <Analytics />
+        </MainLayout>
       </body>
     </html>
   );
