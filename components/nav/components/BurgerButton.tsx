@@ -43,6 +43,10 @@ export default function BurgerButton() {
               name: "blog",
               link: "/blog",
             },
+            {
+              name: "templates",
+              link: "/templates",
+            },
           ].map((i) => (
             <Link
               onClick={() => setOpenSideBar(false)}

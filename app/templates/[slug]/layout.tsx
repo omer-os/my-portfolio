@@ -5,7 +5,7 @@ export default async function RootLayout({
 }) {
   return (
     <div>
-      <div>{children}</div>
+      <div className="max-w-5xl px-6 mx-auto">{children}</div>
     </div>
   );
 }

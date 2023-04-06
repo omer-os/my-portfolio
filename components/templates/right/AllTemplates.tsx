@@ -34,4 +34,8 @@ export type Template = {
       url: string;
     };
   }[];
+  demoUrl: string;
+  githubUrl: string;
+  framework: string;
+  price: number;
 };

@@ -8,7 +8,7 @@ export default function Card({ template }: { template: Template }) {
   return (
     <Link
       href={`/templates/${template.slug.current}`}
-      className="rounded border border-zinc-800 group overflow-hidden relative"
+      className="rounded-xl border hover:border-white transition-all border-zinc-800 group overflow-hidden relative"
     >
       <div className="img relative w-full h-[15em]">
         <Image
@@ -19,7 +19,7 @@ export default function Card({ template }: { template: Template }) {
         />
       </div>
 
-      <div className="p-4 mt-2">
+      <div className="p-5 mt-2">
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold capitalize">{template.title}</div>
 

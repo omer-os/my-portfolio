@@ -37,7 +37,10 @@ export default function MainNavBar() {
         </div>
 
         <div className="hidden gap-4 md:flex">
-          <Link className="px-3 py-1 rounded text-zinc-400" href="/templates">
+          <Link
+            className="px-3 py-1 rounded hover:!text-white text-zinc-400"
+            href="/templates"
+          >
             Templates
           </Link>
           <Link

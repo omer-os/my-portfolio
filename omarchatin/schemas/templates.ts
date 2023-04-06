@@ -41,6 +41,37 @@ export default defineType({
       to: [{type: 'templateCategories'}],
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'demoUrl',
+      title: 'Demo URL',
+      type: 'url',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'githubUrl',
+      title: 'Github URL',
+      type: 'url',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'framework',
+      title: 'Framework',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Next.js', value: 'nextjs'},
+          {title: 'Javascript', value: 'javascript'},
+          {title: 'Jquery', value: 'jquery'},
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    }),
 
     // images
     defineField({
