@@ -1,16 +1,15 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
 export default function page() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [message, setMessage] = useState("");
 
   const [OpenDialog, setOpenDialog] = useState(false);
 
@@ -28,6 +27,15 @@ export default function page() {
     setName("");
     setContact("");
     setMessage("");
+  };
+
+  const [message, setMessage] = useState("");
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleChange = (evt: any) => {
+    const val = evt.target?.message;
+
+    setMessage(val);
   };
 
   return (
@@ -76,7 +84,18 @@ export default function page() {
           </div>
 
           <div className="relative flex-1">
-            <AutoGworingInput />
+            <div>
+              <textarea
+                id="review-text"
+                onChange={handleChange}
+                placeholder="What did you like or dislike?"
+                ref={textAreaRef}
+                rows={1}
+                value={message}
+                className="w-full border pl-10 whitespace-pre-wrap resize-y bg-black border-zinc-600 min-h-max rounded p-2"
+              />
+            </div>
+
             <div className="absolute top-1 left-2 p-2 text-zinc-600">
               <BiSearch />
             </div>
@@ -147,45 +166,3 @@ export default function page() {
 }
 
 // Auto Gworing Input
-export function AutoGworingInput() {
-  const [value, setValue] = useState("");
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
-  useAutosizeTextArea(textAreaRef.current, value);
-
-  const handleChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const val = evt.target?.value;
-
-    setValue(val);
-  };
-
-  return (
-    <>
-      <textarea
-        id="review-text"
-        onChange={handleChange}
-        placeholder="What did you like or dislike?"
-        ref={textAreaRef}
-        rows={1}
-        value={value}
-        className="w-full border pl-10 whitespace-pre-wrap resize-y bg-black border-zinc-600 min-h-max rounded p-2"
-      />
-    </>
-  );
-}
-const useAutosizeTextArea = (
-  textAreaRef: HTMLTextAreaElement | null,
-  value: string
-) => {
-  useEffect(() => {
-    if (textAreaRef) {
-      // We need to reset the height momentarily to get the correct scrollHeight for the textarea
-      textAreaRef.style.height = "0px";
-      const scrollHeight = textAreaRef.scrollHeight;
-
-      // We then set the height directly, outside of the render loop
-      // Trying to set this with state or a ref will product an incorrect value.
-      textAreaRef.style.height = scrollHeight + "px";
-    }
-  }, [textAreaRef, value]);
-};
