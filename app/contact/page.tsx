@@ -18,7 +18,7 @@ export default function page() {
 
     try {
       fetch(
-        `http://localhost:3000/api/bot/sendmassege?type=contact&message=${message}&contacturl=${contact}&name=${name}`
+        `${window.location.origin}/api/bot/sendmassege?type=contact&message=${message}&contacturl=${contact}&name=${name}`
       );
     } catch (e) {
       console.log(e);
