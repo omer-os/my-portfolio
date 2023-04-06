@@ -35,7 +35,7 @@ export default function NavChip({
       <span
         className={`z-10 relative dark:text-zinc-400 text-zinc-500 ${
           page.link === pathname && "dark:!text-white text-black"
-        }`}
+        } text-sm`}
       >
         {page.name}
       </span>

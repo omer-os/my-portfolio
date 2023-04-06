@@ -48,7 +48,7 @@ export default function BlogsLeftSide({
                   animate={{ opacity: 1, bottom: 0 }}
                   exit={{ opacity: 0, bottom: -20 }}
                 >
-                  <div className="p-6 dark:bg-black bg-zinc-300 border rounded border-zinc-400">
+                  <div className="p-6 border rounded dark:bg-black bg-zinc-300 border-zinc-400">
                     <Dialog.Title className="flex items-center justify-between font-bold">
                       <p>Categories</p>
                       <Dialog.Close asChild>
@@ -90,7 +90,7 @@ export default function BlogsLeftSide({
         </Dialog.Root>
         <button
           onClick={() => setShowInputText(!ShowInputText)}
-          className="gap-2 p-2 transition-all rounded active:scale-95 hover:bg-zinc-300  dark:hover:bg-zinc-900"
+          className="gap-2 p-2 transition-all rounded active:scale-95 hover:bg-zinc-300 dark:hover:bg-zinc-900"
         >
           <BiSearch />
         </button>

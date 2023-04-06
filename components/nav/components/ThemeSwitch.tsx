@@ -19,7 +19,7 @@ export default function ThemeSwitch() {
         <>
           <Select.Content
             align="start"
-            className="z-50 shadow-xl p-1 text-sm rounded dark:bg-zinc-900 bg-white"
+            className="z-50 p-1 text-sm bg-white rounded shadow-xl dark:bg-zinc-900"
           >
             {["light", "dark", "system"].map((i) => (
               <Select.Item

@@ -46,7 +46,14 @@ export default async function page({ params }: PageProps) {
           {template.title}
         </div>
 
-        <div className="mt-3 text-zinc-400">{template.description}</div>
+        <div className="mt-3 text-zinc-400">
+          buy this template for just ${template.price}! and let me Customize it
+          to your liking and launch in no time. contact me{" "}
+          <Link href={"/contact"} className="text-blue-600 underline w-max">
+            from this link
+          </Link>{" "}
+          to purchase and build your dream website today!
+        </div>
 
         <div className="flex flex-col">
           <div className="flex flex-col mt-10 divide-y text-zinc-400 divide-zinc-800">
@@ -82,7 +89,7 @@ export default async function page({ params }: PageProps) {
       <div className="flex-1 md:p-10 md:border-l border-zinc-800">
         <div className="img md:flex hidden relative h-[25em] w-full border border-zinc-800 rounded-xl">
           <Image
-            src="https://cdn.sanity.io/images/245fryc5/production/7aedf12843f0668d78d97a59f274d8edbf3036b7-1920x2880.jpg"
+            src={template.coverimage.asset.url}
             fill
             alt="nextjs"
             className="object-cover w-full h-full rounded-xl"
@@ -97,19 +104,10 @@ export default async function page({ params }: PageProps) {
           </Link>
         </div>
 
-        <div className="mt-6 text-4xl font-bold">{template.title}</div>
-        <div className="mt-2 text-zinc-400">
-          Looking to create a beautiful website that stands out from the crowd?
-          This template has everything you need, and it's available at an
-          affordable price starting from just ${template.price}! Customize it to
-          your heart's content and launch your website in no time. To purchase
-          this template and start building your dream website, simply click on{" "}
-          <Link href={"/"} className="w-max text-blue-600 underline">
-            this link
-          </Link>{" "}
-          below and follow the instructions. Don't miss out on this opportunity
-          to create a stunning online presence!
+        <div className="mt-6 text-4xl font-bold capitalize">
+          {template.title}
         </div>
+        <div className="mt-2 text-zinc-400">{template.description}</div>
 
         <div className="mt-10 text-2xl font-bold">Demo</div>
         <Link href={template.demoUrl} className="mt-2 text-blue-600">
@@ -117,7 +115,7 @@ export default async function page({ params }: PageProps) {
         </Link>
 
         <div className="grid gap-4 mt-10 md:grid-cols-2">
-          <div className="text-2xl font-bold md:col-span-2 capitalize">
+          <div className="text-2xl font-bold capitalize md:col-span-2">
             images from this template :
           </div>
           {template.images.map((image, index) => (
@@ -126,25 +124,19 @@ export default async function page({ params }: PageProps) {
                 src={image.asset.url}
                 fill
                 alt={`image ${index} of ${template.title}`}
-                className="object-cover w-full h-full rounded-xl cursor-pointer"
+                className="object-cover w-full h-full cursor-pointer rounded-xl"
               />
             </div>
           ))}
 
           <Link
-            className="flex-1 py-2 text-center transition-all border rounded border-zinc-800 hover:bg-white md:col-span-2 mt-6 capitalize hover:text-black hover:border active:scale-95 "
+            className="flex-1 py-2 mt-6 text-center capitalize transition-all border rounded border-zinc-800 hover:bg-white md:col-span-2 hover:text-black hover:border active:scale-95 "
             href="/templates"
           >
             view more templates
           </Link>
         </div>
       </div>
-
-
-
-
-
-      
     </div>
   );
 }

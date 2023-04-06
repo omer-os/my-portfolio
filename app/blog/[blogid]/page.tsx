@@ -31,7 +31,7 @@ export default async function page({
 
       <Link
         href={"/blog?category=all"}
-        className="flex items-center gap-1 mt-10 text-sm transition-all dark:hover:text-white  hover:underline dark:text-zinc-400 text-zinc-700 hover:text-zinc-600"
+        className="flex items-center gap-1 mt-10 text-sm transition-all dark:hover:text-white hover:underline dark:text-zinc-400 text-zinc-700 hover:text-zinc-600"
       >
         <BsArrowLeftShort />
         Back to blog

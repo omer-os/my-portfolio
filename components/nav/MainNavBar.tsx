@@ -6,11 +6,11 @@ import NavMoreButton from "./components/NavMoreButton";
 
 export default function MainNavBar() {
   return (
-    <header className="sticky top-0 left-0 z-50 p-3 px-6 bg-white dark:bg-black border-b dark:border-zinc-800 border-zinc-400">
+    <header className="sticky top-0 left-0 z-50 p-3 px-6 bg-white border-b dark:bg-black dark:border-zinc-800 border-zinc-400">
       <nav className="relative z-10 flex items-center justify-between max-w-5xl mx-auto">
         <Link
           href="/"
-          className="relative z-50 text-xl font-bold capitalize logo"
+          className="relative z-50 text-sm text-xl font-bold capitalize logo"
         >
           omar chatin
         </Link>
@@ -31,6 +31,10 @@ export default function MainNavBar() {
               name: "blog",
               link: "/blog",
             },
+            {
+              name: "contact",
+              link: "/contact",
+            },
           ].map((i) => (
             <NavChip key={i.link} page={i} />
           ))}
@@ -44,7 +48,7 @@ export default function MainNavBar() {
             Templates
           </Link>
           <Link
-            className="flex items-center px-4 py-1 capitalize transition-all dark:bg-black bg-blue-600 border rounded dark:text-zinc-400 text-white hover:bg-white hover:text-black border-zinc-400"
+            className="flex items-center px-4 py-1 text-white capitalize transition-all bg-blue-600 border rounded dark:bg-black dark:text-zinc-400 hover:bg-white hover:text-black border-zinc-400"
             href="/signup"
           >
             signup

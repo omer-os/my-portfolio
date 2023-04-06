@@ -25,6 +25,7 @@ specifiers:
   react-icons: ^4.7.1
   remark: ^14.0.2
   remark-html: ^15.0.2
+  supports-color: ^9.3.1
   tailwindcss: ^3.3.1
   typescript: 4.9.5
 
@@ -34,7 +35,7 @@ dependencies:
   '@radix-ui/react-hover-card': 1.0.5_zula6vjvt3wdocc4mwcxqa6nzi
   '@radix-ui/react-select': 1.2.1_zula6vjvt3wdocc4mwcxqa6nzi
   '@radix-ui/react-switch': 1.0.2_biqbaboplfbrettd7655fr4n2y
-  '@sanity/client': 5.2.2
+  '@sanity/client': 5.2.2_supports-color@9.3.1
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.3.1
   '@types/node': 18.14.0
   '@types/react': 18.0.28
@@ -47,8 +48,9 @@ dependencies:
   react-css-theme-switcher: 0.3.0_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
-  remark: 14.0.2
+  remark: 14.0.2_supports-color@9.3.1
   remark-html: 15.0.2
+  supports-color: 9.3.1
   typescript: 4.9.5
 
 devDependencies:
@@ -642,12 +644,12 @@ packages:
       '@babel/runtime': 7.21.0
     dev: false
 
-  /@sanity/client/5.2.2:
+  /@sanity/client/5.2.2_supports-color@9.3.1:
     resolution: {integrity: sha512-AhOLSIZI0IO6/vDYYQekhAokqiAmDW2bVvNx3xW8T2hpJLRKHsw98Y+iOcX4dnH6y1Y7IO6upgb76D35xa2Szg==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 4.0.0
-      get-it: 8.0.9
+      get-it: 8.0.9_supports-color@9.3.1
       rxjs: 7.8.0
     transitivePeerDependencies:
       - supports-color
@@ -893,7 +895,7 @@ packages:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: false
 
-  /debug/4.3.4:
+  /debug/4.3.4_supports-color@9.3.1:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
@@ -903,6 +905,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+      supports-color: 9.3.1
     dev: false
 
   /decode-named-character-reference/1.0.2:
@@ -990,7 +993,7 @@ packages:
       debug:
         optional: true
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4_supports-color@9.3.1
     dev: false
 
   /fraction.js/4.2.0:
@@ -1030,11 +1033,11 @@ packages:
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
 
-  /get-it/8.0.9:
+  /get-it/8.0.9_supports-color@9.3.1:
     resolution: {integrity: sha512-Nm54soj8MEXTmkzAR0iWGP/TCAfsueOOWzBTvTB9ch0ubUE/5FbV7tAptbmsYzpk9QzA6zhcadqTCwP3prRfHw==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4_supports-color@9.3.1
       decompress-response: 7.0.0
       follow-redirects: 1.15.2_debug@4.3.4
       into-stream: 6.0.0
@@ -1303,14 +1306,14 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /mdast-util-from-markdown/1.3.0:
+  /mdast-util-from-markdown/1.3.0_supports-color@9.3.1:
     resolution: {integrity: sha512-HN3W1gRIuN/ZW295c7zi7g9lVBllMgZE40RxCX37wrTPWXCWtpvOZdfnuK+1WNpvZje6XuJeI3Wnb4TJEUem+g==}
     dependencies:
       '@types/mdast': 3.0.11
       '@types/unist': 2.0.6
       decode-named-character-reference: 1.0.2
       mdast-util-to-string: 3.2.0
-      micromark: 3.1.0
+      micromark: 3.1.0_supports-color@9.3.1
       micromark-util-decode-numeric-character-reference: 1.0.0
       micromark-util-decode-string: 1.0.2
       micromark-util-normalize-identifier: 1.0.0
@@ -1517,11 +1520,11 @@ packages:
     resolution: {integrity: sha512-DCfg/T8fcrhrRKTPjRrw/5LLvdGV7BHySf/1LOZx7TzWZdYRjogNtyNq885z3nNallwr3QUKARjqvHqX1/7t+w==}
     dev: false
 
-  /micromark/3.1.0:
+  /micromark/3.1.0_supports-color@9.3.1:
     resolution: {integrity: sha512-6Mj0yHLdUZjHnOPgr5xfWIMqMWS12zDN6iws9SLuSz76W8jTtAv24MN4/CL7gJrl5vtxGInkkqDv/JIoRsQOvA==}
     dependencies:
       '@types/debug': 4.1.7
-      debug: 4.3.4
+      debug: 4.3.4_supports-color@9.3.1
       decode-named-character-reference: 1.0.2
       micromark-core-commonmark: 1.0.6
       micromark-factory-space: 1.0.0
@@ -1921,11 +1924,11 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /remark-parse/10.0.1:
+  /remark-parse/10.0.1_supports-color@9.3.1:
     resolution: {integrity: sha512-1fUyHr2jLsVOkhbvPRBJ5zTKZZyD6yZzYaWCS6BPBdQ8vEMBCH+9zNCDA6tET/zHCi/jLqjCWtlJZUPk+DbnFw==}
     dependencies:
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.3.0
+      mdast-util-from-markdown: 1.3.0_supports-color@9.3.1
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
@@ -1939,11 +1942,11 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /remark/14.0.2:
+  /remark/14.0.2_supports-color@9.3.1:
     resolution: {integrity: sha512-A3ARm2V4BgiRXaUo5K0dRvJ1lbogrbXnhkJRmD0yw092/Yl0kOCZt1k9ZeElEwkZsWGsMumz6qL5MfNJH9nOBA==}
     dependencies:
       '@types/mdast': 3.0.11
-      remark-parse: 10.0.1
+      remark-parse: 10.0.1_supports-color@9.3.1
       remark-stringify: 10.0.2
       unified: 10.1.2
     transitivePeerDependencies:
@@ -2047,6 +2050,11 @@ packages:
       mz: 2.7.0
       pirates: 4.0.5
       ts-interface-checker: 0.1.13
+
+  /supports-color/9.3.1:
+    resolution: {integrity: sha512-knBY82pjmnIzK3NifMo3RxEIRD9E0kIzV4BKcyTZ9+9kWgLMxd4PrsTSMoFQUabgRBbF8KOLRDCyKgNV+iK44Q==}
+    engines: {node: '>=12'}
+    dev: false
 
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}

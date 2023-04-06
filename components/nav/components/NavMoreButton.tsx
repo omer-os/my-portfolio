@@ -21,27 +21,27 @@ export default function NavMoreButton() {
       >
         <Link
           href="/gallery"
-          className="bg-white/10 relative backdrop-blur-md py-1 px-2 border dark:border-zinc-800/50 border-zinc-200 rounded flex flex-col"
+          className="relative flex flex-col px-2 py-1 border rounded bg-white/10 backdrop-blur-md dark:border-zinc-800/50 border-zinc-200"
         >
           <div className="self-start text-sm font-bold">Gallery</div>
           <div className="absolute text-zinc-400 top-2 right-2">
             <TbExternalLink />
           </div>
-          <div className="mt-auto flex flex-col">
-            <div className="font-bold text-sm flex gap-2 items-center">
+          <div className="flex flex-col mt-auto">
+            <div className="flex items-center gap-2 text-sm font-bold">
               <FaImages size={12} />
               <span className="pb-0.5">My gallery</span>
             </div>
-            <div className="text-zinc-400 text-xs mt-1">
+            <div className="mt-1 text-xs text-zinc-400">
               see my gallery of images and other stuff
             </div>
           </div>
         </Link>
         <div className="flex flex-col gap-2">
-          <div className="p-2 text-sm hover:bg-white/10 flex-1 hover:backdrop-blur-md transition-all border border-zinc-800/50 rounded">
+          <div className="flex-1 p-2 text-sm transition-all border rounded hover:bg-white/10 hover:backdrop-blur-md border-zinc-800/50">
             comming soon...
           </div>
-          <div className="p-2 text-sm hover:bg-white/10 flex-1 hover:backdrop-blur-md transition-all border border-zinc-800/50 rounded">
+          <div className="flex-1 p-2 text-sm transition-all border rounded hover:bg-white/10 hover:backdrop-blur-md border-zinc-800/50">
             comming soon...
           </div>
         </div>

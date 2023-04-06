@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen body text-white bg-black">
+      <body className="relative min-h-screen text-white bg-black body">
         <MainLayout>
           {children}
           <Analytics />

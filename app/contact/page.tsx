@@ -32,47 +32,47 @@ export default function page() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto py-16 px-6">
+    <div className="max-w-5xl px-6 py-16 mx-auto">
       <div className="text-3xl font-bold">
         Feel free to contact me for any reason
       </div>
 
-      <p className="text-zinc-400 sm:w-4/6 text-sm mt-2">
+      <p className="mt-2 text-sm text-zinc-400 sm:w-4/6">
         Please feel free to contact me for any questions or suggestions. Kindly
         refrain from spamming this working contact form and respect its purpose.
         Rest assured, I will get back to you as soon as possible via the contact
         URL you provide. Thank you.{" "}
       </p>
 
-      <div className="p-3 rounded border border-zinc-600 mt-6">
+      <div className="p-3 mt-6 border rounded border-zinc-600">
         <div className="text-xl font-bold">Send Me Massege</div>
-        <div className="mt-4 flex flex-col gap-4">
-          <div className="flex md:flex-row flex-col flex-1 gap-4">
+        <div className="flex flex-col gap-4 mt-4">
+          <div className="flex flex-col flex-1 gap-4 md:flex-row">
             <div className="relative flex-1">
               <input
                 type="text"
-                className="w-full border pl-10 bg-black border-zinc-600 rounded p-2"
+                className="w-full p-2 pl-10 bg-black border rounded border-zinc-600"
                 placeholder="Your Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 maxLength={20}
                 minLength={3}
               />
-              <div className="absolute top-1 left-2 p-2 text-zinc-600">
+              <div className="absolute p-2 top-1 left-2 text-zinc-600">
                 <BiSearch />
               </div>
             </div>
             <div className="relative flex-1">
               <input
                 type="text"
-                className="w-full border pl-10 bg-black border-zinc-600 rounded p-2"
+                className="w-full p-2 pl-10 bg-black border rounded border-zinc-600"
                 placeholder="a contact link, instagram, email etc..."
                 maxLength={30}
                 minLength={3}
                 onChange={(e) => setContact(e.target.value)}
                 value={contact}
               />
-              <div className="absolute top-1 left-2 p-2 text-zinc-600">
+              <div className="absolute p-2 top-1 left-2 text-zinc-600">
                 <BiSearch />
               </div>
             </div>
@@ -87,11 +87,11 @@ export default function page() {
                 ref={textAreaRef}
                 rows={1}
                 value={message}
-                className="w-full border pl-10 whitespace-pre-wrap resize-y bg-black border-zinc-600 min-h-max rounded p-2"
+                className="w-full p-2 pl-10 whitespace-pre-wrap bg-black border rounded resize-y border-zinc-600 min-h-max"
               />
             </div>
 
-            <div className="absolute top-1 left-2 p-2 text-zinc-600">
+            <div className="absolute p-2 top-1 left-2 text-zinc-600">
               <BiSearch />
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function page() {
             <Dialog.Trigger asChild>
               <button
                 onClick={HandleSubmit}
-                className="bg-white text-black py-2 sm:w-max w-full px-4 rounded hover:bg-white/10 border border-white hover:text-white transition-all active:scale-95"
+                className="w-full px-4 py-2 text-black transition-all bg-white border border-white rounded sm:w-max hover:bg-white/10 hover:text-white active:scale-95"
               >
                 Send
               </button>
@@ -111,7 +111,7 @@ export default function page() {
             <Dialog.Portal>
               <Dialog.Overlay className="fixed inset-0 bg-black/50" />
 
-              <Dialog.Content className="fixed p-10 inset-0 flex items-center justify-center">
+              <Dialog.Content className="fixed inset-0 flex items-center justify-center p-10">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -130,20 +130,20 @@ export default function page() {
                       </p>
                     </Dialog.Description>
 
-                    <div className="flex  gap-4 w-full">
-                      <Dialog.Close asChild className="mt-4 flex-1">
+                    <div className="flex w-full gap-4">
+                      <Dialog.Close asChild className="flex-1 mt-4">
                         <button
                           onClick={() => setOpenDialog(false)}
-                          className="bg-white flex-1 text-center text-black py-2 px-4 rounded hover:bg-white/10 border border-white hover:text-white transition-all active:scale-95"
+                          className="flex-1 px-4 py-2 text-center text-black transition-all bg-white border border-white rounded hover:bg-white/10 hover:text-white active:scale-95"
                         >
                           Close
                         </button>
                       </Dialog.Close>
 
-                      <Dialog.Close asChild className="mt-4 flex-1">
+                      <Dialog.Close asChild className="flex-1 mt-4">
                         <Link
                           href="/"
-                          className="bg-black flex-1 text-center text-white py-2 px-4 rounded hover:bg-white border border-white hover:text-black transition-all active:scale-95"
+                          className="flex-1 px-4 py-2 text-center text-white transition-all bg-black border border-white rounded hover:bg-white hover:text-black active:scale-95"
                         >
                           Back To Home Page
                         </Link>

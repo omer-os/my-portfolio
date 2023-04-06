@@ -8,24 +8,24 @@ export default function Card({ template }: { template: Template }) {
   return (
     <Link
       href={`/templates/${template.slug.current}`}
-      className="rounded-xl border hover:border-white transition-all border-zinc-800 group overflow-hidden relative"
+      className="relative overflow-hidden transition-all border rounded-xl hover:border-white border-zinc-800 group"
     >
       <div className="img relative w-full h-[15em]">
         <Image
           src={template.coverimage.asset.url}
-          className="object-cover rounded w-full h-full group-hover:scale-110 transition-all duration-300"
+          className="object-cover w-full h-full transition-all duration-300 rounded group-hover:scale-110"
           fill
           alt={template.title}
         />
       </div>
 
       <div className="p-5 mt-2">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div className="text-xl font-bold capitalize">{template.title}</div>
 
           <div className="text-zinc-400">$20</div>
         </div>
-        <div className="text-sm mt-1 text-zinc-400 line-clamp-2">
+        <div className="mt-1 text-sm text-zinc-400 line-clamp-2">
           {template.description}
         </div>
       </div>

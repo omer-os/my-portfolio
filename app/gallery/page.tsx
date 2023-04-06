@@ -32,13 +32,13 @@ export default async function Page() {
 
   return (
     <div className="max-w-5xl px-6 mx-auto my-10">
-      <div className=" text-4xl font-bold">My Gallery</div>
+      <div className="text-4xl font-bold ">My Gallery</div>
       <div className="text-zinc-400 text-lg mt-2 max-w-[30em]">
         Discover my transformative college memories through photos that capture
         the excitement of new beginnings and the bittersweet farewells of
         graduation day.
       </div>
-      <div className="grid mt-10 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {data.map((image) => (
           <div
             key={image.slug.current}
@@ -46,7 +46,7 @@ export default async function Page() {
             `}
           >
             <Image
-              className="absolute bg-zinc-800 inset-0 object-cover w-full h-full rounded-xl"
+              className="absolute inset-0 object-cover w-full h-full bg-zinc-800 rounded-xl"
               src={image.image.asset.url}
               alt="gallery item"
               fill
