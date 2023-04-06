@@ -17,9 +17,9 @@ export default function BlogsLeftSide({
 }) {
   const [ShowInputText, setShowInputText] = useState(false);
   return (
-    <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] bg-black z-30">
+    <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] dark:bg-black z-30">
       <div
-        className={`flex md:hidden capitalize items-center py-3 px-6 border-b border-zinc-800 justify-between ${
+        className={`flex md:hidden capitalize items-center py-3 px-6 border-b dark:border-zinc-800 justify-between ${
           ShowInputText ? "!hidden" : ""
         }`}
       >
@@ -32,7 +32,7 @@ export default function BlogsLeftSide({
           </Dialog.Trigger>
 
           <>
-            <Dialog.Portal className="z-50 text-white">
+            <Dialog.Portal className="z-50 dark:text-white">
               <Dialog.Overlay asChild>
                 <motion.div
                   className="bg-black/30 backdrop-blur-lg fixed inset-0 z-[998]"
@@ -48,11 +48,11 @@ export default function BlogsLeftSide({
                   animate={{ opacity: 1, bottom: 0 }}
                   exit={{ opacity: 0, bottom: -20 }}
                 >
-                  <div className="p-6 bg-black border rounded border-zinc-400">
+                  <div className="p-6 dark:bg-black bg-zinc-300 border rounded border-zinc-400">
                     <Dialog.Title className="flex items-center justify-between font-bold">
                       <p>Categories</p>
                       <Dialog.Close asChild>
-                        <button className="p-2 rounded hover:bg-zinc-900">
+                        <button className="p-2 rounded dark:hover:bg-zinc-900">
                           <IoClose size={18} />
                         </button>
                       </Dialog.Close>
@@ -66,12 +66,12 @@ export default function BlogsLeftSide({
                               className={`${
                                 category === i.slug.current &&
                                 "!font-bold !text-white"
-                              } transition-all capitalize font-normal text-zinc-400 rounded  relative hover:bg-zinc-900 `}
+                              } transition-all capitalize font-normal dark:text-zinc-400 rounded  relative hover:bg-zinc-900 `}
                             >
                               {category === i.slug.current && (
                                 <motion.div
                                   layoutId="bgoreiuhouroin"
-                                  className="absolute top-0 left-0 w-full h-full rounded bg-zinc-800"
+                                  className="absolute top-0 left-0 w-full h-full rounded dark:bg-zinc-800 bg-zinc-300"
                                 />
                               )}
                               <div className="relative z-10 flex items-center gap-2 p-2">
@@ -90,7 +90,7 @@ export default function BlogsLeftSide({
         </Dialog.Root>
         <button
           onClick={() => setShowInputText(!ShowInputText)}
-          className="gap-2 p-2 transition-all rounded active:scale-95 hover:bg-zinc-900"
+          className="gap-2 p-2 transition-all rounded active:scale-95 hover:bg-zinc-300  dark:hover:bg-zinc-900"
         >
           <BiSearch />
         </button>

@@ -27,7 +27,7 @@ export default function HomeSkillsSection() {
           {skills.map((i) => (
             <div
               key={i}
-              className="bg-white/10 border border-zinc-800 sm:min-w-[7em] py-2 px-3 rounded capitalize grow text-center sm:text-base text-sm hover:scale-105 transition-all hover:!bg-zinc-800"
+              className="bg-white/10 border dark:border-zinc-800 border-zinc-400 sm:min-w-[7em] py-2 px-3 rounded capitalize grow text-center sm:text-base text-sm hover:scale-105 transition-all dark:hover:!bg-zinc-800 hover:bg-zinc-300"
             >
               {i}
             </div>

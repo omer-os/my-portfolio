@@ -33,8 +33,8 @@ export default function NavChip({
       onMouseLeave={handleMouseLeave}
     >
       <span
-        className={`z-10 relative text-zinc-400 ${
-          page.link === pathname && "!text-white"
+        className={`z-10 relative dark:text-zinc-400 text-zinc-500 ${
+          page.link === pathname && "dark:!text-white text-black"
         }`}
       >
         {page.name}
@@ -42,7 +42,7 @@ export default function NavChip({
       {isHovered && (
         <motion.div
           layoutId="mwruiubeiyeigyewiy"
-          className="absolute top-0 left-0 w-full h-full rounded bg-zinc-900"
+          className="absolute top-0 left-0 w-full h-full rounded dark:bg-zinc-900 bg-zinc-300"
         />
       )}
 
@@ -52,8 +52,8 @@ export default function NavChip({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 2, opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4,delay: 0.2 }}
-            className="absolute w-full left-0 -bottom-3 bg-white h-[.05em]"
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="absolute w-full left-0 -bottom-3 dark:bg-white bg-blue-600 h-[.05em]"
           />
         )}
       </AnimatePresence>

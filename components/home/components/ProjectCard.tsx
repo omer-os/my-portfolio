@@ -7,9 +7,9 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <Link
       href={project.demo}
-      className="flex flex-1 min-w-[15em] flex-col  rounded-xl p-3 relative group hover:scale-105 transition-all active:scale-95 border border-zinc-900 bg-black/5"
+      className="flex flex-1 min-w-[15em] flex-col  rounded-xl p-3 relative group hover:scale-105 transition-all active:scale-95 border dark:border-zinc-900 border-zinc-300 dark:bg-black/5"
     >
-      <div className="absolute z-10 flex items-center justify-center w-8 h-8 transition-all border rounded opacity-0 border-zinc-700 hover:bg-white/10 bg-black/0 group-hover:top-6 top-1 group-hover:right-6 right-1 group-hover:opacity-100">
+      <div className="absolute z-10 flex items-center justify-center w-8 h-8 transition-all border rounded opacity-0 dark:border-zinc-700 border-white hover:bg-white/10 bg-black/0 group-hover:top-6 top-1 group-hover:right-6 right-1 group-hover:opacity-100 text-white dark:text-black">
         <HiOutlineExternalLink />
       </div>
 

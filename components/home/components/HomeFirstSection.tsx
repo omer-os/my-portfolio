@@ -50,7 +50,7 @@ export default function HomeFirstSection() {
           </div>
         </div>
 
-        <p className="text-zinc-300 sm:text-base text-xs capitalize max-w-[20em]">
+        <p className="dark:text-zinc-300 text-zinc-600 sm:text-base text-xs capitalize max-w-[20em]">
           frontend web developer | musician | dental technician
         </p>
         <p className="text-sm sm:text-xl">
@@ -64,11 +64,11 @@ export default function HomeFirstSection() {
       <div className="flex gap-6 mt-6 sm:mt-10">
         <Link
           href="/projects"
-          className="px-4 py-2 text-sm font-bold rounded gradient-bg sm:text-base"
+          className="px-4 py-2 text-white text-sm font-bold rounded gradient-bg sm:text-base"
         >
           See Projects
         </Link>
-        <button className="px-4 py-2 text-sm font-bold rounded bg-zinc-900 sm:text-base">
+        <button className="px-4 py-2 text-sm bg-zinc-300 font-bold rounded dark:bg-zinc-900 sm:text-base">
           Download Resume
         </button>
       </div>

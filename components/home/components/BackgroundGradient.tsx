@@ -13,7 +13,7 @@ export default function BackgroundGradient() {
             height={1000}
           />
 
-          <div className="z-10 bg-black/70 absolute backdrop-blur-[3em] -left-[7em] -top-[7em] -right-[7em] -bottom-[7em] "></div>
+          <div className="z-10 dark:bg-black/70 bg-white/60 absolute backdrop-blur-[3em] -left-[7em] -top-[7em] -right-[7em] -bottom-[7em] "></div>
         </div>
       </div>
     </div>

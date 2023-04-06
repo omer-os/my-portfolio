@@ -8,6 +8,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as Select from "@radix-ui/react-select";
+import ThemeSwitch from "./ThemeSwitch";
 
 export default function BurgerButton() {
   const [OpenSideBar, setOpenSideBar] = useState(false);
@@ -24,12 +25,12 @@ export default function BurgerButton() {
       </button>
 
       <motion.div
-        className={`sidebar fixed transition-all duration-300 bg-black pt-24 px-6 w-full h-full -left-full top-0 z-40 flex flex-col ${
+        className={`sidebar fixed transition-all duration-300 dark:bg-black bg-white pt-24 px-6 w-full h-full -left-full top-0 z-40 flex flex-col ${
           OpenSideBar && "!left-0"
         }`}
       >
         <div className="text-2xl font-bold">Pages</div>
-        <div className="flex flex-col mt-4 divide-y-2 divide-zinc-900">
+        <div className="flex flex-col mt-4 divide-y-2 dark:divide-zinc-900 divide-zinc-300">
           {[
             {
               name: "home",
@@ -50,8 +51,8 @@ export default function BurgerButton() {
           ].map((i) => (
             <Link
               onClick={() => setOpenSideBar(false)}
-              className={`capitalize py-2 text-zinc-500 hover:bg-zinc-900 ${
-                i.link === pathname && "!text-white"
+              className={`capitalize py-2 text-zinc-500 dark:hover:bg-zinc-900 hover:zinc-300 ${
+                i.link === pathname && "dark:!text-white text-black"
               }`}
               href={i.link}
               key={i.link}
@@ -63,39 +64,12 @@ export default function BurgerButton() {
 
         <div className="flex flex-col mt-10">
           <div className="text-2xl font-bold">Settings</div>
-          <div className="flex flex-col mt-4 divide-y-2 divide-zinc-900">
+          <div className="flex flex-col mt-4 divide-y-2 dark:divide-zinc-900">
             <div className="flex items-center justify-between px-2 py-2 text-zinc-400">
               <span>Theme</span>
 
               <div className="relative z-50">
-                <Select.Root>
-                  <Select.Trigger className="flex items-center gap-2 px-3 py-1 border rounded text-zinc-400 border-zinc-800">
-                    <Select.Value placeholder={SystemTheme} />
-                    <Select.Icon>
-                      <BsChevronExpand />
-                    </Select.Icon>
-                  </Select.Trigger>
-                  <>
-                    <Select.Content
-                      align="start"
-                      className="z-50 p-1 text-sm rounded bg-zinc-900"
-                      // @ts-ignore
-                      onSelectionChange={(value) => setSystemTheme(value)}
-                      // @ts-ignore
-                      value={SystemTheme}
-                    >
-                      {["light", "dark", "system"].map((i) => (
-                        <Select.Item
-                          className="min-w-[7em] rounded capitalize hover:bg-zinc-800 p-2"
-                          value={i}
-                          key={i}
-                        >
-                          <Select.ItemText>{i}</Select.ItemText>
-                        </Select.Item>
-                      ))}
-                    </Select.Content>
-                  </>
-                </Select.Root>
+                <ThemeSwitch />
               </div>
             </div>
           </div>

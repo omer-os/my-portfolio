@@ -1,48 +1,66 @@
-
 #cards:hover > .card::after {
-    opacity: 1;
-  }
-  .card {
-    position: relative;
-  }
-  
-  .card > * {
-    z-index: 20;
-  }
-  
-  .card:hover::before {
-    opacity: 1;
-  }
-  
-  .card::before,
-  .card::after {
-    z-index: -20;
-    border-radius: inherit;
-    content: "";
-    height: 100%;
-    left: 0px;
-    opacity: 0;
-    position: absolute;
-    top: 0px;
-    transition: opacity 500ms;
-    width: 100%;
-  }
-  
+  opacity: 1;
+}
+.card {
+  position: relative;
+}
+
+.card > * {
+  z-index: 20;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card::after {
+  z-index: -20;
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
+}
+
+.card::after {
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+/* if system theme is 
+  light, then use this */
+
+@media (prefers-color-scheme: light) {
   .card::before {
     background: radial-gradient(
       800px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.06),
+      rgba(0, 0, 0, 0.151),
       transparent 40%
     );
-    z-index: 3;
   }
-  
   .card::after {
     background: radial-gradient(
       600px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.4),
+      rgba(0, 0, 0, 0.4),
       transparent 40%
     );
-    z-index: 1;
   }
-  
+}

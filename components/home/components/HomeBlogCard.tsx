@@ -19,7 +19,7 @@ export default function HomeBlogCard({ blog }: { blog: Blog }) {
   return (
     <Link href={`/blog/${blog.slug.current}`}>
       <GlowingBox>
-        <div className="flex flex-col w-full h-full px-6 py-5 border sm:px-8 bg-zinc-900/80 border-zinc-800/40 rounded-xl group">
+        <div className="flex flex-col w-full h-full px-6 py-5 border sm:px-8 dark:bg-zinc-900/80 bg-black/10 border-zinc-800/40 rounded-xl group">
           <div className="text-xs capitalize text-zinc-400">
             {formatDate(blog.publishedAt)}
           </div>

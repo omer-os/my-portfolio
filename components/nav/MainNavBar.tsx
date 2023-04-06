@@ -6,7 +6,7 @@ import NavMoreButton from "./components/NavMoreButton";
 
 export default function MainNavBar() {
   return (
-    <header className="sticky top-0 left-0 z-50 p-3 px-6 bg-black border-b border-zinc-800">
+    <header className="sticky top-0 left-0 z-50 p-3 px-6 bg-white dark:bg-black border-b dark:border-zinc-800 border-zinc-400">
       <nav className="relative z-10 flex items-center justify-between max-w-5xl mx-auto">
         <Link
           href="/"
@@ -38,13 +38,13 @@ export default function MainNavBar() {
 
         <div className="hidden gap-4 md:flex">
           <Link
-            className="px-3 py-1 rounded hover:!text-white text-zinc-400"
+            className="px-3 py-1 rounded dark:hover:!text-white hover:text-black dark:text-zinc-400 text-zinc-500"
             href="/templates"
           >
             Templates
           </Link>
           <Link
-            className="flex items-center px-4 py-1 capitalize transition-all bg-black border rounded text-zinc-400 hover:bg-white hover:text-black border-zinc-400"
+            className="flex items-center px-4 py-1 capitalize transition-all dark:bg-black bg-blue-600 border rounded dark:text-zinc-400 text-white hover:bg-white hover:text-black border-zinc-400"
             href="/signup"
           >
             signup
@@ -54,7 +54,7 @@ export default function MainNavBar() {
         <BurgerButton />
       </nav>
 
-      <div className="absolute inset-0 top-0 left-0 bg-black/30 backdrop-blur-lg"></div>
+      <div className="absolute inset-0 top-0 left-0 dark:bg-black/30 bg-white/30 backdrop-blur-lg"></div>
     </header>
   );
 }

@@ -5,7 +5,7 @@ import { RiInstagramFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center p-4 border-t border-zinc-800">
+    <div className="flex flex-col items-center p-4 border-t dark:border-zinc-800 border-zinc-300">
       <div className="flex gap-4 w-max">
         <Link
           href="http://github.com/omer-os/"
