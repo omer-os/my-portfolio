@@ -7,7 +7,14 @@ export const GetAllBlogs = async () => {
         slug{
             current
         },
-        publishedAt}
+        publishedAt,
+        blogCategory->{
+            title,
+            slug{
+                current
+            }
+          }
+      }
       `);
   return data;
 };
@@ -86,5 +93,4 @@ export const GetBlogsByCategory = async (slug: string) => {
     { slug }
   );
   return data;
-}
-
+};

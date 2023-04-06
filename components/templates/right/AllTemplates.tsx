@@ -6,13 +6,7 @@ export default async function AllTemplates() {
   const data: Template[] = await GetAllTemplates();
 
   return (
-    <div
-      className="grid 
-    gap-4
-lg:grid-cols-4
-    md:grid-cols-2
-    "
-    >
+    <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 mt-10 ">
       {data.map((template) => (
         <Card key={template.slug.current} template={template} />
       ))}

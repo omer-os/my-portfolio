@@ -1,20 +1,4 @@
-import { GetAllBlogs } from "@/pages/api/blog";
-import Link from "next/link";
-import { BiSearch } from "react-icons/bi";
-import BlogsLeftSide from "./left/BlogsLeftSide";
-type PageProps = {
-  searchParams: {
-    category: string;
-  };
-};
-
-export default async function BloghMain2({ searchParams }: PageProps) {
-  const data: {
-    slug: {
-      current: string;
-    };
-  }[] = await GetAllBlogs();
-
+export default async function BloghMain2() {
   return (
     <div className="">
       <div>

@@ -1,6 +1,5 @@
 import { Blog } from "@/components/interfaces/blog";
-import { GetAllBlogs } from "@/pages/api/blog";
-import { GetBlogsByCategory } from "@/pages/api/blogs/Functions";
+import { GetAllBlogs, GetBlogsByCategory } from "@/pages/api/blogs/Functions";
 import React from "react";
 import Card from "./Card";
 
@@ -11,6 +10,8 @@ export default async function BlogsRight({ category }: { category: string }) {
   } else {
     data = await GetBlogsByCategory(category);
   }
+
+  console.log(data);
 
   return (
     <div className="flex-1 min-h-full px-6 md:border-l border-zinc-800 md:ml-5 md:pl-14 md:px-0 py-7">
