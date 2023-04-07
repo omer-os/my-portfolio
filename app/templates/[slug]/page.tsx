@@ -1,5 +1,8 @@
 import { Template } from "@/components/templates/right/AllTemplates";
-import { GetTemplateBySlug } from "@/pages/api/templates/Functions";
+import {
+  GetAllTemplates,
+  GetTemplateBySlug,
+} from "@/pages/api/templates/Functions";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -10,6 +13,15 @@ type PageProps = {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  const data: Template[] = await GetAllTemplates();
+
+  return data.map((template) => ({
+    templateid: template.slug.current,
+  }));
+}
+
 export default async function page({ params }: PageProps) {
   const template: Template = await GetTemplateBySlug(params.slug);
 

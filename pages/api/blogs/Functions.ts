@@ -94,3 +94,17 @@ export const GetBlogsByCategory = async (slug: string) => {
   );
   return data;
 };
+
+export const SearchForBlogg = async (search: string) => {
+  const data = await client.fetch(
+    `*[_type == "blogs" && title match $search]{
+    title,
+    slug{
+        current
+    }
+  }
+    `,
+    { search }
+  );
+  return data;
+};

@@ -1,6 +1,11 @@
 import BlogsLeftSide from "@/components/blog/left/BlogsLeftSide";
 import BlogsRight from "@/components/blog/right/BlogsRight";
-import { GetAllCategories } from "@/pages/api/blogs/Functions";
+import { Blog } from "@/components/interfaces/blog";
+import {
+  GetAllBlogs,
+  GetAllCategories,
+  GetBlogsByCategory,
+} from "@/pages/api/blogs/Functions";
 import React, { Suspense } from "react";
 import { VscLoading } from "react-icons/vsc";
 
@@ -13,6 +18,12 @@ type PageProps = {
 export default async function page({ searchParams }: PageProps) {
   if (!searchParams.category) searchParams.category = "all";
   const categories = await GetAllCategories();
+  let data: Blog[] = [];
+  if (searchParams.category === "all") {
+    data = await GetAllBlogs();
+  } else {
+    data = await GetBlogsByCategory(searchParams.category);
+  }
 
   categories.push({
     title: "all",
@@ -34,7 +45,7 @@ export default async function page({ searchParams }: PageProps) {
         }
       >
         {/* @ts-ignore */}
-        <BlogsRight category={searchParams.category} />
+        <BlogsRight data={data} />
       </Suspense>
     </div>
   );

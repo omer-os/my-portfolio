@@ -6,6 +6,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "omar chatin",
   description: "Frontend Web Developer | Musician | Dental Technician.",
+  icons: {
+    icon: "/logocircle.png",
+  },
 };
 
 export default function RootLayout({

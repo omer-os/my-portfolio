@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 import * as Dialog from "@radix-ui/react-dialog";
-import { BlogCategory } from "@/components/interfaces/blog";
+import { Blog, BlogCategory } from "@/components/interfaces/blog";
 
 export default function BlogsLeftSide({
   category,
@@ -16,6 +16,21 @@ export default function BlogsLeftSide({
   categories: BlogCategory[];
 }) {
   const [ShowInputText, setShowInputText] = useState(false);
+  const [SearchText, setSearchText] = useState("");
+  const [SearchResults, setSearchResults] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    if (SearchText.length > 0) {
+      fetch(`/api/blogs/search?query=${SearchText}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setSearchResults(data.result);
+        });
+    } else {
+      setSearchResults([]);
+    }
+  }, [SearchText]);
+
   return (
     <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] dark:bg-black bg-white z-30">
       <div
@@ -103,15 +118,46 @@ export default function BlogsLeftSide({
           }
         `}
         >
-          <input
-            type="text"
-            className="w-full px-4 py-2 bg-white border rounded dark:bg-black dark:border-zinc-700 border-zinc-300 pl-9 dark:text-zinc-400 text-zinc-500"
-            placeholder="Search for a blog"
-          />
+          <div className="flex flex-col relative">
+            <input
+              type="text"
+              className="w-full px-4 py-2 bg-white border rounded dark:bg-black dark:border-zinc-700 border-zinc-300 pl-9 dark:text-zinc-400 text-zinc-500"
+              placeholder="Search for a blog"
+              value={SearchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onBlur={() => {
+                setTimeout(() => {
+                  setSearchResults([]);
+                }, 1000);
+              }}
+            />
+
+            <AnimatePresence>
+              {SearchText && SearchResults.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="absolute w-full bg-zinc-900 rounded border border-zinc-800 p-3 top-12 flex flex-col gap-2 z-40"
+                >
+                  <div className="flex font-bold text-sm flex-col bg-zinc-800 rounded p-2 w-full">
+                    {SearchResults.map((i, index) => (
+                      <Link
+                        href={`/blog/${i.slug.current}`}
+                        key={index + i.title}
+                        className="line-clamp-2"
+                      >
+                        {i.title}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <div className="absolute top-3.5 left-3 text-zinc-500 dark:text-zinc-400">
             <BiSearch size={15} />
           </div>
-
           <div className="absolute md:hidden top-2.5 right-3">
             <button
               onClick={() => setShowInputText(false)}

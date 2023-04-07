@@ -1,16 +1,8 @@
 import { Blog } from "@/components/interfaces/blog";
-import { GetAllBlogs, GetBlogsByCategory } from "@/pages/api/blogs/Functions";
 import React from "react";
 import Card from "./Card";
 
-export default async function BlogsRight({ category }: { category: string }) {
-  let data: Blog[] = [];
-  if (category === "all") {
-    data = await GetAllBlogs();
-  } else {
-    data = await GetBlogsByCategory(category);
-  }
-
+export default async function BlogsRight({ data }: { data: Blog[] }) {
   return (
     <div className="flex-1 min-h-full px-6 md:border-l dark:border-zinc-800 border-zinc-300 md:ml-5 md:pl-14 md:px-0 py-7">
       <div className="pb-3 text-3xl font-bold border-b border-zinc-800">
