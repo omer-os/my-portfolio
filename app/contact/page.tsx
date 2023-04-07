@@ -37,21 +37,21 @@ export default function page() {
         Feel free to contact me for any reason
       </div>
 
-      <p className="mt-2 text-sm text-zinc-400 sm:w-4/6">
+      <p className="mt-2 text-sm dark:text-zinc-400 text-zinc-600 sm:w-4/6">
         Please feel free to contact me for any questions or suggestions. Kindly
         refrain from spamming this working contact form and respect its purpose.
         Rest assured, I will get back to you as soon as possible via the contact
         URL you provide. Thank you.{" "}
       </p>
 
-      <div className="p-3 mt-6 border rounded border-zinc-600">
+      <div className="p-3 mt-6 border rounded border-zinc-300 dark:border-zinc-600">
         <div className="text-xl font-bold">Send Me Massege</div>
         <div className="flex flex-col gap-4 mt-4">
           <div className="flex flex-col flex-1 gap-4 md:flex-row">
             <div className="relative flex-1">
               <input
                 type="text"
-                className="w-full p-2 pl-10 bg-black border rounded border-zinc-600"
+                className="w-full p-2 pl-10 bg-white border rounded dark:bg-black border-zinc-600"
                 placeholder="Your Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
@@ -65,7 +65,7 @@ export default function page() {
             <div className="relative flex-1">
               <input
                 type="text"
-                className="w-full p-2 pl-10 bg-black border rounded border-zinc-600"
+                className="w-full p-2 pl-10 bg-white border rounded dark:bg-black border-zinc-600"
                 placeholder="a contact link, instagram, email etc..."
                 maxLength={30}
                 minLength={3}
@@ -87,7 +87,7 @@ export default function page() {
                 ref={textAreaRef}
                 rows={1}
                 value={message}
-                className="w-full p-2 pl-10 whitespace-pre-wrap bg-black border rounded resize-y border-zinc-600 min-h-max"
+                className="w-full p-2 pl-10 whitespace-pre-wrap border resize-y rounded bg-white dark:bg-black border-zinc-600 min-h-max"
               />
             </div>
 
@@ -102,14 +102,14 @@ export default function page() {
             <Dialog.Trigger asChild>
               <button
                 onClick={HandleSubmit}
-                className="w-full px-4 py-2 text-black transition-all bg-white border border-white rounded sm:w-max hover:bg-white/10 hover:text-white active:scale-95"
+                className="w-full px-4 py-2 dark:text-black text-white transition-all dark:bg-white bg-blue-600 border border-white rounded sm:w-max dark:hover:bg-white/10 hover:bg-blue-500 dark:hover:text-white active:scale-95"
               >
                 Send
               </button>
             </Dialog.Trigger>
 
             <Dialog.Portal>
-              <Dialog.Overlay className="fixed inset-0 bg-black/50" />
+              <Dialog.Overlay className="fixed inset-0 bg-black/20 dark:bg-black/50" />
 
               <Dialog.Content className="fixed inset-0 flex items-center justify-center p-10">
                 <motion.div
@@ -118,7 +118,7 @@ export default function page() {
                   exit={{ opacity: 0, y: 50 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <div className="bg-black border border-zinc-700 p-4 rounded max-w-[30em]">
+                  <div className="dark:bg-black dark:text-white bg-white  border border-zinc-700 p-4 rounded max-w-[30em]">
                     <Dialog.Title className="text-xl font-bold">
                       Thank you for your message
                     </Dialog.Title>
@@ -134,7 +134,7 @@ export default function page() {
                       <Dialog.Close asChild className="flex-1 mt-4">
                         <button
                           onClick={() => setOpenDialog(false)}
-                          className="flex-1 px-4 py-2 text-center text-black transition-all bg-white border border-white rounded hover:bg-white/10 hover:text-white active:scale-95"
+                          className="flex-1 px-4 py-2 text-center dark:text-black text-white transition-all dark:bg-white bg-blue-600 dark:border border-white rounded hover:bg-blue-500 dark:hover:bg-white/10 hover:text-white active:scale-95"
                         >
                           Close
                         </button>
@@ -143,9 +143,9 @@ export default function page() {
                       <Dialog.Close asChild className="flex-1 mt-4">
                         <Link
                           href="/"
-                          className="flex-1 px-4 py-2 text-center text-white transition-all bg-black border border-white rounded hover:bg-white hover:text-black active:scale-95"
+                          className="flex-1 px-4 py-2 text-center transition-all border rounded bg-white dark:text-white dark:bg-black dark:hover:bg-white dark:border-zinc-800 border-zinc-300 hover:text-black active:scale-95"
                         >
-                          Back To Home Page
+                          home
                         </Link>
                       </Dialog.Close>
                     </div>

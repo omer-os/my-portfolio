@@ -42,11 +42,12 @@ export default async function Page() {
         {data.map((image) => (
           <div
             key={image.slug.current}
-            className={`relative pb-2/3 h-[25em]
+            className={`relative pb-2/3 h-[25em] overflow-hidden rounded-xl
             `}
           >
             <Image
-              className="absolute inset-0 object-cover w-full h-full bg-zinc-800 rounded-xl"
+              className="object-cover w-full h-full dark:bg-zinc-800 bg-zinc-300 rounded-xl hover:scale-110 transition-all duration-300
+              "
               src={image.image.asset.url}
               alt="gallery item"
               fill

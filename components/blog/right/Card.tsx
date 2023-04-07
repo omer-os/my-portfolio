@@ -10,17 +10,17 @@ export default function Card({ data }: { data: Blog }) {
       className="overflow-hidden rounded-xl"
     >
       <GlowingBox>
-        <div className="relative flex flex-col p-5 border rounded-xl border-zinc-700">
+        <div className="relative flex flex-col p-5 border rounded-xl dark:border-zinc-700 border-zinc-300">
           <div className="relative z-10 text-xl font-bold sm:text-3xl line-clamp-2">
             {data.title}
           </div>
 
           <div className="flex items-center justify-between mt-6">
-            <div className="relative z-10 text-sm text-zinc-400">
+            <div className="relative z-10 text-sm text-zinc-500 dark:text-zinc-400">
               {formatDate(data.publishedAt)}
             </div>
 
-            <div className="relative z-10 px-4 py-1 text-sm capitalize rounded-full text-zinc-400 bg-zinc-900">
+            <div className="relative z-10 px-4 py-1 text-sm capitalize rounded-full text-zinc-400 dark:bg-zinc-900 bg-zinc-200">
               {data.blogCategory.title}
             </div>
           </div>

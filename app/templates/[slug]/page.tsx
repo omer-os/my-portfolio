@@ -12,13 +12,12 @@ type PageProps = {
 };
 export default async function page({ params }: PageProps) {
   const template: Template = await GetTemplateBySlug(params.slug);
-  console.log(template);
 
   return (
     <div className="flex flex-col min-h-screen gap-10 pb-10 md:flex-row md:pb-0">
       {/* LEFT SIDE STARTS HERE */}
       <div className="flex w-full md:sticky top-20 h-max left-0 flex-col py-6 md:max-w-[20em]">
-        <div className="relative md:hidden h-[25em] w-full border border-zinc-800 rounded-xl">
+        <div className="relative md:hidden h-[25em] w-full border border-zinc-400 dark:border-zinc-800 rounded-xl">
           <Image
             src={template.coverimage.asset.url}
             fill
@@ -36,7 +35,7 @@ export default async function page({ params }: PageProps) {
 
         <Link
           href="/templates"
-          className="mt-8 hover:!bg-zinc-800 hover:text-white hover: w-max active:scale-95 rounded py-2 hover:px-3 bg-black transition-all text-zinc-400 md:mt-0 flex items-center gap-2"
+          className="mt-8 dark:hover:!bg-zinc-800 hover:!bg-zinc-300 dark:hover:text-white hover: w-max active:scale-95 rounded py-2 hover:px-3 dark:bg-black bg-white transition-all dark:text-zinc-400 md:mt-0 flex items-center gap-2"
         >
           <BsArrowLeftShort />
           Back to Templates
@@ -56,7 +55,7 @@ export default async function page({ params }: PageProps) {
         </div>
 
         <div className="flex flex-col">
-          <div className="flex flex-col mt-10 divide-y text-zinc-400 divide-zinc-800">
+          <div className="flex flex-col mt-10 divide-y text-zinc-400 dark:divide-zinc-800 divide-zinc-400">
             <div className="flex items-center justify-between py-2">
               <span>Price</span>
               <span>${template.price}</span>
@@ -76,7 +75,7 @@ export default async function page({ params }: PageProps) {
               Contact Me
             </Link>
             <Link
-              className="flex-1 py-2 text-center transition-all border rounded border-zinc-800 hover:bg-white hover:text-black hover:border active:scale-95 "
+              className="flex-1 py-2 text-center transition-all border rounded border-zinc-800 dark:hover:bg-white hover:bg-black hover:text-white dark:hover:text-black hover:border active:scale-95 "
               href={template.demoUrl}
             >
               View Demo
@@ -107,7 +106,7 @@ export default async function page({ params }: PageProps) {
         <div className="mt-6 text-4xl font-bold capitalize">
           {template.title}
         </div>
-        <div className="mt-2 text-zinc-400">{template.description}</div>
+        <div className="mt-2 dark:text-zinc-400">{template.description}</div>
 
         <div className="mt-10 text-2xl font-bold">Demo</div>
         <Link href={template.demoUrl} className="mt-2 text-blue-600">
@@ -130,7 +129,7 @@ export default async function page({ params }: PageProps) {
           ))}
 
           <Link
-            className="flex-1 py-2 mt-6 text-center capitalize transition-all border rounded border-zinc-800 hover:bg-white md:col-span-2 hover:text-black hover:border active:scale-95 "
+            className="flex-1 py-2 mt-6 text-center capitalize transition-all border rounded border-zinc-800 dark:hover:bg-white hover:bg-black md:col-span-2 hover:text-white dark:hover:text-black hover:border active:scale-95 "
             href="/templates"
           >
             view more templates

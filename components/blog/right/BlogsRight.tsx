@@ -12,11 +12,11 @@ export default async function BlogsRight({ category }: { category: string }) {
   }
 
   return (
-    <div className="flex-1 min-h-full px-6 md:border-l border-zinc-800 md:ml-5 md:pl-14 md:px-0 py-7">
+    <div className="flex-1 min-h-full px-6 md:border-l dark:border-zinc-800 border-zinc-300 md:ml-5 md:pl-14 md:px-0 py-7">
       <div className="pb-3 text-3xl font-bold border-b border-zinc-800">
         All Blogs
       </div>
-      <div className="mt-6 capitalize text-zinc-300">
+      <div className="mt-6 capitalize dark:text-zinc-300">
         see all the blogs that I have written
       </div>
 

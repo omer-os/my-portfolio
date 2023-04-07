@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -17,7 +17,7 @@ export default function BlogsLeftSide({
 }) {
   const [ShowInputText, setShowInputText] = useState(false);
   return (
-    <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] dark:bg-black z-30">
+    <div className="md:w-[15em] w-full h-max sticky md:top-28 top-[3.3em] dark:bg-black bg-white z-30">
       <div
         className={`flex md:hidden capitalize items-center py-3 px-6 border-b dark:border-zinc-800 justify-between ${
           ShowInputText ? "!hidden" : ""
@@ -25,7 +25,7 @@ export default function BlogsLeftSide({
       >
         <Dialog.Root>
           <Dialog.Trigger asChild>
-            <button className="flex items-center gap-2 px-2 py-1 font-bold transition-all rounded active:scale-95 hover:bg-zinc-900">
+            <button className="flex items-center gap-2 px-2 py-1 font-bold transition-all rounded active:scale-95 hover:bg-zinc-300 dark:hover:bg-zinc-900">
               <AiOutlineMenuUnfold />
               categories
             </button>
@@ -35,7 +35,7 @@ export default function BlogsLeftSide({
             <Dialog.Portal className="z-50 dark:text-white">
               <Dialog.Overlay asChild>
                 <motion.div
-                  className="bg-black/30 backdrop-blur-lg fixed inset-0 z-[998]"
+                  className="dark:bg-black/30 bg-black-20 backdrop-blur-lg fixed inset-0 z-[998]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function BlogsLeftSide({
                   animate={{ opacity: 1, bottom: 0 }}
                   exit={{ opacity: 0, bottom: -20 }}
                 >
-                  <div className="p-6 border rounded dark:bg-black bg-zinc-300 border-zinc-400">
+                  <div className="p-6 border rounded dark:bg-black bg-white border-zinc-400">
                     <Dialog.Title className="flex items-center justify-between font-bold">
                       <p>Categories</p>
                       <Dialog.Close asChild>
@@ -66,12 +66,12 @@ export default function BlogsLeftSide({
                               className={`${
                                 category === i.slug.current &&
                                 "!font-bold !text-white"
-                              } transition-all capitalize font-normal dark:text-zinc-400 rounded  relative hover:bg-zinc-900 `}
+                              } transition-all capitalize font-normal dark:text-zinc-400 rounded  relative dark:hover:bg-zinc-900 hover:bg-zinc-300 `}
                             >
                               {category === i.slug.current && (
                                 <motion.div
                                   layoutId="bgoreiuhouroin"
-                                  className="absolute top-0 left-0 w-full h-full rounded dark:bg-zinc-800 bg-zinc-300"
+                                  className="absolute top-0 left-0 w-full h-full rounded bg-zinc-800"
                                 />
                               )}
                               <div className="relative z-10 flex items-center gap-2 p-2">
@@ -96,7 +96,7 @@ export default function BlogsLeftSide({
         </button>
       </div>
 
-      <div className="border-b md:flex-col md:border-none border-zinc-800">
+      <div className="border-b md:flex-col md:border-none dark:border-zinc-800 border-zinc-400">
         <div
           className={`relative md:m-0 m-2 ${
             ShowInputText ? "md:flex" : "hidden md:!flex"
@@ -105,10 +105,10 @@ export default function BlogsLeftSide({
         >
           <input
             type="text"
-            className="w-full px-4 py-2 bg-black border rounded border-zinc-700 pl-9 text-zinc-400"
+            className="w-full px-4 py-2 bg-white border rounded dark:bg-black dark:border-zinc-700 border-zinc-300 pl-9 dark:text-zinc-400 text-zinc-500"
             placeholder="Search for a blog"
           />
-          <div className="absolute top-3.5 left-3 text-zinc-400">
+          <div className="absolute top-3.5 left-3 text-zinc-500 dark:text-zinc-400">
             <BiSearch size={15} />
           </div>
 
@@ -128,8 +128,9 @@ export default function BlogsLeftSide({
               href={`/blog?category=${i.slug.current}`}
               key={i.slug.current}
               className={`${
-                category === i.slug.current && "!font-bold !text-white"
-              } transition-all capitalize font-normal text-zinc-400 rounded relative hover:bg-zinc-900/50 `}
+                category === i.slug.current &&
+                "!font-bold dark:!text-white !text-black"
+              } transition-all capitalize font-normal dark:text-zinc-400 text-zinc-500 rounded relative  dark:hover:bg-zinc-900/50 dark:hover:text-white hover:text-black  hover:bg-zinc-300 `}
             >
               <div className="flex items-center gap-2 p-2">
                 <div>{i.title}</div>
@@ -138,7 +139,8 @@ export default function BlogsLeftSide({
               {category === i.slug.current && (
                 <motion.div
                   layoutId="bgoreiuhouroin"
-                  className="absolute top-0 left-0 w-full h-full rounded -z-10 bg-zinc-800"
+                  className="absolute top-0 left-0 w-full h-full rounded -z-10 dark:bg-zinc-800 bg-zinc-200"
+                  transition={{ duration: 0.4 }}
                 />
               )}
             </Link>

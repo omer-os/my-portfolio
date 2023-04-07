@@ -12,7 +12,7 @@ export default function loading() {
         {[1, 2, 3, 4, 5, 6].map((index: number) => (
           <div
             key={index}
-            className={`relative pb-2/3 h-[25em] bg-zinc-800 animate-pulse rounded-xl
+            className={`relative pb-2/3 h-[25em] dark:bg-zinc-800 bg-zinc-300 animate-pulse rounded-xl
             `}
           ></div>
         ))}

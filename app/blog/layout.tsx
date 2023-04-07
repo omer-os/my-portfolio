@@ -5,7 +5,14 @@ export default async function RootLayout({
 }) {
   return (
     <div>
-      <div className="flex justify-center w-full min-h-screen">{children}</div>
+      <div className="flex justify-center w-full min-h-screen">
+        
+        
+        
+        {children}
+        
+        
+        </div>
     </div>
   );
 }

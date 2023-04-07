@@ -9,7 +9,7 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
     <>
       <GlowingBox>
-        <div className="flex flex-col gap-3 border border-zinc-800/50 md:flex-row md:gap-8 rounded-xl bg-zinc-900/40">
+        <div className="flex flex-col gap-3 border border-zinc-400 dark:border-zinc-800/50 md:flex-row md:gap-8 rounded-xl dark:bg-zinc-900/40">
           <div className="img md:p-3 h-[12em] md:h-60  md:w-[20em] w-full">
             <img
               src={project.coverimage?.asset.url}
@@ -32,21 +32,21 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
             <div className="mt-2 text-2xl font-bold md:text-3xl md:mt-4">
               {project.title}
             </div>
-            <div className="text-md text-zinc-200 line-clamp-2">
+            <div className="text-md dark:text-zinc-200 text-zinc-400 line-clamp-2">
               {project.subtitle}{" "}
             </div>
 
             <div className="flex flex-wrap gap-1 mt-3 text-xs md:mt-2 md:gap-5">
               <Link
                 href={project.demo}
-                className="flex items-center gap-2 px-2 py-2 transition-all rounded bg-zinc-900 sm:px-3 ring-0 hover:bg-zinc-800 hover:ring-1 ring-zinc-700"
+                className="flex items-center gap-2 px-2 py-2 transition-all rounded dark:bg-zinc-900 bg-zinc-300 sm:px-3 ring-0 dark:hover:bg-zinc-800 hover:zinc-400 hover:ring-1 ring-zinc-700"
               >
                 <p>view demo</p>
                 <FiArrowUpRight />
               </Link>
               <Link
                 href={project.github}
-                className="flex items-center gap-2 px-2 py-2 transition-all rounded bg-zinc-900 sm:px-3 ring-0 hover:bg-zinc-800 hover:ring-1 ring-zinc-700"
+                className="flex items-center gap-2 px-2 py-2 transition-all rounded dark:bg-zinc-900 bg-zinc-300 sm:px-3 ring-0 dark:hover:bg-zinc-800 hover:zinc-400 hover:ring-1 ring-zinc-700"
               >
                 <VscGithubInverted />
                 <p>source code</p>

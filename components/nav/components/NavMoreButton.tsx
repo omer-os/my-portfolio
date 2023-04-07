@@ -17,7 +17,7 @@ export default function NavMoreButton() {
       </HoverCard.Trigger>
       <HoverCard.Content
         align="start"
-        className="dark:bg-black/80 bg-white/80 backdrop-blur-md min-w-[25em] p-2 rounded border dark:border-zinc-800 border-zinc-200 min-h-[15em] grid grid-cols-[10em,_1fr] gap-2"
+        className="dark:bg-black/80 bg-white/80 backdrop-blur-md min-w-[25em] p-2 rounded border dark:border-zinc-800 border-zinc-200 min-h-[15em] grid grid-cols-[10em,_1fr] gap-2 z-50"
       >
         <Link
           href="/gallery"

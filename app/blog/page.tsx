@@ -1,4 +1,3 @@
-import BloghMain2 from "@/components/blog/BloghMain2";
 import BlogsLeftSide from "@/components/blog/left/BlogsLeftSide";
 import BlogsRight from "@/components/blog/right/BlogsRight";
 import { GetAllCategories } from "@/pages/api/blogs/Functions";

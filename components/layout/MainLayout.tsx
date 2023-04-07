@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeSwitcherProvider } from "react-css-theme-switcher";
 import MainNavBar from "../nav/MainNavBar";
 import Footer from "./Footer";
 
@@ -9,10 +8,10 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="relative min-h-screen dark:text-white dark:bg-black">
       <MainNavBar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }

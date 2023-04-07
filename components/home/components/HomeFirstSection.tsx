@@ -51,7 +51,7 @@ export default function HomeFirstSection() {
         </div>
 
         <p className="dark:text-zinc-300 text-zinc-600 sm:text-base text-xs capitalize max-w-[20em]">
-          frontend web developer | musician | dental technician s
+          frontend web developer | musician | dental technician.
         </p>
         <p className="text-sm sm:text-xl">
           As a Front-End Web Developer with 4+ years of experience, I bring
