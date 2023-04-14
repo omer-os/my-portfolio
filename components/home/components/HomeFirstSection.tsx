@@ -5,6 +5,8 @@ import { ImGithub } from "react-icons/im";
 import { AiFillLinkedin } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
 import Link from "next/link";
+import SimpleButton from "@/components/common/button/SimpleButton";
+import SimpleChip from "@/components/common/chips/SimpleChip";
 
 export default function HomeFirstSection() {
   return (
@@ -38,15 +40,29 @@ export default function HomeFirstSection() {
             omar chatin
           </p>
           <div className="flex gap-4">
-            <SocialLinkChip Img={ImGithub} link="https://github.com/omer-os" />
-            <SocialLinkChip
-              Img={AiFillLinkedin}
-              link="https://www.linkedin.com/in/omar-chatin/"
-            />
-            <SocialLinkChip
-              Img={RiInstagramFill}
-              link="https://www.instagram.com/omar.chatin/"
-            />
+            {[
+              {
+                href: "https://github.com/omer-os",
+                icon: <ImGithub />,
+              },
+              {
+                href: "https://www.linkedin.com/in/omar-chatin/",
+                icon: <AiFillLinkedin />,
+              },
+              {
+                href: "https://www.instagram.com/omar.chatin/",
+                icon: <RiInstagramFill />,
+              },
+            ].map((chip, index) => (
+              <SimpleChip
+                key={index}
+                href={chip.href}
+                variant={"bordered"}
+                size={"sm"}
+              >
+                {chip.icon}
+              </SimpleChip>
+            ))}
           </div>
         </div>
 
@@ -68,9 +84,10 @@ export default function HomeFirstSection() {
         >
           See Projects
         </Link>
-        <button className="px-4 py-2 text-sm font-bold rounded bg-zinc-300 dark:bg-zinc-900 sm:text-base">
+
+        <SimpleButton variant="primary" href="/" bold>
           Download Resume
-        </button>
+        </SimpleButton>
       </div>
     </div>
   );

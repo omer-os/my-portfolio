@@ -3,8 +3,27 @@ import { BiChevronDown, BiMenu } from "react-icons/bi";
 import NavChip from "./components/NavChip";
 import BurgerButton from "./components/BurgerButton";
 import NavMoreButton from "./components/NavMoreButton";
+import LinkTab from "../common/tabs/LinkTab";
 
 export default function MainNavBar() {
+  const navLinks = [
+    {
+      name: "home",
+      href: "/",
+    },
+    {
+      name: "projects",
+      href: "/projects",
+    },
+    {
+      name: "blog",
+      href: "/blog",
+    },
+    {
+      name: "contact",
+      href: "/contact",
+    },
+  ];
   return (
     <header className="sticky top-0 left-0 z-50 p-3 px-6 bg-white border-b dark:bg-black dark:border-zinc-800 border-zinc-400">
       <nav className="relative z-10 flex items-center justify-between max-w-5xl mx-auto">
@@ -15,30 +34,11 @@ export default function MainNavBar() {
           omar chatin
         </Link>
 
-        <div className="hidden md:flex">
-          <NavMoreButton />
-
-          {[
-            {
-              name: "home",
-              link: "/",
-            },
-            {
-              name: "projects",
-              link: "/projects",
-            },
-            {
-              name: "blog",
-              link: "/blog",
-            },
-            {
-              name: "contact",
-              link: "/contact",
-            },
-          ].map((i) => (
-            <NavChip key={i.link} page={i} />
-          ))}
-        </div>
+        <LinkTab
+          links={navLinks}
+          ItemFromBeggining={<NavMoreButton />}
+          underlines
+        />
 
         <div className="hidden gap-4 md:flex">
           <Link
