@@ -4,6 +4,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { VscGithubInverted } from "react-icons/vsc";
 import GlowingBox from "../coms/GlowingBox";
 import { ProjectType } from "../interfaces/projectTypes";
+import UiButton from "../common/ui/button/UiButton";
+import UiLink from "../common/ui/link/UiLink";
 
 export default function ProjectCard({ project }: { project: ProjectType }) {
   return (
@@ -37,21 +39,12 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
             </div>
 
             <div className="flex flex-wrap gap-1 mt-3 text-xs md:mt-2 md:gap-5">
-              <Link
-                href={project.demo}
-                className="flex items-center gap-2 px-2 py-2 transition-all rounded dark:bg-zinc-900 bg-zinc-300 sm:px-3 ring-0 dark:hover:bg-zinc-800 hover:zinc-400 hover:ring-1 ring-zinc-700"
-              >
-                <p>view demo</p>
-                <FiArrowUpRight />
-              </Link>
-              <Link
-                href={project.github}
-                className="flex items-center gap-2 px-2 py-2 transition-all rounded dark:bg-zinc-900 bg-zinc-300 sm:px-3 ring-0 dark:hover:bg-zinc-800 hover:zinc-400 hover:ring-1 ring-zinc-700"
-              >
-                <VscGithubInverted />
-                <p>source code</p>
-                <FiArrowUpRight />
-              </Link>
+              <UiLink href={project.demo} startIcon={<VscGithubInverted />}>
+                view demo
+              </UiLink>
+              <UiLink href={project.github} startIcon={<VscGithubInverted />}>
+                source code
+              </UiLink>
             </div>
 
             <div className="mt-10 font-bold md:text-xl">Learn More</div>

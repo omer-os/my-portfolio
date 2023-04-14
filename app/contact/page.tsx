@@ -1,31 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-
 import * as Dialog from "@radix-ui/react-dialog";
-import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import SimpleButton from "@/components/common/button/SimpleButton";
+import UiButton from "@/components/common/ui/button/UiButton";
+import UiLink from "@/components/common/ui/link/UiLink";
 
 export default function page() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
-  const [OpenDialog, setOpenDialog] = useState(false);
 
   const HandleSubmit = () => {
-    setOpenDialog(true);
-
-    try {
-      fetch(
-        `${window.location.origin}/api/bot/sendmassege?type=contact&message=${message}&contacturl=${contact}&name=${name}`
-      );
-    } catch (e) {
-      console.log(e);
-    }
+    fetch(
+      `${window.location.origin}/api/bot/sendmassege?type=contact&message=${
+        message || "nothing"
+      }&contacturl=${contact || "nothing"}&name=${name || "nothing"}`
+    );
 
     setName("");
     setContact("");
@@ -85,7 +77,6 @@ export default function page() {
                 id="review-text"
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="type your message here..."
-                ref={textAreaRef}
                 rows={1}
                 value={message}
                 className="w-full p-2 pl-10 whitespace-pre-wrap border resize-y rounded bg-white dark:bg-black border-zinc-600 min-h-max"
@@ -99,11 +90,11 @@ export default function page() {
         </div>
 
         <div className="flex gap-4 mt-5">
-          <Dialog.Root open={OpenDialog}>
+          <Dialog.Root>
             <Dialog.Trigger asChild>
-              <SimpleButton onClick={HandleSubmit} variant="secondary">
-                send
-              </SimpleButton>
+              <div>
+                <UiButton onClick={HandleSubmit}>send</UiButton>
+              </div>
             </Dialog.Trigger>
 
             <Dialog.Portal>
@@ -130,22 +121,17 @@ export default function page() {
 
                     <div className="flex w-full gap-4">
                       <Dialog.Close asChild className="flex-1 mt-4">
-                        <button
-                          onClick={() => setOpenDialog(false)}
-                          className="flex-1 px-4 py-2 text-center dark:text-black text-white transition-all dark:bg-white bg-blue-600 dark:border border-white rounded hover:bg-blue-500 dark:hover:bg-white/10 hover:text-white active:scale-95"
-                        >
+                        <UiButton intent={"whiteFilled"} className="flex-1">
                           Close
-                        </button>
+                        </UiButton>
                       </Dialog.Close>
-
-                      <Dialog.Close asChild className="flex-1 mt-4">
-                        <Link
-                          href="/"
-                          className="flex-1 px-4 py-2 text-center transition-all border rounded bg-white dark:text-white dark:bg-black dark:hover:bg-white dark:border-zinc-800 border-zinc-300 hover:text-black active:scale-95"
-                        >
-                          home
-                        </Link>
-                      </Dialog.Close>
+                      <UiLink
+                        href="/"
+                        className="flex-1 mt-4"
+                        intent={"bordered"}
+                      >
+                        home
+                      </UiLink>{" "}
                     </div>
                   </div>
                 </motion.div>

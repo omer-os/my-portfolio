@@ -1,5 +1,5 @@
-import SimpleButton from "@/components/common/button/SimpleButton";
 import SimpleImage from "@/components/common/images/SimpleImage";
+import UiLink from "@/components/common/ui/link/UiLink";
 import { Template } from "@/components/templates/right/AllTemplates";
 import {
   GetAllTemplates,
@@ -38,13 +38,14 @@ export default async function page({ params }: PageProps) {
             alt="nextjs"
             className="object-cover w-full h-full rounded-xl"
           />
-          <Link
+
+          <UiLink
             href={template.demoUrl}
-            className="absolute bottom-4 left-4 py-2 px-3 bg-white text-black flex items-center gap-2 z-10 rounded active:scale-95 transition-all hover:!bg-black/50 hover:!text-white hover:ring-[0.1em] ring-white"
+            startIcon={<TbExternalLink />}
+            className="absolute bottom-4 left-4"
           >
-            <TbExternalLink />
-            <span className="z-10">View Demo</span>
-          </Link>
+            View Demo
+          </UiLink>
         </div>
 
         <Link
@@ -80,20 +81,16 @@ export default async function page({ params }: PageProps) {
             </div>
           </div>
           <div className="flex flex-1 gap-3 mt-6">
-            <SimpleButton
-              className="flex-1 !bg-white !text-black hover:!bg-black hover:!text-white !border-white border text-center"
-              href="/contact"
-              variant="primary"
-            >
-              Contact Me
-            </SimpleButton>
-            <SimpleButton
-              className="flex-1 text-center !border-zinc-800"
-              href="/contact"
-              variant="secondary"
+            <UiLink className="flex-1" intent={"whiteFilled"} href="/contact">
+              contact me
+            </UiLink>
+            <UiLink
+              className="flex-1"
+              intent={"bordered"}
+              href={template.demoUrl}
             >
               View Demo
-            </SimpleButton>
+            </UiLink>
           </div>
         </div>
       </div>
@@ -108,13 +105,13 @@ export default async function page({ params }: PageProps) {
             className="object-cover w-full h-full rounded-xl"
           />
 
-          <Link
+          <UiLink
             href={template.demoUrl}
-            className="absolute bottom-4 left-4 py-2 px-3 bg-white text-black flex items-center gap-2 z-10 rounded active:scale-95 transition-all hover:!bg-black/50 hover:!text-white hover:ring-[0.1em] ring-white"
+            startIcon={<TbExternalLink />}
+            className="absolute bottom-4 left-4"
           >
-            <TbExternalLink />
-            <span className="z-10">View Demo</span>
-          </Link>
+            View Demo
+          </UiLink>
         </div>
 
         <div className="mt-6 text-4xl font-bold capitalize">
@@ -140,12 +137,14 @@ export default async function page({ params }: PageProps) {
             </div>
           ))}
 
-          <Link
-            className="flex-1 py-2 mt-6 text-center capitalize transition-all border rounded border-zinc-800 dark:hover:bg-white hover:bg-black md:col-span-2 hover:text-white dark:hover:text-black hover:border active:scale-95 "
+          <UiLink
+            intent={"bordered"}
+            border={"zinc"}
+            className="!w-full md:col-span-2"
             href="/templates"
           >
             view more templates
-          </Link>
+          </UiLink>
         </div>
       </div>
     </div>

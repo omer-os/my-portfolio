@@ -5,8 +5,8 @@ import { ImGithub } from "react-icons/im";
 import { AiFillLinkedin } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
 import Link from "next/link";
-import SimpleButton from "@/components/common/button/SimpleButton";
 import SimpleChip from "@/components/common/chips/SimpleChip";
+import UiButton from "@/components/common/ui/button/UiButton";
 
 export default function HomeFirstSection() {
   return (
@@ -85,9 +85,7 @@ export default function HomeFirstSection() {
           See Projects
         </Link>
 
-        <SimpleButton variant="primary" href="/" bold>
-          Download Resume
-        </SimpleButton>
+        <UiButton>Download Resume</UiButton>
       </div>
     </div>
   );

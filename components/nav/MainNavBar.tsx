@@ -2,6 +2,7 @@ import Link from "next/link";
 import BurgerButton from "./components/BurgerButton";
 import NavMoreButton from "./components/NavMoreButton";
 import LinkTab from "../common/tabs/LinkTab";
+import UiLink from "../common/ui/link/UiLink";
 
 export default function MainNavBar() {
   const navLinks = [
@@ -39,19 +40,22 @@ export default function MainNavBar() {
           underlines
         />
 
-        <div className="hidden gap-4 md:flex">
+        <div className="hidden gap-4 md:flex items-center">
           <Link
             className="px-3 py-1 rounded dark:hover:!text-white hover:text-black dark:text-zinc-400 text-zinc-500"
             href="/templates"
           >
             Templates
           </Link>
-          <Link
-            className="flex items-center px-4 py-1 text-white capitalize transition-all bg-blue-600 border rounded dark:bg-black dark:text-zinc-400 hover:bg-white hover:text-black border-zinc-400"
-            href="/signup"
+          <UiLink
+            className="px-4 !py-2"
+            intent="bordered"
+            border="zinc"
+            textColor="zinc"
+            href="/"
           >
-            signup
-          </Link>
+            signupd
+          </UiLink>
         </div>
 
         <BurgerButton />
