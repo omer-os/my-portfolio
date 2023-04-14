@@ -57,7 +57,7 @@ export default function SimpleChip(props: SimpleChipProps) {
   } else {
     // Render as button with onClick
     return (
-      <button
+      <div
         onClick={onClick}
         data-variant={variant}
         data-size={size}
@@ -92,7 +92,7 @@ export default function SimpleChip(props: SimpleChipProps) {
     `}
       >
         {children}
-      </button>
+      </div>
     );
   }
 }

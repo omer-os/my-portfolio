@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { BiChevronDown, BiMenu } from "react-icons/bi";
-import NavChip from "./components/NavChip";
 import BurgerButton from "./components/BurgerButton";
 import NavMoreButton from "./components/NavMoreButton";
 import LinkTab from "../common/tabs/LinkTab";
@@ -29,12 +27,13 @@ export default function MainNavBar() {
       <nav className="relative z-10 flex items-center justify-between max-w-5xl mx-auto">
         <Link
           href="/"
-          className="relative z-50 text-sm text-xl font-bold capitalize logo"
+          className="relative z-50  text-xl font-bold capitalize logo"
         >
           omar chatin
         </Link>
 
         <LinkTab
+          className="md:flex hidden"
           links={navLinks}
           ItemFromBeggining={<NavMoreButton />}
           underlines

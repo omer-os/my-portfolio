@@ -9,6 +9,9 @@ interface SimpleButtonProps {
   px?: number;
   py?: number;
   onClick?: () => void;
+  size?: "sm" | "xs" | "lg";
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 }
 
 export default function SimpleButton(props: SimpleButtonProps) {
@@ -48,6 +51,7 @@ export default function SimpleButton(props: SimpleButtonProps) {
         onClick={props.onClick}
         data-variant={props.variant}
         data-bold={props.bold}
+        data-size={props.size}
         className={`
         text-white
         rounded 
@@ -64,9 +68,23 @@ export default function SimpleButton(props: SimpleButtonProps) {
         border-zinc-400
         transition-all
         active:scale-90
+
+        data-[size=lg]:text-lg
+        data-[size=sm]:text-sm
+        data-[size=xs]:text-xs
+
+
+        flex items-center gap-2
+
+
+
         `}
       >
+        {props.startIcon}
+
         {props.children}
+
+        {props.endIcon}
       </button>
     );
   }
