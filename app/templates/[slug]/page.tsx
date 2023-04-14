@@ -1,3 +1,5 @@
+import SimpleButton from "@/components/common/button/SimpleButton";
+import SimpleImage from "@/components/common/images/SimpleImage";
 import { Template } from "@/components/templates/right/AllTemplates";
 import {
   GetAllTemplates,
@@ -78,20 +80,20 @@ export default async function page({ params }: PageProps) {
             </div>
           </div>
           <div className="flex flex-1 gap-3 mt-6">
-            <Link
-              className="bg-white text-black flex-1 rounded text-center py-2
-              hover:bg-black hover:text-white hover:ring-[.05em] ring-white active:scale-95 transition-all
-              "
+            <SimpleButton
+              className="flex-1 !bg-white !text-black hover:!bg-black hover:!text-white !border-white border text-center"
               href="/contact"
+              variant="primary"
             >
               Contact Me
-            </Link>
-            <Link
-              className="flex-1 py-2 text-center transition-all border rounded border-zinc-800 dark:hover:bg-white hover:bg-black hover:text-white dark:hover:text-black hover:border active:scale-95 "
-              href={template.demoUrl}
+            </SimpleButton>
+            <SimpleButton
+              className="flex-1 text-center !border-zinc-800"
+              href="/contact"
+              variant="secondary"
             >
               View Demo
-            </Link>
+            </SimpleButton>
           </div>
         </div>
       </div>
@@ -102,7 +104,7 @@ export default async function page({ params }: PageProps) {
           <Image
             src={template.coverimage.asset.url}
             fill
-            alt="nextjs"
+            alt="demo image"
             className="object-cover w-full h-full rounded-xl"
           />
 
@@ -131,11 +133,9 @@ export default async function page({ params }: PageProps) {
           </div>
           {template.images.map((image, index) => (
             <div key={index} className="img relative h-[20em]">
-              <Image
+              <SimpleImage
                 src={image.asset.url}
-                fill
                 alt={`image ${index} of ${template.title}`}
-                className="object-cover w-full h-full cursor-pointer rounded-xl"
               />
             </div>
           ))}

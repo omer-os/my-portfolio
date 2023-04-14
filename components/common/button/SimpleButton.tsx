@@ -12,6 +12,8 @@ interface SimpleButtonProps {
   size?: "sm" | "xs" | "lg";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+
+  className?: string;
 }
 
 export default function SimpleButton(props: SimpleButtonProps) {
@@ -25,13 +27,15 @@ export default function SimpleButton(props: SimpleButtonProps) {
         data-variant={props.variant}
         data-bold={props.bold}
         className={`
-        text-white
+        dark:text-white
         rounded 
         data-[bold=true]:font-bold
         px-${props.px || "4"}
         py-${props.py || "2"}
-        data-[variant=primary]:bg-zinc-900
-        data-[variant=primary]:hover:bg-zinc-800
+        data-[variant=primary]:dark:bg-zinc-900
+        data-[variant=primary]:bg-zinc-300
+        data-[variant=primary]:hover:bg-zinc-400
+        data-[variant=primary]:dark:hover:bg-zinc-800
         data-[variant=secondary]:bg-black
         data-[variant=secondary]:hover:bg-white
         data-[variant=secondary]:hover:text-black
@@ -40,6 +44,8 @@ export default function SimpleButton(props: SimpleButtonProps) {
         border-zinc-400
         transition-all
         active:scale-90
+
+        ${props.className}
         `}
       >
         {props.children}
@@ -53,6 +59,9 @@ export default function SimpleButton(props: SimpleButtonProps) {
         data-bold={props.bold}
         data-size={props.size}
         className={`
+        ${props.className}
+
+
         text-white
         rounded 
         data-[bold=true]:font-bold
@@ -75,7 +84,6 @@ export default function SimpleButton(props: SimpleButtonProps) {
 
 
         flex items-center gap-2
-
 
 
         `}

@@ -48,6 +48,10 @@ export default function BurgerButton() {
               name: "templates",
               link: "/templates",
             },
+            {
+              name: "contact",
+              link: "/contact",
+            },
           ].map((i) => (
             <Link
               onClick={() => setOpenSideBar(false)}

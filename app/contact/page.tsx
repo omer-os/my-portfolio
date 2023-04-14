@@ -6,6 +6,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
+import SimpleButton from "@/components/common/button/SimpleButton";
 
 export default function page() {
   const [name, setName] = useState("");
@@ -83,7 +84,7 @@ export default function page() {
               <textarea
                 id="review-text"
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="What did you like or dislike?"
+                placeholder="type your message here..."
                 ref={textAreaRef}
                 rows={1}
                 value={message}
@@ -100,12 +101,9 @@ export default function page() {
         <div className="flex gap-4 mt-5">
           <Dialog.Root open={OpenDialog}>
             <Dialog.Trigger asChild>
-              <button
-                onClick={HandleSubmit}
-                className="w-full px-4 py-2 dark:text-black text-white transition-all dark:bg-white bg-blue-600 border border-white rounded sm:w-max dark:hover:bg-white/10 hover:bg-blue-500 dark:hover:text-white active:scale-95"
-              >
-                Send
-              </button>
+              <SimpleButton onClick={HandleSubmit} variant="secondary">
+                send
+              </SimpleButton>
             </Dialog.Trigger>
 
             <Dialog.Portal>
