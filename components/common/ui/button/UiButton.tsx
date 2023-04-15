@@ -56,7 +56,6 @@ interface ButtonProps
   endIcon?: React.ReactNode;
 
   onClick?: any;
-
   className?: string;
 }
 

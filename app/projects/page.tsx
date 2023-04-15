@@ -1,5 +1,5 @@
+import UiProjectCard from "@/components/common/ui/cards/UiProjectCard";
 import { ProjectType } from "@/components/interfaces/projectTypes";
-import ProjectCard from "@/components/projects/ProjectCard";
 import { GetAllProjects } from "@/pages/api/projects";
 
 export default async function Page() {
@@ -14,7 +14,11 @@ export default async function Page() {
         <>
           <div className="flex flex-col gap-6 mt-2">
             {projects?.map((i) => (
-              <ProjectCard key={i.slug.current} project={i} />
+              <UiProjectCard
+                key={i.slug.current}
+                project={i}
+                variant="default"
+              />
             ))}
           </div>
         </>

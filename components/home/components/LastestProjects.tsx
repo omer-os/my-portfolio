@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import ProjectCard from "./ProjectCard";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { GetHomePageProjects } from "@/pages/api/projects";
+import UiProjectCard from "@/components/common/ui/cards/UiProjectCard";
 
 export default async function LastestProjects() {
   const projects = await GetHomePageProjects();
@@ -11,9 +11,9 @@ export default async function LastestProjects() {
     <div>
       <div className="text-2xl font-bold sm:text-3xl">Lastest Projects</div>
 
-      <div className="flex flex-wrap gap-10 mt-6 grow">
+      <div className="grid lg:grid-cols-3 gap-10 mt-6 grow">
         {projects?.map((i, index) => (
-          <ProjectCard project={i} key={index} />
+          <UiProjectCard project={i} key={index} variant="home" />
         ))}
       </div>
 
