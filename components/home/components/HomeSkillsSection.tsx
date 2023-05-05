@@ -23,8 +23,12 @@ export default function HomeSkillsSection() {
       <div className="flex flex-col gap-3 my-10">
         <div className="text-lg font-bold sm:text-3xl">Skills</div>
         <div className="flex flex-wrap gap-3">
-          {skills.map((i) => (
-            <SimpleChip variant="filled" className="grow sm:min-w-[7em]">
+          {skills.map((i, index) => (
+            <SimpleChip
+              variant="filled"
+              className="grow sm:min-w-[7em]"
+              key={i + index}
+            >
               {i}
             </SimpleChip>
           ))}

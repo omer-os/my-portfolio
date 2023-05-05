@@ -29,10 +29,11 @@ export default function RightSide({ category }: { category: string }) {
           <div className="animate-pulse w-1/4 h-4 bg-zinc-800 rounded  mt-2"></div>
         </div>
       ) : (
-        Results?.map((blog: Blog) => (
+        Results?.map((blog: Blog, index) => (
           <Link
             href={`/blog/${blog.slug.current}`}
             className="flex flex-col bg-zinc-900 p-3 rounded gap-2 mt-5"
+            key={blog.slug.current + index}
           >
             <div className="text-xl font-bold capitalize line-clamp-2">
               {blog.title}

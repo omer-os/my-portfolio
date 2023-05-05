@@ -5,10 +5,7 @@ import React from "react";
 
 export default function Card({ data }: { data: Blog }) {
   return (
-    <Link
-      href={`/blog/${data.slug.current}`}
-      className="overflow-hidden rounded-xl"
-    >
+    <Link href={`/blog/${data.slug.current}`}>
       <GlowingBox>
         <div className="relative flex flex-col p-5 border rounded-xl dark:border-zinc-700 border-zinc-300">
           <div className="relative z-10 text-xl font-bold sm:text-3xl line-clamp-2">

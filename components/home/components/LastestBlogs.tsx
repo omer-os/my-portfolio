@@ -20,7 +20,7 @@ export default async function LastestBlogs() {
 
         <div className="flex flex-col max-w-full gap-10 mt-5 overflow-hidden">
           {data?.map((i, index) => (
-            <HomeBlogCard key={i.slug.current} blog={i} />
+            <HomeBlogCard key={i.slug.current + index} blog={i} />
           ))}
         </div>
 
