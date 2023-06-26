@@ -6,8 +6,6 @@
   width: 0;
 }
 
-
-
 .gradient-bg {
   animation: AnimateGradient 8s ease infinite;
   animation-direction: alternate;
@@ -19,4 +17,20 @@
     #eb5e00 51%,
     #cd1500
   );
+}
+
+*::-webkit-scrollbar {
+  background-color: black;
+  width: 0.5em;
+  height: 0.3em;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(56, 56, 56);
+  border-radius: 10em;
+}
+
+@media (max-width: 500px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }

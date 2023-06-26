@@ -141,7 +141,7 @@ export const LinkItem = ({
       {onHover && (
         <motion.div
           layoutId="miureoibyperbiyeri"
-          className="absolute inset-0 bg-zinc-900 rounded"
+          className="absolute top-0 left-0 w-full h-full bg-zinc-900 rounded"
         />
       )}
       <span className="z-10 relative">{name}</span>
