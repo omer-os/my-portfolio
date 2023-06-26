@@ -77,7 +77,7 @@ export default function HomePage() {
       <div className="flex flex-col mt-16">
         {/* Name and Social Links */}
         <div className="flex justify-between items-center">
-          <div className="text-2xl animate-fade-up font-extrabold capitalize sm:text-4xl">
+          <div className="text-2xl font-extrabold capitalize sm:text-4xl">
             Omar Chatin
           </div>
 

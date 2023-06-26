@@ -101,8 +101,9 @@ export default function SimpleNav() {
               <Link
                 href={i.href}
                 className={`capitalize py-2 text-zinc-500 dark:hover:bg-zinc-900 hover:zinc-300  ${
-                  pathname === i.href && "text-white transition-colors"
+                  pathname === i.href && "!text-white transition-colors"
                 }`}
+                onClick={() => setShowSidebar(false)}
                 key={index}
               >
                 {i.name}
