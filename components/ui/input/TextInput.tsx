@@ -30,7 +30,7 @@ const TextInput = React.forwardRef<HTMLInputElement, InputProps>(
         />
 
         {endIcon && (
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+          <div className="absolute z-10 inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
             {endIcon}
           </div>
         )}

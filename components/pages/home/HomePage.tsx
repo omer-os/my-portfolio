@@ -132,9 +132,9 @@ export default function HomePage() {
               {/* See Blog Button */}
               <Link
                 className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-zinc-900 hover:bg-zinc-800 px-6 py-2"
-                href="/projects"
+                href="/blog/all"
               >
-                See Blog
+                See My Blog
               </Link>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function HomePage() {
             {/* View All Blogs Link */}
             <Link
               className="relative flex justify-center gap-2 py-3 mt-5 font-bold capitalize transition-all rounded hover:gap-4 group sm:text-lg sm:w-max sm:py-0 sm:rounded-none sm:items-center active:scale-95"
-              href="/blog"
+              href="/blog/all"
             >
               <div className="absolute top-0 left-0 w-full h-full transition-all -z-10 sm:w-0 rounded-xl gradient-bg"></div>
               <div className="relative dark:text-white">

@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen w-full">
-      <div className="text-2xl font-bold border-b pb-2 w-full border-zinc-900">
+      <div className="text-2xl font-extrabold border-b pb-2 w-full border-zinc-900">
         All Blogs
       </div>
       <div className="grid sm:grid-cols-2 mt-4 gap-5">
@@ -21,7 +22,10 @@ export default function BlogPage() {
 
 const BlogItem = () => {
   return (
-    <div className="flex flex-col p-3 rounded-lg border border-zinc-900">
+    <Link
+      href="/blog/tailwindcss/Why-I-Love-TailwindCSS:-A-Developer's-Perspective"
+      className="flex flex-col p-3 rounded-lg border border-zinc-900"
+    >
       <div className="relative h-[11em]">
         <Image
           src="https://cdn.sanity.io/images/245fryc5/production/cd6559208c4243b502a3ca616eb695002eb44379-1920x930.png"
@@ -40,6 +44,6 @@ const BlogItem = () => {
         suscipit, quibusdam, id nostrum consequatur recusandae temporibus
         accusantium molestias est.
       </div>
-    </div>
+    </Link>
   );
 };

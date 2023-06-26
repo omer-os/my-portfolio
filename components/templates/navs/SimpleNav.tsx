@@ -20,7 +20,7 @@ export default function SimpleNav() {
         </Link>
 
         {/* page links: middle */}
-        <div className="md:flex hidden items-center">
+        <div className="md:flex  hidden items-center">
           {[
             {
               name: "Home",
@@ -32,7 +32,7 @@ export default function SimpleNav() {
             },
             {
               name: "Blog",
-              href: "/blog",
+              href: "/blog/all",
             },
             {
               name: "Contact",
@@ -49,7 +49,7 @@ export default function SimpleNav() {
         </div>
 
         {/* nav actions : right-side */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center  gap-2">
           <Button
             asChild
             className="md:block hidden !text-zinc-500 bg-transparent items-center hover:text-white transition-colors"
@@ -77,7 +77,7 @@ export default function SimpleNav() {
           showSidebar ? "left-0" : " -left-full"
         }`}
       >
-        <div className="flex flex-col mt-4 divide-zinc-300">
+        <div className="flex  flex-col mt-4 divide-zinc-300">
           <div className="text-2xl font-bold">Pages</div>
           <div className="flex flex-col mt-4 divide-y-2 dark:divide-zinc-900 divide-zinc-900">
             {[
@@ -91,7 +91,7 @@ export default function SimpleNav() {
               },
               {
                 name: "Blog",
-                href: "/blog",
+                href: "/blog/all",
               },
               {
                 name: "Contact",
@@ -138,19 +138,22 @@ export const LinkItem = ({
           pathname === href ? "text-white" : "text-zinc-500"
         }`}
     >
-      {onHover && (
+      {onHover && pathname !== href && (
         <motion.div
           layoutId="miureoibyperbiyeri"
           className="absolute top-0 left-0 w-full h-full bg-zinc-900 rounded"
         />
       )}
       <span className="z-10 relative">{name}</span>
-      {pathname === href && (
-        <motion.div
-          layoutId="jbrpiyerpibu"
-          className="absolute -bottom-3 left-0 rounded-full bg-white h-[.05em] w-full"
-        ></motion.div>
-      )}
+      <motion.div
+        className="absolute -bottom-3 left-0 rounded-full bg-white h-[.05em] w-full"
+        initial={{
+          height: 0,
+        }}
+        animate={{
+          height: pathname === href ? 1 : 0,
+        }}
+      ></motion.div>
     </Link>
   );
 };
