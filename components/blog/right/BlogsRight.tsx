@@ -13,9 +13,9 @@ export default async function BlogsRight({ data }: { data: Blog[] }) {
       </div>
 
       <div className="flex flex-col gap-4 mt-5">
-        {data.map((blog, index: number) => (
+        {/* {data.map((blog, index: number) => (
           <Card key={index} data={blog} />
-        ))}
+        ))} */}
       </div>
     </div>
   );
