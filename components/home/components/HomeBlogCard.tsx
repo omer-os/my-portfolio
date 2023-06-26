@@ -15,7 +15,6 @@ function formatDate(date: string) {
 
 export default function HomeBlogCard({ blog }: { blog: Blog }) {
   const router = useRouter();
-
   return (
     <Link href={`/blog/${blog.slug.current}`}>
       <GlowingBox>

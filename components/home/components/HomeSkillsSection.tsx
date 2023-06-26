@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import Line from "@/components/coms/Line";
 import SimpleChip from "@/components/common/chips/SimpleChip";
