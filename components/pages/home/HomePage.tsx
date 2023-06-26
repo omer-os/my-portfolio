@@ -64,7 +64,7 @@ export default function HomePage() {
         />
 
         {/* Profile Image */}
-        <div className="sm:w-[6em] w-[5em] sm:h-[6em] h-[5em] transition-all rounded-full relative sm:left-10 left-5  sm:-bottom-12 -bottom-10 ring-2 ring-white">
+        <div className="sm:w-[6em] w-[5em] sm:h-[6em] h-[5em] transition-all rounded-full relative sm:left-10 left-5  -bottom-20 ring-2 ring-white">
           <Image
             src="/images/profile.webp"
             className="rounded-full object-cover w-full h-full"

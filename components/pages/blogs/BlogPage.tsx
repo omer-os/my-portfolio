@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function BlogPage() {
-  return (
-    <div>BlogPage</div>
-  )
+  return <div className="min-h-screen">BlogPage</div>;
 }

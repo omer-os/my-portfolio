@@ -1,4 +1,4 @@
-import Input from "@/components/ui/input/Input";
+import Input from "@/components/ui/input/TextInput";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
