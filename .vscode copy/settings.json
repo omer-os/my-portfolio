@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "node_modules\\.pnpm\\typescript@5.0.4\\node_modules\\typescript\\lib",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#232323",
+    "titleBar.activeBackground": "#232323",
+    "titleBar.activeForeground": "#F3FDF4"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "cva\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ]
+  ],
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
