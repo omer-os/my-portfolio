@@ -37,11 +37,17 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'blogCategory'}]}],
-      validation: (Rule) => Rule.required().min(1),
+      name: 'publishDate',
+      title: 'Publish Date',
+      type: 'datetime',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{type: 'blogCategory'}],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'coverImage',

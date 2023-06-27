@@ -1,9 +1,26 @@
+import {
+  formatSanityDate,
+  getBlogBySlug,
+} from "@/lib/functions/sanityFunctions";
+import { convertToHtml } from "@/lib/sanityClient";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
 
-export default function page() {
+export default async function page({
+  params,
+}: {
+  params: {
+    category: string;
+    slug: string;
+  };
+}) {
+  const blog = await getBlogBySlug(params.slug);
+
+  const markdownContent = convertToHtml(blog?.content || []);
+
+
   return (
     <div className="w-full max-w-3xl px-4 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
       <div className="bg-gradient-to-r from-blue-600/20 to-yellow-600/20 h-[25em] w-full absolute md:top-16 top-[3.3em]  left-0 flex">
@@ -24,13 +41,15 @@ export default function page() {
             className="px-3 py-1 text-white rounded-full bg-gradient-to-r from-yellow-600 w-max to-orange-600 "
             href="/blog/nextjs"
           >
-            nextjs
+            {blog?.category}
           </Link>
-          <div className="dark:text-zinc-400">Friday, February 24th 2023</div>
+          <div className="dark:text-zinc-400">
+            {formatSanityDate(blog?.publishDate || "")}
+          </div>
         </div>
 
         <div className="text-5xl max-w-[15em]  mt-5 font-bold capitalize">
-          What is Next.js and Why is it So Popular?
+          {blog?.title}
         </div>
 
         <div className="gap-6 mt-16 grid lg:grid-cols-[1fr_16em] grid-cols-1 ">
@@ -46,33 +65,12 @@ export default function page() {
 
             <br />
 
-            <p className="text-xl">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-              itaque iure magnam quas esse, autem consequuntur id laudantium?
-              Est harum expedita minima corporis excepturi ea eius nobis
-              necessitatibus impedit quisquam optio omnis numquam, illo nisi ut
-              nulla dicta vel corrupti at repellendus exercitationem qui?
-              Facilis ad incidunt ipsum, excepturi aut, esse fugit vero delectus
-              quidem magnam eum
-              <br />
-              laboriosam. Quidem modi at beatae ad itaque atque quas. Excepturi
-              atque ut at cumque quia repellendus. Aspernatur magni, voluptas
-              ex, quae laborum officia, in eius earum dolorum omnis aliquam
-              fugiat deleniti soluta consequuntur recusandae autem! Aliquid,
-              quidem, porro ratione dolor fuga ducimus tenetur ullam molestiae
-              quod veniam vitae dolorem quis soluta, a natus quaerat suscipit.
-              Exercitationem expedita unde, magnam nemo temporibus quos quam
-              tenetur earum dolorum at labore assumenda quidem voluptate autem
-              dicta possimus libero vero praesentium maxime maiores eligendi?
-              Dolorum explicabo earum maiores consectetur magni itaque mollitia
-              minima, deleniti sint aspernatur facilis, fugiat omnis soluta quos
-              facere tenetur pariatur magnam enim optio iusto. Doloribus alias
-              aliquid ullam doloremque quidem quod blanditiis obcaecati! Fugiat
-              vel, assumenda magni nostrum quidem praesentium quas quos
-              blanditiis ab facere nemo sapiente, porro distinctio esse totam
-              pariatur. Dolorum amet eveniet aut ducimus qui est omnis inventore
-              quibusdam. Ratione.
-            </p>
+            <>
+              <div
+                className="prose prose-invert truncate break-words"
+                dangerouslySetInnerHTML={{ __html: markdownContent }}
+              ></div>
+            </>
           </div>
           <div className="con-2-2 md:w-[16em] flex flex-col gap-3 md:border-none border-t border-zinc-800 md:py-0 py-10 transition-all">
             <div className="text-2xl font-bold capitalize">

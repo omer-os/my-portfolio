@@ -7,6 +7,7 @@ import ProjectsCard from "./ProjectsCard";
 import { BsArrowRight } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 import BlogCard from "./BlogCard";
+import { Blog } from "@/lib/interfaces/interfaces";
 
 const skills = [
   "nextjs",
@@ -50,7 +51,7 @@ const blogs = [
   },
 ];
 
-export default function HomePage() {
+export default function HomePage({ blogs }: { blogs: Blog[] }) {
   return (
     <div className="mb-4">
       {/* Hero Section */}
