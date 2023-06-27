@@ -8,11 +8,8 @@ export default function TemplatesPage({
 }: {
   templates: Template[];
 }) {
-  console.log(templates);
-
   return (
     <div>
-      {" "}
       <div className="text-4xl font-bold text-center">Find your template</div>
       <div className="text-lg text-zinc-500 mt-4 text-center max-w-[25em] mx-auto">
         choose from my pre-built templates or contact me for a custom design,
