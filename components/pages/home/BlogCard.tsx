@@ -6,7 +6,9 @@ import React from "react";
 export default function BlogCard({ blog }: { blog: Blog }) {
   return (
     <article>
-      <Link href={`/blog/${blog.slug.current}`}>
+      <Link
+        href={`/blog/${blog.category.replace(" ", "-")}/${blog.slug.current}`}
+      >
         <div>
           <div className="flex flex-col w-full h-full px-6 py-5 border sm:px-8 dark:bg-zinc-900/80 bg-black/10 border-zinc-800/40 rounded-xl group">
             <time className="text-xs capitalize dark:text-zinc-400">

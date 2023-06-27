@@ -93,6 +93,12 @@ export default function SimpleNav() {
                 name: "Blog",
                 href: "/blog/all",
               },
+
+              {
+                name: "Templates",
+                href: "/templates",
+              },
+
               {
                 name: "Contact",
                 href: "/contact",

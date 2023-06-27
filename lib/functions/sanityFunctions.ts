@@ -81,3 +81,50 @@ export function formatSanityDate(isoString: string): string {
 
   return monthNames[monthIndex] + " " + day + ", " + year;
 }
+
+export async function getTemplateBySlug(slug: string) {
+  const query = `*[_type == "template" && slug.current == "${slug}"]{
+    _id,
+    slug,
+    coverimage {
+      asset->{
+        _id,
+        url
+      }
+    },
+    title,
+    subtitle,
+    price,
+    technology,
+    demoLink,
+    "projectImages": projectImages[]{
+      "image": asset->{
+        _id,
+        url
+      }
+    }
+  }[0]`;
+  const template = await client.fetch(query);
+  return template;
+}
+
+export async function getAllTemplates() {
+  const query = `*[_type == "template"]{
+    _id,
+    slug,
+    coverimage {
+      asset->{
+        _id,
+        url
+      }
+    },
+    title,
+    subtitle,
+    price,
+    technology,
+    demoLink,
+    "projectImages": projectImages[].asset->url
+  }`;
+  const templates = await client.fetch(query);
+  return templates;
+}
