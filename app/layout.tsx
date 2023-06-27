@@ -1,14 +1,39 @@
-import "../styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import MainLayout from "@/components/layout/MainLayout";
+import MainLayout from "@/components/templates/layouts/MainLayout";
+import "@styles/globals.css";
 import { Metadata } from "next";
+import { Roboto } from "next/font/google";
+
+const inter = Roboto({
+  weight: "400",
+  subsets: ["latin-ext"],
+});
 
 export const metadata: Metadata = {
-  title: "omar chatin",
+  title: "Omar Chatin",
   description: "Frontend Web Developer | Musician | Dental Technician.",
-  icons: {
-    icon: "/logocircle.png",
+  openGraph: {
+    locale: "en_US",
+    images: ["/images/metadata.jpg"],
+    title: "Omar Chatin",
+    description: "Frontend Web Developer | Musician | Dental Technician.",
+    url: "https://omarchatin.com",
+    type: "website",
   },
+  generator: "NextJS",
+  applicationName: "portfolio website",
+  keywords: [
+    "web developer",
+    "frontend developer",
+    "dental technician",
+    "musician",
+  ],
+  authors: {
+    name: "Omar Chatin",
+    url: "https://www.instagram.com/omar.chatin/",
+  },
+  colorScheme: "dark",
+  creator: "Omar Chatin",
+  publisher: "Omar Chatin",
 };
 
 export default function RootLayout({
@@ -18,11 +43,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="dark:selection:bg-pink-600 selection:bg-blue-600 selection:text-white ">
-        <MainLayout>
-          {children}
-          <Analytics />
-        </MainLayout>
+      <body
+        className={
+          inter.className + " dark bg-black text-white selection:bg-pink-600"
+        }
+      >
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

@@ -1,28 +1,10 @@
-import UiProjectCard from "@/components/common/ui/cards/UiProjectCard";
-import { ProjectType } from "@/components/interfaces/projectTypes";
-import { GetAllProjects } from "@/pages/api/projects";
+import ProjectsPage from "@/components/pages/projects/ProjectsPage";
+import React from "react";
 
-export default async function Page() {
-  const projects: ProjectType[] | null = await GetAllProjects();
+export default function page() {
   return (
-    <>
-      <div className="max-w-4xl px-8 mx-auto mt-10 mb-16 ">
-        <h1 className="mb-8 text-2xl font-bold md:text-3xl">
-          Some of My Projects
-        </h1>
-
-        <>
-          <div className="flex flex-col gap-6 mt-2">
-            {projects?.map((i) => (
-              <UiProjectCard
-                key={i.slug.current}
-                project={i}
-                variant="default"
-              />
-            ))}
-          </div>
-        </>
-      </div>
-    </>
+    <div>
+      <ProjectsPage />
+    </div>
   );
 }

@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scroll-behavior: smooth;
-}
-
-::selection {
-  background: #bd00c7;
+.noscrollwheel::-webkit-scrollbar {
+  width: 0;
 }
 
 .gradient-bg {
@@ -16,22 +12,11 @@
   background-size: 300% 300%;
   background-image: linear-gradient(
     -45deg,
-    rgb(255, 197, 0) 0%,
-    rgb(220, 172, 0) 25%,
-    rgb(235, 94, 0) 51%,
-    rgb(205, 21, 0) 100%
+    #ffc500,
+    #dcac00 25%,
+    #eb5e00 51%,
+    #cd1500
   );
-}
-@keyframes AnimateGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 *::-webkit-scrollbar {
@@ -43,45 +28,9 @@
   background-color: rgb(56, 56, 56);
   border-radius: 10em;
 }
-/* if light theme make it red */
-
-@media (prefers-color-scheme: light) {
-  *::-webkit-scrollbar {
-    background-color: rgb(218, 218, 218);
-    width: 0.5em;
-    height: 0.3em;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: rgb(192, 192, 192);
-    border-radius: 10em;
-  }
-}
 
 @media (max-width: 500px) {
   *::-webkit-scrollbar {
     display: none;
-  }
-}
-.neon-line {
-  background: linear-gradient(
-    -45deg,
-    rgb(255, 197, 0) 0%,
-    rgb(220, 172, 0) 25%,
-    rgb(235, 94, 0) 51%,
-    rgb(205, 21, 0) 100%
-  );
-  background-size: 400% 400%;
-  animation: neon-animation 2s ease-in-out infinite;
-}
-
-@keyframes neon-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }

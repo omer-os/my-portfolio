@@ -22,13 +22,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/components": ["/components/"],
-      "@/styles": ["/styles/"]
+      "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/*"],
+      "@lib/*": ["./components/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
 
-// 
+//
 //
