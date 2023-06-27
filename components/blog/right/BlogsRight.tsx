@@ -1,6 +1,4 @@
-import { Blog } from "@/components/interfaces/blog";
-import React from "react";
-import Card from "./Card";
+import { Blog } from "@/lib/interfaces/interfaces";
 
 export default async function BlogsRight({ data }: { data: Blog[] }) {
   return (

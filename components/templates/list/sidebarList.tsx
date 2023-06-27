@@ -4,7 +4,7 @@ import { atom, useAtom } from "jotai";
 import { cn } from "@/components/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export const menuOpenAtom = atom(false);
