@@ -1,3 +1,5 @@
+import RelatedBlogs from "@/components/pages/blogs/RelatedBlogs-blogdetails";
+import BlogCard from "@/components/pages/home/home-blogs/BlogCard";
 import {
   formatSanityDate,
   getBlogBySlug,
@@ -5,7 +7,7 @@ import {
 import { convertToHtml } from "@/lib/sanityClient";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 
 export default async function page({
@@ -19,7 +21,6 @@ export default async function page({
   const blog = await getBlogBySlug(params.slug);
 
   const markdownContent = convertToHtml(blog?.content || []);
-
 
   return (
     <div className="w-full max-w-3xl px-4 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
@@ -72,16 +73,28 @@ export default async function page({
               ></div>
             </>
           </div>
-          <div className="con-2-2 md:w-[16em] flex flex-col gap-3 md:border-none border-t border-zinc-800 md:py-0 py-10 transition-all">
-            <div className="text-2xl font-bold capitalize">
-              Read Related Blogs :
-            </div>
-            <div className="flex flex-col gap-2 mt-3 p-3 rounded bg-zinc-900">
-              <div className="animate-pulse h-7 bg-zinc-800 rounded w-5/6 mt-2"></div>
-              <div className="animate-pulse w-4/6 h-7 bg-zinc-800 rounded  mt-2"></div>
-              <div className="animate-pulse w-1/4 h-4 bg-zinc-800 rounded  mt-2"></div>
-            </div>
-          </div>{" "}
+          <Suspense
+            fallback={
+              <div className="flex flex-col gap-4">
+                {[1, 2].map((i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col bg-zinc-900 h-max p-3 rounded-lg"
+                  >
+                    <div className="animate-pulse h-7 bg-zinc-800 rounded w-5/6 mt-2"></div>
+                    <div className="animate-pulse w-4/6 h-7 bg-zinc-800 rounded  mt-2"></div>
+                    <div className="animate-pulse w-1/4 h-4 bg-zinc-800 rounded  mt-2"></div>
+                  </div>
+                ))}
+              </div>
+            }
+          >
+            {/* @ts-ignore */}
+            <RelatedBlogs
+              currentBlog={blog?.slug.current || ""}
+              category={blog?.category || ""}
+            />
+          </Suspense>
         </div>
       </main>
     </div>

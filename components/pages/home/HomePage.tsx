@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button/Button";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
-import ProjectsCard from "./ProjectsCard";
+import ProjectsCard from "./home-projects/ProjectsCard";
 import { BsArrowRight } from "react-icons/bs";
-import { FaArrowRight } from "react-icons/fa";
-import BlogCard from "./BlogCard";
 import { Blog } from "@/lib/interfaces/interfaces";
+import HomeBlogs from "./home-blogs/home-blogs";
+import HomeProjects from "./home-projects/home-projects";
 
 const skills = [
   "nextjs",
@@ -22,36 +22,8 @@ const skills = [
   "railway",
   "sanity",
 ];
-const projects = [
-  {
-    title: "lmsat al fan",
-    subtitle: "Architecture Firm based in Kirkuk, Iraq",
-    slug: "lmsat-al-fan",
-    img: "https://cdn.sanity.io/images/245fryc5/production/73d02a61750a4bb0804a28d09b80905fa54276d1-1920x931.png",
-    demo: "https://lmsatarchi.com/",
-    code: "https://github.com/omer-os/lamasat-al-fan-website",
-  },
-  {
-    title: "Sadiq Ghazi Photography",
-    subtitle: "Passionate Photographer and Videographer",
-    slug: "sadiq-ghazi-photography",
-    img: "https://cdn.sanity.io/images/245fryc5/production/2a1787ac416a2884a4709bd3d2c19d4818aa251a-1897x927.png",
-    demo: "https://mosa-khathur-portfolio.vercel.app/",
-    code: "https://github.com/omer-os/mosa-khathur-portfolio",
-  },
-];
-const blogs = [
-  {
-    title: "How to use Next.js with Tailwind CSS",
-    slug: "how-to-use-nextjs-with-tailwindcss",
-    date: "24 Feb 2023",
-    tags: ["nextjs", "tailwindcss"],
-    description:
-      "Next.js is a React framework that allows you to build static and dynamic websites and web applications. It is a very popular framework that is used by many developers and companies. It is also very easy to use and has a lot of features that make it a great choice for building websites and web applications.",
-  },
-];
 
-export default function HomePage({ blogs }: { blogs: Blog[] }) {
+export default function HomePage() {
   return (
     <div className="mb-4">
       {/* Hero Section */}
@@ -164,53 +136,22 @@ export default function HomePage({ blogs }: { blogs: Blog[] }) {
         </div>
 
         {/* Projects Section */}
-        <div>
-          <div className="text-2xl font-bold sm:text-3xl">Latest Projects</div>
-          <div className="grid lg:grid-cols-3 gap-10 mt-6 grow">
-            {/* Project Cards */}
-            {projects.map((project, index) => (
-              <ProjectsCard key={index} project={project} />
-            ))}
-          </div>
-          <div className="mt-4">
-            {/* View All Projects Link */}
-            <Link
-              href="/projects"
-              className="text-xl flex gap-3 items-center w-max"
-            >
-              <span>View All Projects</span>
-              <BsArrowRight className="mt-1" />
-            </Link>
-          </div>
-        </div>
+        <Suspense
+          fallback={
+            <p className="text-zinc-500">loading lastest projects...</p>
+          }
+        >
+          {/* @ts-ignore */}
+          <HomeProjects />
+        </Suspense>
 
         {/* Latest Blogs Section */}
-        <div className="my-10">
-          <div className="w-full h-[.09em] rounded-full bg-zinc-500"></div>
-          <div className="my-10">
-            <div className="text-3xl font-bold">Latest Blogs</div>
-            <div className="mt-3 text-md text-zinc-400">
-              I mostly have blogs about programming and web development.
-            </div>
-            <div className="flex flex-col max-w-full gap-10 mt-5 overflow-hidden">
-              {/* Blog Cards */}
-              {blogs.map((blog, index) => (
-                <BlogCard key={index} blog={blog} />
-              ))}
-            </div>
-            {/* View All Blogs Link */}
-            <Link
-              className="relative flex justify-center gap-2 py-3 mt-5 font-bold capitalize transition-all rounded hover:gap-4 group sm:text-lg sm:w-max sm:py-0 sm:rounded-none sm:items-center active:scale-95"
-              href="/blog/all"
-            >
-              <div className="absolute top-0 left-0 w-full h-full transition-all -z-10 sm:w-0 rounded-xl gradient-bg"></div>
-              <div className="relative dark:text-white">
-                <p>View All Blogs</p>
-              </div>
-              <FaArrowRight className="hidden sm:block h-max" />
-            </Link>
-          </div>
-        </div>
+        <Suspense
+          fallback={<p className="text-zinc-500">loading lastest blogs...</p>}
+        >
+          {/* @ts-ignore */}
+          <HomeBlogs />
+        </Suspense>
       </div>
     </div>
   );

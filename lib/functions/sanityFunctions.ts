@@ -56,6 +56,22 @@ export async function getBlogsByCategory(
   return await client.fetch(query, { categorySlug });
 }
 
+// Function to retrieve 3 related blogs by category slug excluding the current blog
+export async function getRelatedBlogs(
+  categorySlug: string,
+  currentBlogSlug: string
+): Promise<Blog[]> {
+  const query = `*[_type == "blogs" && category->slug.current == $categorySlug && slug.current != $currentBlogSlug][0..2]{
+        title,
+        subtitle,
+        slug,
+        "category": category->title,
+        "coverImageUrl": coverImage.asset->url, // Added cover image URL
+        publishDate
+      }`;
+  return await client.fetch(query, { categorySlug, currentBlogSlug });
+}
+
 export function formatSanityDate(isoString: string): string {
   const date = new Date(isoString);
 
