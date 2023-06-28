@@ -46,3 +46,17 @@ interface Template {
 }
 
 export default Template;
+
+export interface Project {
+  slug: {
+    _type: string;
+    current: string;
+  }; // Added slug
+  title: string;
+  subtitle: string;
+  content: string;
+  demoLink: string;
+  sourceCodeLink: string;
+  coverImageUrl: string;
+  projectImages: string[]; // This assumes that projectImages is an array of URLs
+}

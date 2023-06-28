@@ -144,3 +144,38 @@ export async function getAllTemplates() {
   const templates = await client.fetch(query);
   return templates;
 }
+
+// Function to retrieve all projects
+export async function getAllProjects() {
+  const query = `*[_type == "project"]{
+        title,
+        subtitle,
+        content,
+        demoLink,
+        sourceCodeLink,
+        slug, // Added slug
+        "coverImageUrl": coverImage.asset->url, // Added cover image URL
+        "projectImages": projectImages[].asset->url // Added project images URLs
+      }`;
+  return await client.fetch(query);
+}
+
+// Function to retrieve a single project by its slug
+export async function getProjectBySlug(slug: string) {
+  const query = `*[_type == "project" && slug.current == "${slug}"]{
+        title,
+        subtitle,
+        content,
+        demoLink,
+        sourceCodeLink,
+        slug, // Added slug
+        "coverImageUrl": coverImage.asset->url, // Added cover image URL
+        "projectImages": projectImages[]{
+            "image": asset->{
+                _id,
+                url
+            }
+        }
+    }[0]`;
+  return await client.fetch(query);
+}

@@ -64,13 +64,13 @@ export default async function page({
             </div>
             <div className="flex flex-1 gap-3 mt-6">
               <a
-                className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-white hover:bg-black !text-black hover:!text-white border-white border px-4 py-2 flex-1"
+                className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-white hover:bg-black  hover:!text-white border-white border px-4 py-2 flex-1"
                 href="/contact"
               >
                 contact me
               </a>
               <a
-                className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-black hover:bg-white border hover:border-white text-white hover:text-black px-4 py-2 flex-1"
+                className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-black hover:bg-white border hover:border-white  hover:text-black px-4 py-2 flex-1"
                 href={template?.demoLink || ""}
               >
                 View Demo
