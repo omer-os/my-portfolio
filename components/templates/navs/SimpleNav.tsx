@@ -6,10 +6,22 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button/Button";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import {
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  UserProfile,
+  useAuth,
+  useSignIn,
+  useUser,
+} from "@clerk/nextjs";
 
 export default function SimpleNav() {
   const pathname = usePathname();
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const { signIn } = useSignIn();
 
   return (
     <header className="sticky top-0 left-0 z-50 p-3 px-6 bg-white border-b dark:bg-black dark:border-zinc-800 border-zinc-400">
@@ -40,7 +52,7 @@ export default function SimpleNav() {
             },
           ].map((i, index) => (
             <LinkItem
-              pathname={pathname}
+              pathname={pathname || "/"}
               key={index}
               href={i.href}
               name={i.name}
@@ -57,9 +69,16 @@ export default function SimpleNav() {
             <Link href="/templates">Templates</Link>
           </Button>
 
-          <Button className="md:block hidden" variant={"zinc"}>
-            sgin up
-          </Button>
+          <SignedIn>
+            <UserButton userProfileMode="modal" afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <SignUpButton mode="modal">
+              <Button className="btn md:block hidden" variant={"zinc"}>
+                sgin up
+              </Button>
+            </SignUpButton>
+          </SignedOut>
 
           <Button
             onClick={() => setShowSidebar(!showSidebar)}
@@ -116,6 +135,13 @@ export default function SimpleNav() {
               </Link>
             ))}
           </div>
+          <SignedOut>
+            <SignUpButton mode="modal">
+              <Button className="mt-10" variant={"blue"}>
+                sgin up
+              </Button>
+            </SignUpButton>
+          </SignedOut>
         </div>
       </aside>
     </header>

@@ -2,6 +2,9 @@ import MainLayout from "@/components/templates/layouts/MainLayout";
 import "@styles/globals.css";
 import { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { dark } from "@clerk/themes";
+
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Roboto({
   weight: "400",
@@ -42,14 +45,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={
-          inter.className + " dark bg-black text-white selection:bg-pink-600"
-        }
-      >
-        <MainLayout>{children}</MainLayout>
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
+      <html lang="en">
+        <body
+          className={
+            inter.className + " dark bg-black text-white selection:bg-pink-600"
+          }
+        >
+          <MainLayout>{children}</MainLayout>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
