@@ -1,9 +1,17 @@
-import { getProjectBySlug } from "@/lib/functions/sanityFunctions";
+import { getProjectBySlug, getSlugs } from "@/lib/functions/sanityFunctions";
 import { Project } from "@/lib/interfaces/interfaces";
 import { convertToHtml } from "@/lib/sanityClient";
 import Link from "next/link";
 import React from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
+
+export async function generateStaticParams() {
+  const projectsSlugs = await getSlugs("projects");
+
+  return projectsSlugs.map((i: { slug: string }) => ({
+    slug: i.slug,
+  }));
+}
 
 export default async function page({
   params,
@@ -50,9 +58,7 @@ export default async function page({
           </Link>
         </div>
 
-        <div className="text-4xl mt-6 font-bold capitalize">
-          {project?.title}
-        </div>
+        <h1 className="text-4xl mt-6 font-bold capitalize">{project?.title}</h1>
 
         <div className="text-zinc-400">{project?.subtitle}</div>
 

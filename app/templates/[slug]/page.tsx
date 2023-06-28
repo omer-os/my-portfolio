@@ -1,8 +1,16 @@
-import { getTemplateBySlug } from "@/lib/functions/sanityFunctions";
+import { getSlugs, getTemplateBySlug } from "@/lib/functions/sanityFunctions";
 import Template from "@/lib/interfaces/interfaces";
 import Link from "next/link";
 import React from "react";
 import { BsArrowLeft, BsLink } from "react-icons/bs";
+
+export async function generateStaticParams() {
+  const templatesSlugs = await getSlugs("templates");
+
+  return templatesSlugs.map((i: { slug: string }) => ({
+    slug: i.slug,
+  }));
+}
 
 export default async function page({
   params,
@@ -31,13 +39,13 @@ export default async function page({
           </Link>
         </div>
         <div className="flex w-full md:sticky top-20 h-max left-0 flex-col py-6 md:max-w-[20em]">
-          <a
+          <Link
             className="mt-8 dark:hover:!bg-zinc-800 hover:!bg-zinc-300 dark:hover:text-white hover: w-max active:scale-95 rounded py-2 hover:px-3 dark:bg-black bg-white transition-all dark:text-zinc-400 md:mt-0 flex items-center gap-2"
             href="/templates"
           >
             <BsArrowLeft />
             Back to Templates
-          </a>
+          </Link>
 
           <div className="mt-4 text-4xl font-bold capitalize">
             dark mode portfolio website
@@ -63,18 +71,18 @@ export default async function page({
               </div>
             </div>
             <div className="flex flex-1 gap-3 mt-6">
-              <a
+              <Link
                 className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-white hover:bg-black  hover:!text-white border-white border px-4 py-2 flex-1"
                 href="/contact"
               >
                 contact me
-              </a>
-              <a
+              </Link>
+              <Link
                 className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-black hover:bg-white border hover:border-white  hover:text-black px-4 py-2 flex-1"
                 href={template?.demoLink || ""}
               >
                 View Demo
-              </a>
+              </Link>
             </div>
           </div>
         </div>{" "}

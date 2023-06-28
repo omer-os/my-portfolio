@@ -66,6 +66,7 @@ export default function page() {
           <button
             type="submit"
             className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-zinc-900 hover:bg-zinc-800 px-4 py-2"
+            title="Send Message"
           >
             send
           </button>

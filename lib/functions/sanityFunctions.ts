@@ -179,3 +179,61 @@ export async function getProjectBySlug(slug: string) {
     }[0]`;
   return await client.fetch(query);
 }
+
+// Function to retrieve latest 3 projects
+export async function HomePageProjects() {
+  const query = `*[_type == "project"] | order(_createdAt desc)[0..2] {
+        title,
+        subtitle,
+        content,
+        demoLink,
+        sourceCodeLink,
+        slug,
+        "coverImageUrl": coverImage.asset->url,
+        "projectImages": projectImages[].asset->url
+      }`;
+  return await client.fetch(query);
+}
+
+// Function to retrieve latest 3 blogs
+export async function HomePageBlogs() {
+  const query = `*[_type == "blogs"] | order(publishDate desc)[0..2] {
+        title,
+        subtitle,
+        slug,
+        "category": category->title,
+        "coverImageUrl": coverImage.asset->url,
+        publishDate
+      }`;
+  return await client.fetch(query);
+}
+
+
+
+
+
+
+// Function to retrieve all slugs
+export async function getSlugs(type: 'blogs' | 'projects' | 'templates') {
+  let typeName;
+
+  switch (type) {
+    case 'blogs':
+      typeName = 'blogs';
+      break;
+    case 'projects':
+      typeName = 'project';
+      break;
+    case 'templates':
+      typeName = 'template';
+      break;
+    default:
+      throw new Error('Invalid type. Valid types are blogs, projects, templates');
+  }
+
+  const query = `*[_type == "${typeName}"]{
+        "slug": slug.current
+      }`;
+
+  return await client.fetch(query);
+}

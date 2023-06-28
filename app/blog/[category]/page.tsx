@@ -6,6 +6,7 @@ import {
 import { Blog } from "@/lib/interfaces/interfaces";
 import React from "react";
 
+
 export default async function page({
   params,
 }: {

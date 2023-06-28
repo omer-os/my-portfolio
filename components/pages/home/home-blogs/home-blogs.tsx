@@ -1,11 +1,12 @@
 import React from "react";
 import BlogCard from "./BlogCard";
-import { getAllBlogs } from "@/lib/functions/sanityFunctions";
+import { HomePageBlogs } from "@/lib/functions/sanityFunctions";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { Blog } from "@/lib/interfaces/interfaces";
 
 export default async function HomeBlogs() {
-  const blogs = await getAllBlogs();
+  const blogs: Blog[] = await HomePageBlogs();
 
   return (
     <div className="my-10">

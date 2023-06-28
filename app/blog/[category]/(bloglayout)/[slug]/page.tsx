@@ -1,5 +1,4 @@
 import RelatedBlogs from "@/components/pages/blogs/RelatedBlogs-blogdetails";
-import BlogCard from "@/components/pages/home/home-blogs/BlogCard";
 import {
   formatSanityDate,
   getBlogBySlug,
@@ -30,8 +29,8 @@ export default async function page({
 
       <main className="z-10 relative -mt-10">
         <Link
-          className="flex items-center w-max mt-10 text-sm transition-all dark:hover:text-white hover:underline dark:text-zinc-400 text-zinc-700 hover:text-zinc-600 gap-2"
           href="/blog/all"
+          className="flex items-center w-max mt-10 text-sm transition-all dark:hover:text-white hover:underline dark:text-zinc-400 text-zinc-700 hover:text-zinc-600 gap-2"
         >
           <BsArrowLeft />
           Back to blog
@@ -39,8 +38,8 @@ export default async function page({
 
         <div className="flex flex-col gap-2 pt-10 md:flex-row md:items-center md:gap-3">
           <Link
-            className="px-3 py-1 text-white rounded-full bg-gradient-to-r from-yellow-600 w-max to-orange-600 "
             href="/blog/nextjs"
+            className="px-3 py-1 text-white rounded-full bg-gradient-to-r from-yellow-600 w-max to-orange-600"
           >
             {blog?.category}
           </Link>
@@ -49,11 +48,11 @@ export default async function page({
           </div>
         </div>
 
-        <div className="text-5xl max-w-[15em]  mt-5 font-bold capitalize">
+        <div className="text-5xl max-w-[15em] mt-5 font-bold capitalize">
           {blog?.title}
         </div>
 
-        <div className="gap-6 mt-16 grid lg:grid-cols-[1fr_16em] grid-cols-1 ">
+        <div className="gap-6 mt-16 grid lg:grid-cols-[1fr_16em] grid-cols-1">
           <div className="con-1-1 flex-1 lg:border-r lg:pr-10 dark:border-zinc-800 flex flex-col border-zinc-300">
             <div className="img h-[20em] relative">
               <Image
@@ -66,13 +65,12 @@ export default async function page({
 
             <br />
 
-            <>
-              <div
-                className="prose prose-invert truncate break-words"
-                dangerouslySetInnerHTML={{ __html: markdownContent }}
-              ></div>
-            </>
+            <div
+              className="prose prose-invert  break-words"
+              dangerouslySetInnerHTML={{ __html: markdownContent }}
+            ></div>
           </div>
+
           <Suspense
             fallback={
               <div className="flex flex-col gap-4">
@@ -82,8 +80,8 @@ export default async function page({
                     className="flex flex-col bg-zinc-900 h-max p-3 rounded-lg"
                   >
                     <div className="animate-pulse h-7 bg-zinc-800 rounded w-5/6 mt-2"></div>
-                    <div className="animate-pulse w-4/6 h-7 bg-zinc-800 rounded  mt-2"></div>
-                    <div className="animate-pulse w-1/4 h-4 bg-zinc-800 rounded  mt-2"></div>
+                    <div className="animate-pulse w-4/6 h-7 bg-zinc-800 rounded mt-2"></div>
+                    <div className="animate-pulse w-1/4 h-4 bg-zinc-800 rounded mt-2"></div>
                   </div>
                 ))}
               </div>
