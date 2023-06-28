@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function BlogsLeft() {
   const [search, setSearch] = useState("");
-  const category = useParams().category;
+  const category = useParams()?.category;
   const categories = ["nextjs", "tailwindcss", "all"];
   const scrolling = useIsScrollingDown();
 
