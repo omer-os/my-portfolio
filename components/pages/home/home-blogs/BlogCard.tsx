@@ -1,3 +1,4 @@
+import GoToButton from "@/components/ui/button/GoToButton";
 import { formatSanityDate } from "@/lib/functions/sanityFunctions";
 import { Blog } from "@/lib/interfaces/interfaces";
 import Link from "next/link";
@@ -15,9 +16,12 @@ export default function BlogCard({ blog }: { blog: Blog }) {
               {formatSanityDate(blog.publishDate)}
             </time>
             <div className="relative z-20 flex gap-3 mt-2">
-              <button className="px-3 py-1 text-xs font-light capitalize transition-all rounded ring-2 hover:bg-white/10 hover:scale-105 bg-black/0 ring-orange-600">
+              <GoToButton
+                href={`/blog/${blog.category.replace(" ", "-")}/`}
+                className="px-3 py-1 text-xs font-light capitalize transition-all rounded ring-2 hover:bg-white/10 hover:scale-105 bg-black/0 ring-orange-600"
+              >
                 {blog.category}
-              </button>
+              </GoToButton>
             </div>
             <div className="flex flex-col mt-2">
               <h2 className="relative max-w-full text-xl font-bold sm:text-2xl line-clamp-1 w-max">

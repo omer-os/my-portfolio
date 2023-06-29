@@ -3,9 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { Suspense } from "react";
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
-import ProjectsCard from "./home-projects/ProjectsCard";
-import { BsArrowRight } from "react-icons/bs";
-import { Blog } from "@/lib/interfaces/interfaces";
 import HomeBlogs from "./home-blogs/home-blogs";
 import HomeProjects from "./home-projects/home-projects";
 
@@ -34,6 +31,7 @@ export default function HomePage() {
           className="rounded-lg object-cover w-full h-full ring-2 ring-white"
           fill
           alt="hero image"
+          priority
         />
 
         {/* Profile Image */}
@@ -43,6 +41,7 @@ export default function HomePage() {
             className="rounded-full object-cover w-full h-full"
             fill
             alt="hero image"
+            priority
           />
         </div>
       </div>

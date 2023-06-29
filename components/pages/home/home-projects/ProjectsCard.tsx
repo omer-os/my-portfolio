@@ -1,3 +1,4 @@
+import GoToButton from "@/components/ui/button/GoToButton";
 import { Project } from "@/lib/interfaces/interfaces";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,18 +25,18 @@ export default function ProjectsCard({ project }: { project: Project }) {
             {project.subtitle}
           </p>
           <div className="flex flex-wrap gap-1 mt-auto pt-4 text-xs md:gap-5">
-            <Link
+            <GoToButton
               href={project.demoLink} // Use Next.js Link for internal links
               className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-zinc-900 hover:bg-zinc-800 px-4 py-2"
             >
               View Demo
-            </Link>
-            <Link
+            </GoToButton>
+            <GoToButton
               href={project.sourceCodeLink} // Use Next.js Link for internal links
               className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-zinc-900 hover:bg-zinc-800 px-4 py-2"
             >
               Source Code
-            </Link>
+            </GoToButton>
           </div>
         </div>
       </div>

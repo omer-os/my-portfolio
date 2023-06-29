@@ -7,3 +7,9 @@ export default async function page() {
     </div>
   );
 }
+
+
+
+// ideas:
+// Services page
+// calculator page
