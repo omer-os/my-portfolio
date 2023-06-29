@@ -31,8 +31,13 @@ export const metadata: Metadata = {
   publisher: "Omar Chatin",
 };
 
-export default async function Template({ children }: { children: React.ReactNode }) {
-  const allCategories = await getAllBlogCategories()
+export default async function Template({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const allCategories = await getAllBlogCategories();
+
   return (
     <div className="flex max-w-5xl mx-auto">
       <BlogsLeft allCategories={allCategories} />
