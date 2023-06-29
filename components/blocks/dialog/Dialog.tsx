@@ -69,7 +69,7 @@ export default function Dialog({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               className={`z-10 relative w-max ${
-                !noBackground && "bg-white border"
+                !noBackground && "bg-zinc-900 border border-zinc-700"
               } p-3 rounded-lg shadow-lg`}
               transition={{ duration: 0.2 }}
             >

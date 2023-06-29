@@ -208,27 +208,24 @@ export async function HomePageBlogs() {
   return await client.fetch(query);
 }
 
-
-
-
-
-
 // Function to retrieve all slugs
-export async function getSlugs(type: 'blogs' | 'projects' | 'templates') {
+export async function getSlugs(type: "blogs" | "projects" | "templates") {
   let typeName;
 
   switch (type) {
-    case 'blogs':
-      typeName = 'blogs';
+    case "blogs":
+      typeName = "blogs";
       break;
-    case 'projects':
-      typeName = 'project';
+    case "projects":
+      typeName = "project";
       break;
-    case 'templates':
-      typeName = 'template';
+    case "templates":
+      typeName = "template";
       break;
     default:
-      throw new Error('Invalid type. Valid types are blogs, projects, templates');
+      throw new Error(
+        "Invalid type. Valid types are blogs, projects, templates"
+      );
   }
 
   const query = `*[_type == "${typeName}"]{
@@ -236,4 +233,32 @@ export async function getSlugs(type: 'blogs' | 'projects' | 'templates') {
       }`;
 
   return await client.fetch(query);
+}
+
+export async function getAllBlogCategories() {
+  const query = `*[_type == "blogCategory"]{
+        title,
+        "slug": slug.current
+      }`;
+
+  return await client.fetch(query);
+}
+
+export async function searchBlogs(searchTerm: string) {
+  // Ensure the search term is a string and is not empty
+  if (typeof searchTerm !== "string" || searchTerm.trim() === "") {
+    return [];
+  }
+
+  // Use regex match to search for the term in title and content
+  const query = `*[_type == "blogs" && (title match $term || content match $term)]{
+        title,
+        subtitle,
+        slug,
+        "coverImageUrl": coverImage.asset->url, // Added cover image URL
+        publishDate
+      }`;
+
+  // Fetch and return the search results
+  return await client.fetch(query, { term: `*${searchTerm}*` });
 }

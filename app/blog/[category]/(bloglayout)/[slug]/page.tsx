@@ -1,6 +1,7 @@
 import RelatedBlogs from "@/components/pages/blogs/RelatedBlogs-blogdetails";
 import {
   formatSanityDate,
+  getAllBlogCategories,
   getBlogBySlug,
 } from "@/lib/functions/sanityFunctions";
 import { convertToHtml } from "@/lib/sanityClient";

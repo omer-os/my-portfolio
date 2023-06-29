@@ -1,4 +1,5 @@
 import BlogsLeft from "@/components/pages/blogs/BlogsLeft";
+import { getAllBlogCategories } from "@/lib/functions/sanityFunctions";
 import { Metadata } from "next";
 import React from "react";
 export const metadata: Metadata = {
@@ -30,10 +31,11 @@ export const metadata: Metadata = {
   publisher: "Omar Chatin",
 };
 
-export default function Template({ children }: { children: React.ReactNode }) {
+export default async function Template({ children }: { children: React.ReactNode }) {
+  const allCategories = await getAllBlogCategories()
   return (
     <div className="flex max-w-5xl mx-auto">
-      <BlogsLeft />
+      <BlogsLeft allCategories={allCategories} />
 
       <div className="py-4 px-6 w-full md:pt-6 pt-16">{children}</div>
     </div>

@@ -13,13 +13,9 @@
   "dependencies": {
     "@clerk/nextjs": "^4.21.12",
     "@clerk/themes": "^1.7.5",
-    "@portabletext/react": "^2.0.2",
-    "@radix-ui/react-dialog": "^1.0.3",
-    "@radix-ui/react-hover-card": "^1.0.5",
     "@radix-ui/react-popover": "^1.0.6",
     "@radix-ui/react-select": "^1.2.1",
     "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-switch": "^1.0.2",
     "@sanity/block-content-to-html": "^2.0.0",
     "@sanity/client": "^5.2.2",
     "@tailwindcss/line-clamp": "^0.4.2",
@@ -36,7 +32,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "supports-color": "^9.3.1",
     "tailwind-merge": "^1.13.2",
     "tailwindcss-animated": "^1.0.0",
     "typescript": "4.9.5"

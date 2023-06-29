@@ -1,11 +1,11 @@
 import BlogPage from "@/components/pages/blogs/BlogPage";
 import {
+  getAllBlogCategories,
   getAllBlogs,
   getBlogsByCategory,
 } from "@/lib/functions/sanityFunctions";
 import { Blog } from "@/lib/interfaces/interfaces";
 import React from "react";
-
 
 export default async function page({
   params,

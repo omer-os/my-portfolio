@@ -48,17 +48,10 @@ export default async function page({
           </Link>
 
           <div className="mt-4 text-4xl font-bold capitalize">
-            dark mode portfolio website
+            {template.title}
           </div>
-          <div className="mt-3 text-zinc-400">
-            buy this template for just 40! and let me Customize it to your
-            liking and launch in no time. contact me{" "}
-            <a className="text-blue-600 underline w-max" href="/contact">
-              from this link
-            </a>{" "}
-            to purchase and build your dream website today!
-          </div>
-
+          <div className="mt-3">{template.subtitle}</div>
+          
           <div className="flex flex-col">
             <div className="flex flex-col mt-10 divide-y text-zinc-400 dark:divide-zinc-800 divide-zinc-400">
               <div className="flex items-center justify-between py-2">
@@ -72,7 +65,7 @@ export default async function page({
             </div>
             <div className="flex flex-1 gap-3 mt-6">
               <Link
-                className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-white hover:bg-black  hover:!text-white border-white border px-4 py-2 flex-1"
+                className="rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-white text-black hover:bg-black  hover:!text-white border-white border px-4 py-2 flex-1"
                 href="/contact"
               >
                 contact me
