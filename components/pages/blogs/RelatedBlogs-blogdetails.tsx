@@ -13,7 +13,7 @@ export default async function RelatedBlogs({
   currentBlog: string;
   category: string;
 }) {
-  const blogs: Blog[] = await getRelatedBlogs(category, currentBlog);
+  const blogs: Blog[] = await getRelatedBlogs("dental-care", currentBlog);
 
   return (
     <div className="con-2-2 lg:max-w-[16em] flex flex-col gap-3 md:border-none border-t border-zinc-800 w-full md:py-0 py-10 transition-all">

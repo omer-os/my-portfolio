@@ -106,7 +106,7 @@ export default function HomePage() {
                 className="text-white rounded active:scale-95 fill-current transition-all flex gap-2 items-center justify-center text-center w-max bg-zinc-900 hover:bg-zinc-800 px-6 py-2"
                 href="/blog/all"
               >
-                See My Blog
+                See My Blogs
               </Link>
             </div>
           </div>

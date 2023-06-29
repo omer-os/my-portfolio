@@ -22,7 +22,7 @@ export default async function page({
   const markdownContent = convertToHtml(blog?.content || []);
 
   return (
-    <div className="w-full max-w-3xl px-4 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
+    <div className="w-full max-w-3xl px-3 mx-auto mt-2 sm:px-6 xl:max-w-5xl xl:px-0">
       <div className="bg-gradient-to-r from-blue-600/20 to-yellow-600/20 h-[25em] w-full absolute md:top-16 top-[3.3em]  left-0 flex">
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t dark:from-black from-white"></div>
       </div>
@@ -56,7 +56,7 @@ export default async function page({
           <div className="con-1-1 flex-1 lg:border-r lg:pr-10 dark:border-zinc-800 flex flex-col border-zinc-300">
             <div className="img h-[20em] relative">
               <Image
-                src="https://cdn.sanity.io/images/245fryc5/production/f54f481348cfbc47902c4bec66b9f199cad95bbb-1000x582.png"
+                src={blog?.coverImageUrl || ""}
                 fill
                 alt="Picture of the author"
                 className="rounded-lg object-cover w-full h-full border border-zinc-800"
@@ -90,7 +90,7 @@ export default async function page({
             {/* @ts-ignore */}
             <RelatedBlogs
               currentBlog={blog?.slug.current || ""}
-              category={blog?.category || ""}
+              category={blog?.category.replaceAll(" ","-") || ""}
             />
           </Suspense>
         </div>

@@ -4,13 +4,13 @@ import Link from "next/link";
 import React from "react";
 import { BsArrowLeft, BsLink } from "react-icons/bs";
 
-export async function generateStaticParams() {
-  const templatesSlugs = await getSlugs("templates");
+// export async function generateStaticParams() {
+//   const templatesSlugs = await getSlugs("templates");
 
-  return templatesSlugs.map((i: { slug: string }) => ({
-    slug: i.slug,
-  }));
-}
+//   return templatesSlugs.map((i: { slug: string }) => ({
+//     slug: i.slug,
+//   }));
+// }
 
 export default async function page({
   params,
@@ -51,7 +51,7 @@ export default async function page({
             {template.title}
           </div>
           <div className="mt-3">{template.subtitle}</div>
-          
+
           <div className="flex flex-col">
             <div className="flex flex-col mt-10 divide-y text-zinc-400 dark:divide-zinc-800 divide-zinc-400">
               <div className="flex items-center justify-between py-2">

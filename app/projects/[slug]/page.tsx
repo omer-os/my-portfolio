@@ -5,13 +5,15 @@ import Link from "next/link";
 import React from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
 
-export async function generateStaticParams() {
-  const projectsSlugs = await getSlugs("projects");
+// const dynamic = 'force-dynamic'
 
-  return projectsSlugs.map((i: { slug: string }) => ({
-    slug: i.slug,
-  }));
-}
+// export async function generateStaticParams() {
+//   const projectsSlugs = await getSlugs("projects");
+
+//   return projectsSlugs.map((i: { slug: string }) => ({
+//     slug: i.slug,
+//   }));
+// }
 
 export default async function page({
   params,
