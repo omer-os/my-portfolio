@@ -17,11 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <SessionProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={`${GeistSans.variable}`}
+      >
         <body>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
