@@ -29,7 +29,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <MainLayout>{children}</MainLayout>
+            {children}
           </ThemeProvider>
         </body>
       </html>
