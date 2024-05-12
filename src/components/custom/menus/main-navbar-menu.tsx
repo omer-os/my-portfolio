@@ -40,7 +40,7 @@ export default function MainNavbarMenu() {
   return (
     <div
       className={cn(
-        "items fixed bottom-0 top-0 flex w-full flex-col gap-1 bg-background px-10 pt-20 transition-all lg:relative lg:left-0 lg:w-max lg:flex-row lg:px-0 lg:pt-4",
+        "fixed bottom-0 top-0 flex w-full flex-col gap-1 bg-background px-4 pt-20 transition-all lg:relative lg:left-0 lg:w-max lg:flex-row lg:px-0 lg:pt-0",
         {
           "left-0": isSidebarOpen,
           "-left-full": !isSidebarOpen,

@@ -1,5 +1,8 @@
+import { Github, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { Button } from "~/components/ui/button";
 
 export default function HomeHeroSection() {
   return (
@@ -25,14 +28,45 @@ export default function HomeHeroSection() {
       </div>
 
       <div className="mt-16 flex flex-col">
-        <div className="flex items-start justify-between">
-          <h1 className="text-xl font-bold">Omar Chatin</h1>
+        <div className="flex flex-col-reverse items-start justify-between gap-3 md:flex-row">
+          <h1 className="text-2xl font-bold md:text-3xl">Omar Chatin</h1>
 
-          <div className="flex gap-2"></div>
+          <div className="flex gap-2">
+            {[
+              {
+                name: "github",
+                icon: Github,
+                href: "/",
+              },
+              {
+                name: "Linkdin",
+                icon: Linkedin,
+                href: "/",
+              },
+              {
+                name: "Instagram",
+                icon: Instagram,
+                href: "/",
+              },
+            ].map((item, index) => {
+              return (
+                <Link key={index} href={item.href}>
+                  <Button variant={"outline"} size={"icon"}>
+                    <item.icon size={16} />
+                  </Button>
+                </Link>
+              );
+            })}
+          </div>
         </div>
-        <p className="max-w-[20em] text-sm text-muted-foreground">
+        <p className="max-w-[20em] text-lg text-muted-foreground">
           Frontend Web Developer | Musician | Dental Technician.
         </p>
+      </div>
+
+      <div className="mt-4 flex gap-2">
+        <Button variant={"default"}>See Projects</Button>
+        <Button variant={"secondary"}>See My Blog</Button>
       </div>
     </div>
   );

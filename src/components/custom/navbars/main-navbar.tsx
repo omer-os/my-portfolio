@@ -16,14 +16,18 @@ export default function MainNavbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useAtom(SidebarAtom);
   const { data } = useSession();
   return (
-    <nav className="sticky left-0 top-0 z-50 border-b">
-      <div className="container flex items-center justify-between py-3">
+    <nav className="sticky left-0 top-0 z-50 border-b bg-background">
+      <div className="container flex items-center justify-between py-2 sm:py-3">
         <div className="logo text-xl font-bold">Omar Chatin</div>
 
         <MainNavbarMenu />
 
         <ToggleMainSidebarMenuButton className="lg:hidden">
-          <Button variant={"ghost"} className="relative z-30" size={"icon"}>
+          <Button
+            variant={"ghost"}
+            className="relative z-30"
+            size={"icon-toolbar"}
+          >
             <Menu size={16} />
           </Button>
         </ToggleMainSidebarMenuButton>
